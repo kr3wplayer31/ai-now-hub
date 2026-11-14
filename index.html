@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A.I. NOW — Everything AI, One Place | Live Video, Live AI News, Tools & Free Guides</title>
+<meta name="description" content="The loud front door of A.I. NOW: a live video wall of 24/7 news channels, live AI news from the BBC, TechCrunch and The Verge, a plain-English directory of the AI tools that matter, free prompt packs, and every A.I. NOW branch under one roof.">
+<style>
+  :root{--bg:#0a0618;--panel:#150b31;--panel2:#1c0f42;--line:#3b2a7a;--txt:#f5f2ff;--dim:#bdb2e8;--pink:#ff2e88;--violet:#8b3dff;--cyan:#00e5ff;--lime:#a6ff00;--yel:#ffd400;--red:#ff3355}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.45;
+    background-image:radial-gradient(900px 480px at 12% -6%,rgba(255,46,136,.30),transparent 60%),radial-gradient(900px 520px at 88% 4%,rgba(0,229,255,.22),transparent 60%),radial-gradient(760px 600px at 50% 108%,rgba(139,61,255,.28),transparent 60%);
+    background-attachment:fixed}
+  a{color:var(--cyan);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+  header{position:sticky;top:0;z-index:20;background:rgba(10,6,24,.92);backdrop-filter:blur(8px);border-bottom:3px solid;border-image:linear-gradient(90deg,var(--pink),var(--violet),var(--cyan),var(--lime)) 1}
+  .bar{max-width:1180px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .logo{font-weight:900;font-size:27px;letter-spacing:.5px;color:var(--txt)}
+  .grad{background:linear-gradient(92deg,var(--pink),var(--violet) 48%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .pill{display:inline-flex;align-items:center;gap:7px;background:var(--pink);color:#fff;font-size:12px;font-weight:900;padding:5px 12px;border-radius:999px;letter-spacing:1.5px;box-shadow:0 0 18px rgba(255,46,136,.55)}
+  .clock{margin-left:auto;color:var(--dim);font-size:13px;text-align:right}
+  .clock b{color:var(--txt);font-size:15px}
+  .hero{padding:40px 0 8px}
+  .hero .kicker{font-weight:900;letter-spacing:3px;font-size:13px;color:var(--lime);text-transform:uppercase}
+  .hero h1{font-size:clamp(46px,10.5vw,112px);font-weight:900;line-height:.94;letter-spacing:-1.5px;text-transform:uppercase;margin:10px 0 6px}
+  .stroke{color:transparent;-webkit-text-stroke:2.5px var(--cyan)}
+  .hero .sub{font-size:clamp(16px,2.4vw,21px);font-weight:600;color:#ddd6ff;max-width:840px;margin-top:12px}
+  .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+  .btn{display:inline-block;font-weight:900;font-size:16px;padding:14px 26px;border-radius:999px;letter-spacing:.4px}
+  .btn:hover{text-decoration:none;transform:translateY(-2px)}
+  .btn-hot{background:linear-gradient(92deg,var(--pink),var(--violet));color:#fff;box-shadow:0 6px 24px rgba(255,46,136,.45)}
+  .btn-cool{background:transparent;color:var(--lime);border:2.5px solid var(--lime)}
+  .ticker{background:#000;border-top:3px solid var(--pink);border-bottom:3px solid var(--pink);overflow:hidden;white-space:nowrap;margin:26px 0 6px}
+  .ticker .track{display:inline-block;padding:10px 0;font-weight:900;letter-spacing:.6px;font-size:15px;text-transform:uppercase;animation:tick 55s linear infinite;will-change:transform}
+  .ticker .sep{color:var(--pink);padding:0 12px}
+  .ticker .src{color:var(--cyan)}
+  @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  section.panel{background:linear-gradient(180deg,var(--panel),#100826);border:2px solid var(--line);border-radius:20px;padding:22px;margin:26px 0;box-shadow:8px 8px 0 rgba(139,61,255,.25)}
+  .stitle{font-size:clamp(27px,5vw,42px);font-weight:900;text-transform:uppercase;line-height:1.05;letter-spacing:.2px}
+  .stitle .u{display:inline-block;border-bottom:6px solid var(--pink)}
+  .note{color:var(--dim);font-size:14.5px;margin:8px 0 16px;max-width:860px}
+  .livedot{width:11px;height:11px;border-radius:50%;background:var(--red);display:inline-block;animation:pulse 1.3s infinite;box-shadow:0 0 12px var(--red)}
+  @keyframes pulse{0%{opacity:1}50%{opacity:.25}100%{opacity:1}}
+  .livebadge{display:inline-flex;align-items:center;gap:8px;background:#2a0a18;border:2px solid var(--red);color:#ffb3c2;font-size:12.5px;font-weight:900;padding:5px 12px;border-radius:999px;letter-spacing:1.5px;vertical-align:middle}
+  .vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+  .vid{border:2.5px solid var(--cyan);border-radius:16px;overflow:hidden;background:#000;box-shadow:6px 6px 0 rgba(0,229,255,.22)}
+  .vid:nth-child(2){border-color:var(--pink);box-shadow:6px 6px 0 rgba(255,46,136,.22)}
+  .vid:nth-child(3){border-color:var(--lime);box-shadow:6px 6px 0 rgba(166,255,0,.20)}
+  .vid:nth-child(4){border-color:var(--yel);box-shadow:6px 6px 0 rgba(255,212,0,.20)}
+  .vid:nth-child(5){border-color:var(--violet);box-shadow:6px 6px 0 rgba(139,61,255,.3)}
+  .vid.feat{grid-column:1/-1;border-color:var(--pink);box-shadow:8px 8px 0 rgba(255,46,136,.3)}
+  .vlabel{display:flex;align-items:center;gap:9px;background:linear-gradient(90deg,#1d0b3d,#0a2436);padding:11px 14px;font-weight:900;font-size:15.5px;letter-spacing:.3px}
+  .vlabel .watch{margin-left:auto;font-size:12.5px;font-weight:800;color:var(--cyan);white-space:nowrap}
+  .frame{position:relative;padding-top:56.25%;background:#000}
+  .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .ev{border:2px solid var(--line);background:var(--panel2);border-radius:14px;padding:13px 15px;margin-bottom:11px}
+  .ev .top{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+  .badge{font-size:11px;font-weight:900;letter-spacing:.7px;padding:4px 9px;border-radius:999px;text-transform:uppercase;border:1.5px solid}
+  .b-pink{background:#2a0a22;color:#ffb0d4;border-color:var(--pink)}
+  .b-cyan{background:#062a36;color:#a8f2ff;border-color:var(--cyan)}
+  .b-lime{background:#1d2f06;color:#dcffb0;border-color:var(--lime)}
+  .b-yel{background:#33290a;color:#ffe98a;border-color:var(--yel)}
+  .b-viol{background:#22104d;color:#d3b8ff;border-color:var(--violet)}
+  .b-dim{background:#191233;color:var(--dim);border-color:var(--line)}
+  .ev .t{font-weight:800;font-size:16px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .card{border:2px solid var(--line);background:var(--panel2);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:7px;box-shadow:5px 5px 0 rgba(0,229,255,.14)}
+  .card .ct{font-weight:900;font-size:17px}
+  .card .cd{color:var(--dim);font-size:14px;flex:1}
+  .card .cl{font-weight:900;font-size:14px}
+  a.card{color:var(--txt)}
+  a.card:hover{border-color:var(--pink);text-decoration:none;transform:translateY(-2px)}
+  .srcrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:6px}
+  .srcrow a.row{display:flex;justify-content:space-between;align-items:center;gap:10px;border:2px solid var(--line);background:var(--panel2);border-radius:14px;padding:13px 15px;color:var(--txt)}
+  .srcrow a.row:hover{border-color:var(--cyan);text-decoration:none}
+  .row .rt{font-weight:900}
+  .row .rd{color:var(--dim);font-size:12.5px}
+  .row .arr{font-size:19px;color:var(--pink);font-weight:900}
+  details.pack{border:2px solid var(--violet);background:var(--panel2);border-radius:16px;padding:6px 16px 14px;margin-bottom:14px}
+  details.pack summary{cursor:pointer;font-weight:900;font-size:17px;padding:12px 0}
+  .prompt{border:1.5px solid var(--line);background:var(--panel);border-radius:12px;padding:12px 13px;margin-bottom:10px}
+  .prompt .pt{font-weight:800;font-size:14.5px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .prompt .px{color:var(--dim);font-size:14px;margin-top:5px;white-space:pre-wrap}
+  .copybtn{background:linear-gradient(92deg,var(--pink),var(--violet));border:0;color:#fff;font-weight:900;font-size:12.5px;padding:6px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  .emg{background:linear-gradient(92deg,#2a0a18,#1a0533);border:2.5px solid var(--red);border-radius:16px;padding:18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .emg .et{font-weight:900;font-size:19px}
+  .emg .ed{color:var(--dim);font-size:14px;max-width:720px}
+  .emg a.btn{margin-left:auto;background:var(--red);color:#fff;box-shadow:0 6px 20px rgba(255,51,85,.4)}
+  .join{background:linear-gradient(92deg,var(--pink),var(--violet) 55%,var(--cyan));border-radius:20px;padding:26px 22px;text-align:center;margin:26px 0;box-shadow:8px 8px 0 rgba(0,229,255,.25)}
+  .join .jt{font-weight:900;font-size:clamp(21px,3.6vw,30px);text-transform:uppercase}
+  .join p{font-size:15px;font-weight:600;margin-top:6px}
+  .join a.btn{display:inline-block;margin-top:14px;background:#0a0618;color:#fff;border:2.5px solid #fff}
+  footer{color:var(--dim);font-size:13px;padding:6px 0 36px}
+  .err{color:var(--yel);font-size:14px;font-weight:600}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <div class="logo">A.I. <span class="grad">NOW</span></div>
+    <span class="pill">THE HUB</span>
+    <div class="clock"><b id="clock">--:--:--</b><br><span id="updated">loading live AI news…</span></div>
+  </div>
+</header>
+<main class="wrap">
+  <div class="hero">
+    <div class="kicker">⚡ Detroit-built · Live around the clock</div>
+    <h1>Everything AI.<br><span class="grad">Happening</span> <span class="stroke">Now.</span></h1>
+    <p class="sub">Live video of what the world is talking about, AI news the minute it breaks, the AI tools that actually matter in plain English, and free guides you can use today — every A.I. NOW branch under one loud roof.</p>
+    <div class="ctas">
+      <a class="btn btn-hot" href="#livewall">🔴 Watch it live</a>
+      <a class="btn btn-cool" href="#explore">🧭 Explore the hub</a>
+      <a class="btn btn-cool" href="https://shop.artificial-intelligencenow.com">🛍️ Shop the store</a>
+    </div>
+  </div>
+
+  <div class="ticker" aria-hidden="true"><div class="track" id="ticker"><span id="ticker-a">Live AI news<span class="sep">⚡</span>Live video wall<span class="sep">⚡</span>New AI tools<span class="sep">⚡</span>Free prompt pack<span class="sep">⚡</span>World Watch<span class="sep">⚡</span>Drop Radar<span class="sep">⚡</span>The store is moving to shop.artificial-intelligencenow.com<span class="sep">⚡</span></span><span id="ticker-b"></span></div></div>
+
+  <section class="panel" id="livewall">
+    <div class="stitle">🔴 <span class="u">Live</span> Video Wall <span class="livebadge"><span class="livedot"></span>Live now</span></div>
+    <p class="note">Real 24/7 live channels, streaming free — the same newsrooms the whole internet watches when something big happens. These channels carry whatever the world is talking about, as it happens: breaking news, launches, markets, weather, all of it. Press play on any screen. If one ever shows "offline," that newsroom is between broadcasts — pick another; there's always one rolling.</p>
+    <div class="vgrid">
+      <div class="vid feat">
+        <div class="vlabel"><span class="livedot"></span>ABC News Live<a class="watch" href="https://www.youtube.com/channel/UCBi2mrWuNuyYy4gbM6fU18Q/live" target="_blank" rel="noopener">Watch on YouTube →</a></div>
+        <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCBi2mrWuNuyYy4gbM6fU18Q" title="ABC News Live — live stream" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+      </div>
+      <div class="vid">
+        <div class="vlabel"><span class="livedot"></span>NBC News<a class="watch" href="https://www.youtube.com/channel/UCeY0bbntWzzVIaj2z3QigXg/live" target="_blank" rel="noopener">Watch on YouTube →</a></div>
+        <div class="frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCeY0bbntWzzVIaj2z3QigXg" title="NBC News — live stream" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+      </div>
+      <div class="vid">
+        <div class="vlabel"><span class="livedot"></span>Sky News<a class="watch" href="https://www.youtube.com/channel/UCoMdktPbSTixAyNGwb-UYkQ/live" target="_blank" rel="noopener">Watch on YouTube →</a></div>
+        <div class="frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCoMdktPbSTixAyNGwb-UYkQ" title="Sky News — live stream" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+      </div>
+      <div class="vid">
+        <div class="vlabel"><span class="livedot"></span>Bloomberg Television<a class="watch" href="https://www.youtube.com/channel/UCIALMKvObZNtJ6AmdCLP7Lg/live" target="_blank" rel="noopener">Watch on YouTube →</a></div>
+        <div class="frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCIALMKvObZNtJ6AmdCLP7Lg" title="Bloomberg Television — live stream" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+      </div>
+      <div class="vid">
+        <div class="vlabel"><span class="livedot"></span>DW News<a class="watch" href="https://www.youtube.com/channel/UCknLrEdhRCp1aegoMqRaCZg/live" target="_blank" rel="noopener">Watch on YouTube →</a></div>
+        <div class="frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCknLrEdhRCp1aegoMqRaCZg" title="DW News — live stream" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+      </div>
+      <div class="vid">
+        <div class="vlabel"><span class="livedot"></span>Al Jazeera English<a class="watch" href="https://www.youtube.com/channel/UCNye-wNBqNL5ZzHSJj3l8Bg/live" target="_blank" rel="noopener">Watch on YouTube →</a></div>
+        <div class="frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCNye-wNBqNL5ZzHSJj3l8Bg" title="Al Jazeera English — live stream" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+      </div>
+    </div>
+    <p class="note" style="margin-top:16px"><b style="color:var(--txt)">Live &amp; trending:</b> want the full-screen version, the live chat, or whatever else is streaming right this second? Open any channel's live page on YouTube:</p>
+    <div class="srcrow">
+      <a class="row" href="https://www.youtube.com/channel/UCBi2mrWuNuyYy4gbM6fU18Q/live" target="_blank" rel="noopener"><span><span class="rt">ABC News Live</span><br><span class="rd">Breaking US news, live</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://www.youtube.com/channel/UCeY0bbntWzzVIaj2z3QigXg/live" target="_blank" rel="noopener"><span><span class="rt">NBC News</span><br><span class="rd">Top stories &amp; special coverage</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://www.youtube.com/channel/UCoMdktPbSTixAyNGwb-UYkQ/live" target="_blank" rel="noopener"><span><span class="rt">Sky News</span><br><span class="rd">UK &amp; world news, live</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://www.youtube.com/channel/UCIALMKvObZNtJ6AmdCLP7Lg/live" target="_blank" rel="noopener"><span><span class="rt">Bloomberg Television</span><br><span class="rd">Markets &amp; money, live</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://www.youtube.com/channel/UCknLrEdhRCp1aegoMqRaCZg/live" target="_blank" rel="noopener"><span><span class="rt">DW News</span><br><span class="rd">World news from Europe</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://www.youtube.com/channel/UCNye-wNBqNL5ZzHSJj3l8Bg/live" target="_blank" rel="noopener"><span><span class="rt">Al Jazeera English</span><br><span class="rd">Global coverage, live</span></span><span class="arr">→</span></a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="stitle">📰 Live <span class="u">AI News</span></div>
+    <p class="note">The newest AI headlines from three newsrooms we trust, pulled live and newest first — the same stories scrolling in the ticker up top. Every headline links to the original story at the source.</p>
+    <div id="news"><p class="note">Loading headlines…</p></div>
+    <div class="srcrow">
+      <a class="row" href="https://www.bbc.com/news/technology" target="_blank" rel="noopener"><span><span class="rt">BBC Technology</span><br><span class="rd">Read AI and tech news at the BBC</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" rel="noopener"><span><span class="rt">TechCrunch — AI</span><br><span class="rd">The AI industry, as it happens</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://www.theverge.com/ai-artificial-intelligence" target="_blank" rel="noopener"><span><span class="rt">The Verge — AI</span><br><span class="rd">AI news, reviews and explainers</span></span><span class="arr">→</span></a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="stitle">🧰 AI Tools <span class="u">Directory</span></div>
+    <p class="note">The major AI tools, in plain English — what each one is for, and a straight link to its official site. No rankings to buy, no fake scores: just the map.</p>
+    <!-- AFFILIATE SWAP: when Impact / PartnerStack approvals land, replace the plain official-site links in this directory with the tracked affiliate links for each tool, and add rel="sponsored noopener" to each swapped link. Until then every link below is a plain link to the tool's official site — A.I. NOW earns nothing from them. -->
+    <div class="cards">
+      <div class="card"><div class="ct">ChatGPT</div><div class="cd">The chatbot that started it all — ask questions, write, brainstorm and code.</div><a class="cl" href="https://chatgpt.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Claude</div><div class="cd">Anthropic's assistant — strong on long documents, careful writing and analysis.</div><a class="cl" href="https://claude.ai" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Gemini</div><div class="cd">Google's AI — lives inside Search, Gmail and Docs, and is quick with images and live info.</div><a class="cl" href="https://gemini.google.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Perplexity</div><div class="cd">An AI search engine — it answers your question and shows the sources so you can check.</div><a class="cl" href="https://www.perplexity.ai" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Copilot</div><div class="cd">Microsoft's assistant — built into Windows, Edge and the Office apps.</div><a class="cl" href="https://copilot.microsoft.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Midjourney</div><div class="cd">Turn a sentence into a striking image — art, posters and product shots.</div><a class="cl" href="https://www.midjourney.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Runway</div><div class="cd">AI video — generate and edit video clips from text and images.</div><a class="cl" href="https://runwayml.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">ElevenLabs</div><div class="cd">Realistic AI voices — narration, audiobooks and video voiceovers.</div><a class="cl" href="https://elevenlabs.io" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Notion AI</div><div class="cd">AI inside your notes — summaries, drafts and answers pulled from your own workspace.</div><a class="cl" href="https://www.notion.com/product/ai" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Canva AI (Magic Studio)</div><div class="cd">Design anything with AI help — social posts, logos, flyers and presentations.</div><a class="cl" href="https://www.canva.com/magic-studio/" target="_blank" rel="noopener">Official site →</a></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="stitle">🎁 Free <span class="u">Downloads</span> — Our Own Stuff</div>
+    <p class="note">Everything here is made by A.I. NOW and free to use. We never offer downloads of other companies' software — for the tools themselves, use the official links in the directory above.</p>
+
+    <details class="pack" open>
+      <summary>📋 The AI Starter Prompt Pack — copy-ready prompts that actually work</summary>
+      <p class="note" style="margin-top:4px">Hit Copy on any prompt and paste it into ChatGPT, Claude, Gemini or any AI chat. Swap the [brackets] for your details.</p>
+
+      <div class="prompt"><div class="pt">Explain anything, plainly <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Explain [topic] to me like I'm smart but brand new to it. Use one real-world example, skip the jargon, and finish with the 3 things that matter most.</p></div>
+
+      <div class="prompt"><div class="pt">Fix my email <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Rewrite the email below so it's shorter, friendly and clear. Keep every fact exactly as-is. Give me two versions: polite and direct.
+[PASTE YOUR EMAIL HERE]</p></div>
+
+      <div class="prompt"><div class="pt">Summarize anything long <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Summarize the text below in 5 bullet points a busy person can read in 30 seconds. Then add one line: "The one thing to remember is…"
+[PASTE THE ARTICLE OR DOCUMENT HERE]</p></div>
+
+      <div class="prompt"><div class="pt">Write a social post that sounds like me <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Write 3 short social media captions about [what you're posting]. Casual and human, no hype words, no fake urgency. One funny, one helpful, one straight to the point.</p></div>
+
+      <div class="prompt"><div class="pt">An honest cover letter <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Write a cover letter for the [job title] job at [company] using ONLY the real experience I paste below. Do not invent employers, dates or duties. Keep it under 250 words and confident.
+[PASTE YOUR EXPERIENCE HERE]</p></div>
+
+      <div class="prompt"><div class="pt">Test a small-business idea <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">I'm thinking about starting [business idea] in [city]. Play devil's advocate: give me the 5 hardest questions a customer or a bank would ask, what it realistically costs to start, and the cheapest way to test it this month before spending real money.</p></div>
+
+      <div class="prompt"><div class="pt">Learn anything in a week <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Build me a 7-day starter plan to learn [skill]. One focused lesson per day, each under an hour, each ending with a tiny hands-on task. Assume I know nothing on day 1.</p></div>
+
+      <div class="prompt"><div class="pt">Meal plan on a budget <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Make me a 5-day dinner plan for [number] people with a grocery budget of $[amount]. Simple ingredients I can find at any grocery store, nothing fancy, and give me the shopping list sorted by aisle.</p></div>
+
+      <div class="prompt"><div class="pt">Turn notes into a to-do list <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Turn these rough notes into a clean action list. Group them by what I can do today, this week, and later. Flag anything that sounds like it has a deadline.
+[PASTE YOUR NOTES HERE]</p></div>
+
+      <div class="prompt"><div class="pt">Brainstorm, then narrow it down <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Give me 10 ideas for [goal — e.g. posts for my shop, gifts for my mom, side income this month]. Then rank your own list: which 3 are best for someone with almost no budget, and why.</p></div>
+    </details>
+  </section>
+
+  <div class="join">
+    <div class="jt">Get the next packs free — plus 10% off your first order</div>
+    <p>Join the A.I. NOW list at the store: new prompt packs and guides land there first, and list members get 10% off their first store order.</p>
+    <a class="btn" href="https://artificial-intelligencenow.com/pages/join-the-list">Join the List — free</a>
+  </div>
+
+  <section class="panel" id="explore">
+    <div class="stitle">🧭 Explore <span class="u">the Hub</span></div>
+    <p class="note">Twelve doors, one roof — every A.I. NOW page, live now. Pick a world: money, games, food, your house, your next trip. Each one carries live headlines, plain-English explainers, the real tools, and a free pack to take with you.</p>
+    <div class="cards">
+      <a class="card" href="money.html" style="border-top:6px solid #a6ff4d"><div class="ct">💰 AI × MONEY</div><div class="cd">AI in Bitcoin, crypto and banking — live prices, live headlines, plain-English explainers and a free crypto safety cheat sheet. Education, never advice.</div><span class="cl">Enter →</span></a>
+      <a class="card" href="gaming.html" style="border-top:6px solid #8b3dff"><div class="ct">🎮 AI × GAMING</div><div class="cd">How AI is changing games, game-making and streaming — smart NPCs, AI-built worlds, anti-cheat and the tools players actually use, with live gaming headlines.</div><span class="cl">Enter →</span></a>
+      <a class="card" href="business.html" style="border-top:6px solid #ffd400"><div class="ct">💼 AI × BUSINESS</div><div class="cd">AI for small business owners, workers and job hunters — live business news, the tools that help at work, and a free Small Business AI Starter Pack.</div><span class="cl">Enter →</span></a>
+      <a class="card" href="creator.html" style="border-top:6px solid #ff3e8a"><div class="ct">🎨 AI × CREATOR</div><div class="cd">Art, video, music &amp; words — the tools turning anyone into an artist, filmmaker, musician or author.</div><span class="cl">Enter →</span></a>
+      <a class="card" href="life.html" style="border-top:6px solid #a3e635"><div class="ct">🌱 AI × LIFE</div><div class="cd">AI in your health, home, learning, shopping and travel — what it can do, what it can't, in plain English.</div><span class="cl">Enter →</span></a>
+      <a class="card" href="sports.html" style="border-top:6px solid #22d3ee"><div class="ct">🏟️ AI × SPORTS</div><div class="cd">AI in training, analytics, broadcasts and fantasy — player tracking, scouting, auto-highlights and the tools fans actually use, with live sports headlines and zero betting talk.</div><span class="cl">Enter →</span></a>
+      <a class="card" href="travel.html" style="border-top:6px solid #22d3ee"><div class="ct">✈️ AI × TRAVEL</div><div class="cd">Plan trips, dodge scams, travel smarter — AI itinerary builders, fare watching, translation and booking safety, explained plainly with live travel headlines.</div><span class="cl">Enter →</span></a>
+      <a class="card" href="food.html" style="border-top:6px solid #a6f750"><div class="ct">🍳 AI × FOOD</div><div class="cd">Recipes from what's in your fridge, meal plans on a budget, self-writing grocery lists and honest nutrition info — with live food headlines and a hard allergy-safety line.</div><span class="cl">Enter →</span></a>
+      <a class="card" href="home.html" style="border-top:6px solid #22d3ee"><div class="ct">🏠 AI × HOME</div><div class="cd">Smart homes, AI cameras, room-design tools and DIY planning — what AI can run in your house, where it stops, and when to call a licensed pro.</div><span class="cl">Enter →</span></a>
+      <a class="card" href="studio.html" style="border-top:6px solid #8b3dff"><div class="ct">🛠️ A.I. NOW STUDIO</div><div class="cd">We build it for you — done-for-you websites, stores and AI projects with honest starting prices, a flat written quote, and a live preview before anything goes public.</div><span class="cl">Enter →</span></a>
+      <a class="card" href="community.html" style="border-top:6px solid #ff9f43"><div class="ct">💬 THE COMMUNITY</div><div class="cd">Where people talk AI, share what they made, and go live — the Daily Drop Club and our channels are open today; the forum, member video features and live shows are on the way.</div><span class="cl">Enter →</span></a>
+      <a class="card" href="blog.html" style="border-top:6px solid #a855f7"><div class="ct">📡 THE SIGNAL — the A.I. NOW blog</div><div class="cd">Plain-English AI from Detroit: honest free-tool guides, scam warnings that protect your family, and big ideas explained without the hype.</div><span class="cl">Enter →</span></a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <div class="stitle">🌐 The <span class="u">Branches</span> — Everything Under A.I. NOW</div>
+    <p class="note">One family, many doors. Statuses are printed honestly: if it doesn't say LIVE, it isn't yet.</p>
+    <div class="cards">
+      <a class="card" href="https://shop.artificial-intelligencenow.com"><div class="ct">🛍️ The Store <span class="badge b-pink">New door</span> <span class="badge b-lime">Live</span></div><div class="cd">Same store, new address — we're moving the shop here over the next few days while this main site becomes all-AI. Same products, same checkout.</div><span class="cl">shop.artificial-intelligencenow.com →</span><span class="cl" style="font-size:12.5px;color:var(--dim)">Still at <a href="https://artificial-intelligencenow.com" style="color:var(--dim)">artificial-intelligencenow.com</a> until the move finishes</span></a>
+      <a class="card" href="https://world.artificial-intelligencenow.com"><div class="ct">🌍 World Watch <span class="badge b-yel">Built — deploying soon</span></div><div class="cd">Live earthquakes, storms, wildfires and severe weather from official sources — plus free help resources when an event hits.</div><span class="cl">world.artificial-intelligencenow.com →</span></a>
+      <a class="card" href="https://radar.artificial-intelligencenow.com"><div class="ct">🎯 Drop Radar <span class="badge b-yel">Built — deploying soon</span></div><div class="cd">A live price-drop feed — deals and glitches spotted across the big stores, checked before they're posted.</div><span class="cl">radar.artificial-intelligencenow.com →</span></a>
+      <div class="card"><div class="ct">⚖️ Legal <span class="badge b-dim">In the works</span></div><div class="cd">Court records, forms and legal processes explained in plain language — so you understand the paper in front of you.</div></div>
+      <div class="card"><div class="ct">📚 Learn <span class="badge b-dim">In the works</span></div><div class="cd">AI, explained plainly — beginner guides and walkthroughs that assume nothing and talk down to no one.</div></div>
+      <div class="card"><div class="ct">💼 Careers <span class="badge b-dim">In the works</span></div><div class="cd">Resume and job-search help built on your real experience — nothing invented, ever.</div></div>
+      <div class="card"><div class="ct">❄️ Snow <span class="badge b-dim">In the works</span></div><div class="cd">SnowCall Detroit — district-by-district school-closure calls when the snow is coming.</div></div>
+      <div class="card"><div class="ct">🎅 Santa <span class="badge b-dim">In the works</span></div><div class="cd">Personalized Santa video messages for kids — seasonal, and back when the season is.</div></div>
+      <div class="card"><div class="ct">🤝 Settle <span class="badge b-dim">In the works</span></div><div class="cd">SettleRail — a commission-only payment rail pitch for people tired of card fees eating the job.</div></div>
+      <div class="card"><div class="ct">📣 Ads <span class="badge b-dim">In the works</span></div><div class="cd">Flat-fee AI video ad packs for local shops — real ads for businesses that can't afford an agency.</div></div>
+    </div>
+  </section>
+
+  <section class="panel" style="padding:14px">
+    <div class="emg">
+      <div>
+        <div class="et">🆘 Need help right now?</div>
+        <div class="ed">A storm, quake or emergency near you? World Watch tracks live events from official sources and links the free help — shelters, FEMA, 2-1-1 — in one place.</div>
+      </div>
+      <a class="btn" href="https://world.artificial-intelligencenow.com">Open World Watch →</a>
+    </div>
+  </section>
+</main>
+<footer class="wrap">
+  A.I. NOW — Detroit, Michigan. This hub becomes the main site at <a href="https://artificial-intelligencenow.com">artificial-intelligencenow.com</a> over the next few days; the store is moving to <a href="https://shop.artificial-intelligencenow.com">shop.artificial-intelligencenow.com</a>. Live video streams are the channels' own YouTube live broadcasts, embedded with YouTube's official player. News headlines are pulled live from the BBC, TechCrunch and The Verge; each headline belongs to its publisher and links to the original story. Tool names belong to their owners — directory links go to each tool's official site.
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+function tick(){const d=new Date();$('clock').textContent=d.toLocaleTimeString('en-US',{hour12:true})+' Detroit';}
+setInterval(tick,1000);tick();
+function ago(t){const s=(Date.now()-t)/1000;if(s<0)return 'just now';if(s<3600)return Math.max(1,Math.round(s/60))+'m ago';if(s<86400)return Math.round(s/3600)+'h ago';return Math.round(s/86400)+'d ago';}
+function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function copyPrompt(btn){
+  const box=btn.closest('.prompt');const txt=box?box.querySelector('.px').innerText:'';
+  const done=()=>{const old=btn.textContent;btn.textContent='Copied ✓';setTimeout(()=>{btn.textContent=old;},1600);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(()=>fallbackCopy(txt,done));}
+  else{fallbackCopy(txt,done);}
+}
+function fallbackCopy(txt,done){
+  const ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');done();}catch(e){}
+  document.body.removeChild(ta);
+}
+/* Live AI news: real headlines pulled client-side via the rss2json reader (the same
+   approach World Watch uses for its BBC feed). Each feed fails independently; if every
+   feed fails, the section falls back to a plain note plus the source cards under it —
+   headlines are never invented or hard-coded. The same items feed the top ticker. */
+const FEEDS=[
+  {name:'BBC Technology',cls:'b-cyan',url:'https://feeds.bbci.co.uk/news/technology/rss.xml'},
+  {name:'TechCrunch — AI',cls:'b-lime',url:'https://techcrunch.com/category/artificial-intelligence/feed/'},
+  {name:'The Verge — AI',cls:'b-pink',url:'https://www.theverge.com/rss/ai-artificial-intelligence/index.xml'}
+];
+async function loadOneFeed(f){
+  const r=await fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(f.url));
+  const j=await r.json();
+  if(j.status!=='ok'||!j.items)return [];
+  return j.items.map(it=>({time:new Date((it.pubDate||'').replace(' ','T')).getTime()||0,title:it.title,url:it.link,src:f.name,cls:f.cls}));
+}
+function fillTicker(items){
+  const html=items.slice(0,14).map(n=>esc(n.title)+' <span class="src">— '+esc(n.src)+'</span>').join('<span class="sep">⚡</span>')+'<span class="sep">⚡</span>';
+  $('ticker-a').innerHTML=html;$('ticker-b').innerHTML=html;
+}
+async function loadNews(){
+  const results=await Promise.allSettled(FEEDS.map(loadOneFeed));
+  let items=[];
+  results.forEach(r=>{if(r.status==='fulfilled')items=items.concat(r.value);});
+  items=items.filter(n=>n.title&&n.url);
+  items.sort((a,b)=>b.time-a.time);
+  if(!items.length){
+    $('news').innerHTML='<p class="err">The live headline feeds aren\'t answering right now — no stale stories shown in their place. Read the latest straight from the sources below.</p>';
+    $('updated').textContent='news feeds unreachable — source links below';
+    return;
+  }
+  fillTicker(items);
+  $('news').innerHTML=items.slice(0,12).map(n=>
+    '<div class="ev"><div class="top"><span class="badge '+n.cls+'">'+esc(n.src)+'</span><span style="color:var(--dim);font-size:12px">'+(n.time?ago(n.time):'')+'</span></div>'+
+    '<div class="t"><a href="'+esc(n.url)+'" target="_blank" rel="noopener" style="color:var(--txt)">'+esc(n.title)+'</a></div></div>').join('');
+  $('updated').textContent='AI news updated '+new Date().toLocaleTimeString('en-US');
+}
+loadNews();setInterval(loadNews,600000);
+</script>
+</body>
+</html>

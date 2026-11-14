@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI × LIFE — AI in Your Health, Home, Learning & Everyday Decisions | A.I. NOW Hub</title>
+<meta name="description" content="AI is already in your phone, your home, your health apps and your shopping cart. AI × LIFE explains what everyday AI tools can and can't do — in plain English, with live news, honest tool links and free prompts.">
+<style>
+  :root{--bg:#0b0e13;--panel:#131720;--panel2:#171c28;--line:#2a3350;--txt:#eef1f6;--dim:#a7b1c6;--red:#ff4d5e;--org:#ff9f43;--yel:#ffd166;--grn:#3ddc84;--blu:#4da3ff;--cyan:#22d3ee;--pink:#ff3e8a;--violet:#a855f7;--lime:#a3e635}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.45}
+  a{color:var(--cyan);text-decoration:none}
+  a:hover{text-decoration:underline}
+  header{position:sticky;top:0;z-index:10;background:rgba(11,14,19,.94);backdrop-filter:blur(8px);border-bottom:2px solid var(--pink)}
+  .bar{max-width:1180px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .logo{font-weight:900;font-size:24px;letter-spacing:.5px;color:var(--txt)}
+  .logo .now{background:linear-gradient(90deg,var(--pink),var(--violet),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .pill{display:inline-flex;align-items:center;gap:7px;background:#1c1030;border:2px solid var(--violet);color:#e9d5ff;font-size:12px;font-weight:800;padding:4px 12px;border-radius:999px;letter-spacing:1px}
+  .live{display:inline-flex;align-items:center;gap:7px;background:#2a0f16;border:2px solid var(--red);color:#ffb3ba;font-size:12px;font-weight:800;padding:4px 12px;border-radius:999px;letter-spacing:1px}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--red);animation:pulse 1.4s infinite}
+  @keyframes pulse{0%{opacity:1}50%{opacity:.25}100%{opacity:1}}
+  .clock{margin-left:auto;color:var(--dim);font-size:13px;text-align:right}
+  .clock b{color:var(--txt);font-size:15px}
+  main{max-width:1180px;margin:0 auto;padding:22px 18px 40px}
+  .hero{padding:10px 0 4px}
+  h1{font-size:clamp(46px,11vw,92px);font-weight:900;line-height:.98;letter-spacing:-1px;text-transform:uppercase}
+  h1 .grad{background:linear-gradient(92deg,var(--pink) 0%,var(--violet) 38%,var(--cyan) 72%,var(--lime) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--dim);margin-top:12px;max-width:780px;font-size:clamp(15px,2.4vw,18px)}
+  .sub b{color:var(--txt)}
+  .panel{background:var(--panel);border:2px solid var(--line);border-radius:20px;padding:20px;margin-bottom:20px}
+  .panel h2{font-size:clamp(21px,3.4vw,27px);font-weight:900;margin-bottom:4px;text-transform:uppercase;letter-spacing:.3px}
+  .panel .note{color:var(--dim);font-size:13.5px;margin-bottom:12px}
+  .bar-pink{border-top:6px solid var(--pink)} .bar-violet{border-top:6px solid var(--violet)} .bar-cyan{border-top:6px solid var(--cyan)} .bar-lime{border-top:6px solid var(--lime)} .bar-org{border-top:6px solid var(--org)} .bar-red{border-top:6px solid var(--red)}
+  .ev{border:1px solid var(--line);background:var(--panel2);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+  .ev .top{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:.6px;padding:3px 9px;border-radius:999px;text-transform:uppercase}
+  .b-pink{background:#3d0f27;color:#ffc2da;border:1px solid var(--pink)}
+  .b-violet{background:#2a1245;color:#e9d5ff;border:1px solid var(--violet)}
+  .b-cyan{background:#0b2f3a;color:#a5f3fc;border:1px solid var(--cyan)}
+  .b-lime{background:#22330a;color:#d9f99d;border:1px solid var(--lime)}
+  .b-org{background:#38230f;color:#ffd9ad;border:1px solid var(--org)}
+  .b-red{background:#3a1218;color:#ffb3ba;border:1px solid var(--red)}
+  .b-dim{background:#1a2030;color:var(--dim);border:1px solid var(--line)}
+  .ev .t{font-weight:800;font-size:15.5px}
+  .ev .m{color:var(--dim);font-size:13px;margin-top:2px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+  .card{border:2px solid var(--line);background:var(--panel2);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:7px}
+  .card .ct{font-weight:900;font-size:18px}
+  .card .cd{color:var(--dim);font-size:14px;flex:1}
+  .card .cd b{color:var(--txt)}
+  .card .cl{font-weight:800;font-size:14px}
+  .a-pink{border-top:7px solid var(--pink)} .a-violet{border-top:7px solid var(--violet)} .a-cyan{border-top:7px solid var(--cyan)} .a-lime{border-top:7px solid var(--lime)} .a-org{border-top:7px solid var(--org)} .a-yel{border-top:7px solid var(--yel)}
+  a.card{color:var(--txt)}
+  a.card:hover{border-color:var(--cyan);text-decoration:none}
+  .srcrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:4px}
+  .srcrow a.row{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);background:var(--panel2);border-radius:12px;padding:12px 14px;color:var(--txt)}
+  .srcrow a.row:hover{border-color:var(--cyan);text-decoration:none}
+  .row .rt{font-weight:800}
+  .row .rd{color:var(--dim);font-size:12.5px}
+  .row .arr{font-size:18px;color:var(--dim)}
+  details.pack{border:2px solid var(--violet);background:var(--panel2);border-radius:16px;padding:6px 16px 14px;margin-bottom:14px}
+  details.pack summary{cursor:pointer;font-weight:900;font-size:17px;padding:12px 0}
+  .prompt{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:11px 12px;margin-bottom:9px}
+  .prompt .pt{font-weight:800;font-size:14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .prompt .px{color:var(--dim);font-size:13.5px;margin-top:5px;white-space:pre-wrap}
+  .copybtn{background:linear-gradient(90deg,var(--pink),var(--violet));border:0;color:#fff;font-weight:800;font-size:12px;padding:6px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  .copybtn:hover{opacity:.9}
+  .alert{background:#2a0f16;border:2px solid var(--red);border-radius:16px;padding:16px 18px;margin-bottom:20px;font-size:15px}
+  .alert b{color:#ffb3ba}
+  .emg{background:#2a0f16;border:2px solid var(--red);border-radius:16px;padding:16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .emg .et{font-weight:900;font-size:18px}
+  .emg .ed{color:var(--dim);font-size:14px}
+  .emg a.btn{margin-left:auto;background:var(--red);color:#fff;font-weight:900;padding:11px 20px;border-radius:999px;white-space:nowrap}
+  .emg a.btn:hover{text-decoration:none;opacity:.92}
+  .join{background:linear-gradient(92deg,#3d0f27,#2a1245 55%,#0b2f3a);border:2px solid var(--pink);border-radius:16px;padding:18px;text-align:center}
+  .join a.btn{display:inline-block;margin-top:8px;background:linear-gradient(90deg,var(--pink),var(--violet));color:#fff;font-weight:900;padding:12px 24px;border-radius:999px}
+  .join a.btn:hover{text-decoration:none;opacity:.92}
+  footer{max-width:1180px;margin:0 auto;padding:0 18px 34px;color:var(--dim);font-size:12.5px}
+  footer .xlinks{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+  footer .xlinks a{flex:1;min-width:220px;text-align:center;border:2px solid var(--line);background:var(--panel2);border-radius:12px;padding:13px 14px;color:var(--txt);font-weight:900;font-size:14.5px}
+  footer .xlinks a:hover{border-color:var(--pink);text-decoration:none}
+  .err{color:var(--org);font-size:13px}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <div class="logo">A.I. <span class="now">NOW</span></div>
+    <span class="pill">THE HUB</span>
+    <span class="live"><span class="dot"></span>LIVE</span>
+    <div class="clock"><b id="clock">--:--:--</b><br><span id="updated">loading live news…</span></div>
+  </div>
+</header>
+<main>
+  <div class="hero">
+    <h1>AI × <span class="grad">LIFE</span></h1>
+    <p class="sub">AI is already in your <b>health apps, your home, your learning, your shopping cart and your travel plans</b> — whether you asked for it or not. This page explains what everyday AI can do, what it <b>can't</b> do, and how to use it without getting played. Plain English, no hype.</p>
+  </div>
+
+  <div class="alert">
+    ⚕️ <b>Straight talk on health:</b> AI health tools give <b>information, not medical advice</b>. They cannot examine you or diagnose you, and they can be wrong. For anything serious, talk to a real clinician — and in an emergency, <b>call 911</b>.
+  </div>
+
+  <section class="panel bar-pink">
+    <h2>📰 Live news — AI in everyday life</h2>
+    <p class="note">The newest headlines from BBC Technology, BBC Health and The Verge, pulled live and newest first. Every headline links to the original story at the source.</p>
+    <div id="news"><p class="note">Loading headlines…</p></div>
+    <div class="srcrow">
+      <a class="row" href="https://www.bbc.com/news/technology" target="_blank" rel="noopener"><span><span class="rt">BBC Technology</span><br><span class="rd">Tech that touches daily life</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://www.bbc.com/news/health" target="_blank" rel="noopener"><span><span class="rt">BBC Health</span><br><span class="rd">Health news, reported straight</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://www.theverge.com/" target="_blank" rel="noopener"><span><span class="rt">The Verge</span><br><span class="rd">Technology and how it makes us live</span></span><span class="arr">→</span></a>
+    </div>
+  </section>
+
+  <section class="panel bar-lime">
+    <h2>🌱 AI in daily life, explained</h2>
+    <p class="note">Six places AI already shows up in an ordinary day — what each one is genuinely good at, and where its limits are. Balanced on purpose.</p>
+    <div class="cards">
+      <div class="card a-lime">
+        <div class="ct">🩺 AI health apps</div>
+        <div class="cd"><b>What they can do:</b> explain symptoms and medical words in plain language, help you track habits like sleep, steps and medication reminders, and help you write down good questions before an appointment.<br><b>What they can't do:</b> examine you, run tests, or diagnose you. A symptom checker is a starting point for a conversation — never the final word. Anything worrying goes to a real clinician.</div>
+      </div>
+      <div class="card a-cyan">
+        <div class="ct">🏠 Smart home AI</div>
+        <div class="cd">Voice assistants, smart thermostats, doorbell cameras and robot vacuums use AI to learn routines — warming the house before you get home, flagging a package at the door, turning lights on with your voice. <b>The trade-off:</b> these devices listen and collect data to work, so check the privacy settings on anything with a microphone or camera, and keep the apps updated.</div>
+      </div>
+      <div class="card a-violet">
+        <div class="ct">🎓 AI tutors &amp; learning</div>
+        <div class="cd">AI can explain a hard idea five different ways until one clicks, quiz you before a test, and practice a language with you at 2 a.m. without getting tired. <b>The limit:</b> it can state wrong things with total confidence — so treat it like a study partner, not the textbook. If it matters for a grade, a license or a job, verify it against a trusted source.</div>
+      </div>
+      <div class="card a-org">
+        <div class="ct">⚖️ AI legal-doc explainers</div>
+        <div class="cd">Paste in a confusing lease, letter or form and AI can translate the legal words into plain English, point at deadlines, and list the questions worth asking. <b>The hard limit:</b> it is <b>information only — not a lawyer and not legal advice</b>. It can miss things and it doesn't know your situation. For court dates, evictions, contracts or anything with real consequences, a real lawyer or legal-aid office is the move.</div>
+      </div>
+      <div class="card a-pink">
+        <div class="ct">🛒 AI shopping assistants</div>
+        <div class="cd">Shopping AIs compare products, summarize piles of reviews, watch for price drops and answer "which one fits my budget?" in seconds. <b>Watch out:</b> some assistants push sponsored products or whoever pays for placement, and summaries can repeat review mistakes. Use them to narrow the field — then check the price and the return policy yourself before you buy.</div>
+      </div>
+      <div class="card a-yel">
+        <div class="ct">✈️ AI travel planners</div>
+        <div class="cd">Tell an AI your dates, budget and pace and it will draft a day-by-day itinerary, suggest neighborhoods to stay in, and flag long layovers. <b>Before you rely on it:</b> double-check opening hours, prices and booking details at the official sites — AI can invent a restaurant that closed or a train that doesn't run. Great first draft, not a travel agent.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel bar-cyan">
+    <h2>🧰 Everyday AI tools directory</h2>
+    <p class="note">Legit tools for ordinary life — what each one is for, with a straight link to its official site. Health apps here are for information only, never a diagnosis.</p>
+    <!-- AFFILIATE SWAP: tracked links when Impact/PartnerStack approve -->
+    <div class="cards">
+      <div class="card"><div class="ct">ChatGPT</div><div class="cd">The all-purpose AI chat — questions, writing, explaining confusing documents, planning almost anything.</div><a class="cl" href="https://chatgpt.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Gemini</div><div class="cd">Google's AI — built into Search, Gmail and Android; quick with live info and photos.</div><a class="cl" href="https://gemini.google.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Perplexity</div><div class="cd">An AI search engine that answers and shows its sources — good for checking facts before you act on them.</div><a class="cl" href="https://www.perplexity.ai" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Google Lens</div><div class="cd">Point your camera at a plant, a product, a menu or a sign — Lens identifies it or translates it on the spot.</div><a class="cl" href="https://lens.google.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Duolingo</div><div class="cd">Language lessons in small daily bites; its AI features explain your mistakes and role-play conversations with you.</div><a class="cl" href="https://www.duolingo.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Ada</div><div class="cd">A health-information app: enter symptoms and it explains possible causes in plain language. <b>Information only — not a diagnosis and not medical advice.</b></div><a class="cl" href="https://ada.com" target="_blank" rel="noopener">Official site →</a></div>
+    </div>
+  </section>
+
+  <section class="panel bar-violet">
+    <h2>🎁 Free download — our own stuff</h2>
+    <p class="note">Made by A.I. NOW, free to use, right on this page. We never offer downloads of other companies' software — for the tools themselves, use the official links above.</p>
+
+    <details class="pack" open>
+      <summary>📋 The AI for Life Prompt Pack — prompts for real life</summary>
+      <p class="note" style="margin-top:4px">Hit Copy, paste into ChatGPT, Gemini or any AI chat, and swap the [brackets] for your details.</p>
+
+      <div class="prompt"><div class="pt">Understand a confusing letter or document <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Explain the document below in plain English, like you're talking to a smart neighbor. Define every hard word, list any deadlines or dollar amounts, tell me exactly what actions it asks for, and finish with the questions I should ask a professional before I respond. Information only — don't give me legal or medical advice.
+[PASTE THE LETTER OR DOCUMENT HERE]</p></div>
+
+      <div class="prompt"><div class="pt">Plan meals on a budget <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Make me a 5-day dinner plan for [number] people with a grocery budget of $[amount]. Simple ingredients from any grocery store, about 30 minutes a meal or less, and give me one shopping list sorted by aisle. If I tell you foods I can't eat, keep them out completely.</p></div>
+
+      <div class="prompt"><div class="pt">Build my study plan <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Build me a study plan to learn [subject] in [number] days, with [minutes] minutes a day. One clear goal per day, a short quiz at the end of each day to check I actually got it, and a review day every fourth day. Start from zero — I know nothing yet.</p></div>
+
+      <div class="prompt"><div class="pt">Compare two products honestly <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Compare [product A] and [product B] for someone who mainly cares about [what matters to you — price, durability, ease of use]. Give me a simple table of the real differences, who each one is better for, and what I should check in person or in reviews before buying. No hype, no sponsored-sounding language — if they're basically the same, say so.</p></div>
+
+      <div class="prompt"><div class="pt">Get ready for a doctor's appointment <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Help me prepare for a doctor's appointment. I'll describe what's been going on; turn it into a short, clear timeline of symptoms and a list of questions to ask the doctor, in the order a busy doctor would want to hear them. Preparation only — do not try to diagnose me or tell me what's wrong.
+[DESCRIBE WHAT'S BEEN GOING ON HERE]</p></div>
+
+      <div class="prompt"><div class="pt">Draft a trip plan <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Draft a [number]-day trip plan for [destination] on a budget of about $[amount], at a relaxed pace. One neighborhood or area per day so I'm not crossing town all day, a mix of one big sight and downtime, and note anything I must book in advance. Mark anything you're unsure about so I can verify it before I count on it.</p></div>
+    </details>
+
+    <div class="join">
+      <div style="font-weight:900;font-size:17px">Get the next packs free — plus 10% off your first order</div>
+      <p style="color:var(--dim);font-size:14px">Join the A.I. NOW list at the store: new prompt packs and plain-English guides land there first, and list members get 10% off their first store order.</p>
+      <a class="btn" href="https://artificial-intelligencenow.com/pages/join-the-list">Join the List — free</a>
+    </div>
+  </section>
+
+  <section class="panel bar-org">
+    <h2>🌿 More branches for everyday life</h2>
+    <p class="note">Two hub branches built for exactly the stuff on this page. Statuses are printed honestly: if it doesn't say LIVE, it isn't yet.</p>
+    <div class="cards">
+      <div class="card a-org">
+        <div class="ct">⚖️ Legal — A.I. NOW <span class="badge b-dim">In the works</span></div>
+        <div class="cd">Our Legal branch (the ArtificialIntelligenceNow legal-documents project): leases, letters, forms and legal processes explained in plain language, so the paper in front of you stops being a mystery. <b>Information only — not a lawyer, not legal advice.</b></div>
+      </div>
+      <div class="card a-violet">
+        <div class="ct">📚 Learn — A.I. NOW <span class="badge b-dim">In the works</span></div>
+        <div class="cd">Our Learn branch: AI itself, explained plainly — beginner guides and walkthroughs that assume nothing and talk down to no one, starting with the tools on this very page.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" style="padding:14px">
+    <div class="emg">
+      <div>
+        <div class="et">🆘 Facing a real-world emergency?</div>
+        <div class="ed">A storm, quake, fire or flood near you? World Watch tracks live events from official sources and puts the free help — shelters, FEMA, 2-1-1 — in one place. If you're in immediate danger, call 911 first.</div>
+      </div>
+      <a class="btn" href="https://world.artificial-intelligencenow.com">Open World Watch →</a>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="xlinks">
+    <a href="https://hub.artificial-intelligencenow.com">🏠 Hub home — A.I. NOW</a>
+    <a href="https://shop.artificial-intelligencenow.com">🛍️ The store's new door — shop.</a>
+  </div>
+  A.I. NOW — Detroit, Michigan. News headlines are pulled live from the BBC and The Verge; each headline belongs to its publisher and links to the original story. Tool names belong to their owners — directory links go to each tool's official site.<br><br>
+  ⚕️ <b>Health disclaimer:</b> everything on this page is general information only. AI health tools give information, not medical advice — they cannot diagnose or treat you. For anything serious, talk to a real clinician. In an emergency, call 911.<br>
+  ⚖️ <b>Legal disclaimer:</b> legal content here is general information only — we are not lawyers and this is not legal advice. For decisions with legal consequences, consult a qualified attorney or legal-aid office.
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+function tick(){const d=new Date();$('clock').textContent=d.toLocaleTimeString('en-US',{hour12:true})+' Detroit';}
+setInterval(tick,1000);tick();
+function ago(t){const s=(Date.now()-t)/1000;if(s<0)return 'just now';if(s<3600)return Math.max(1,Math.round(s/60))+'m ago';if(s<86400)return Math.round(s/3600)+'h ago';return Math.round(s/86400)+'d ago';}
+function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function copyPrompt(btn){
+  const box=btn.closest('.prompt');const txt=box?box.querySelector('.px').innerText:'';
+  const done=()=>{const old=btn.textContent;btn.textContent='Copied ✓';setTimeout(()=>{btn.textContent=old;},1600);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(()=>fallbackCopy(txt,done));}
+  else{fallbackCopy(txt,done);}
+}
+function fallbackCopy(txt,done){
+  const ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');done();}catch(e){}
+  document.body.removeChild(ta);
+}
+/* Live news for AI × LIFE: real headlines pulled client-side via the rss2json reader
+   (the same approach the hub front door uses). Each feed fails independently; if every
+   feed fails, the section falls back to a plain note plus the source cards under it —
+   headlines are never invented or hard-coded. */
+const FEEDS=[
+  {name:'BBC Technology',cls:'b-cyan',url:'https://feeds.bbci.co.uk/news/technology/rss.xml'},
+  {name:'BBC Health',cls:'b-lime',url:'https://feeds.bbci.co.uk/news/health/rss.xml'},
+  {name:'The Verge',cls:'b-pink',url:'https://www.theverge.com/rss/index.xml'}
+];
+async function loadOneFeed(f){
+  const r=await fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(f.url));
+  const j=await r.json();
+  if(j.status!=='ok'||!j.items)return [];
+  return j.items.map(it=>({time:new Date((it.pubDate||'').replace(' ','T')).getTime()||0,title:it.title,url:it.link,src:f.name,cls:f.cls}));
+}
+async function loadNews(){
+  const results=await Promise.allSettled(FEEDS.map(loadOneFeed));
+  let items=[];
+  results.forEach(r=>{if(r.status==='fulfilled')items=items.concat(r.value);});
+  items=items.filter(n=>n.title&&n.url);
+  items.sort((a,b)=>b.time-a.time);
+  if(!items.length){
+    $('news').innerHTML='<p class="err">The live headline feeds aren\'t answering right now — no stale stories shown in their place. Read the latest straight from the sources below.</p>';
+    $('updated').textContent='news feeds unreachable — source links below';
+    return;
+  }
+  $('news').innerHTML=items.slice(0,12).map(n=>
+    '<div class="ev"><div class="top"><span class="badge '+n.cls+'">'+esc(n.src)+'</span><span style="color:var(--dim);font-size:12px">'+(n.time?ago(n.time):'')+'</span></div>'+
+    '<div class="t" style="font-size:15px"><a href="'+esc(n.url)+'" target="_blank" rel="noopener" style="color:var(--txt)">'+esc(n.title)+'</a></div></div>').join('');
+  $('updated').textContent='life news updated '+new Date().toLocaleTimeString('en-US');
+}
+loadNews();setInterval(loadNews,600000);
+</script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI × GAMING — How AI Is Changing Games, Game-Making & Streaming | A.I. NOW Hub</title>
+<meta name="description" content="AI in gaming, explained in plain English: smart NPCs, AI-built worlds, the voice-acting fight, anti-cheat AI, DLSS in plain words, and the tools gamers and streamers actually use. Live gaming headlines from IGN, Polygon and PC Gamer.">
+<style>
+  :root{
+    --bg:#07050f;--panel:#100b22;--panel2:#171030;--line:#33235c;
+    --txt:#f5f1ff;--dim:#b3a8d9;
+    --pink:#ff2e88;--vio:#8b3dff;--cyan:#22d3ee;--lime:#a6f750;
+    --org:#ff9f43;--red:#ff4d5e;--grn:#3ddc84
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:
+      radial-gradient(900px 480px at 12% -6%, rgba(139,61,255,.34), transparent 60%),
+      radial-gradient(800px 420px at 88% 0%, rgba(255,46,136,.26), transparent 60%),
+      radial-gradient(700px 500px at 50% 108%, rgba(34,211,238,.16), transparent 60%),
+      var(--bg);
+    color:var(--txt);
+    font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.45;
+  }
+  a{color:var(--cyan);text-decoration:none}
+  a:hover{text-decoration:underline}
+  header{position:sticky;top:0;z-index:10;background:rgba(7,5,15,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--line)}
+  .bar{max-width:1180px;margin:0 auto;padding:13px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .logo{font-weight:900;font-size:23px;letter-spacing:.5px;color:var(--txt)}
+  .logo .now{background:linear-gradient(90deg,var(--pink),var(--vio),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .pill{display:inline-flex;align-items:center;gap:7px;background:#1b0f33;border:2px solid var(--vio);color:#d9c6ff;font-size:12px;font-weight:800;padding:4px 11px;border-radius:999px;letter-spacing:1px}
+  .livedot{width:9px;height:9px;border-radius:50%;background:var(--pink);box-shadow:0 0 10px var(--pink);animation:pulse 1.3s infinite}
+  @keyframes pulse{0%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}100%{opacity:1;transform:scale(1)}}
+  .clock{margin-left:auto;color:var(--dim);font-size:13px;text-align:right}
+  .clock b{color:var(--txt);font-size:15px}
+  main{max-width:1180px;margin:0 auto;padding:22px 18px 44px}
+  /* HERO */
+  .hero{padding:22px 4px 8px;text-align:left}
+  .kicker{display:inline-flex;align-items:center;gap:8px;background:#24082a;border:2px solid var(--pink);color:#ffd3e8;font-weight:900;font-size:12.5px;letter-spacing:2px;padding:5px 13px;border-radius:999px;text-transform:uppercase}
+  h1{font-size:clamp(46px,9.5vw,92px);font-weight:900;line-height:.98;letter-spacing:-1px;margin:16px 0 6px;text-transform:uppercase}
+  h1 .g{background:linear-gradient(92deg,var(--pink) 5%,var(--vio) 42%,var(--cyan) 78%,var(--lime) 105%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 18px rgba(139,61,255,.45))}
+  .sub{color:var(--dim);font-size:clamp(15px,2.4vw,19px);max-width:820px;margin-top:8px}
+  .sub b{color:var(--txt)}
+  /* PANELS */
+  .panel{background:linear-gradient(180deg,rgba(255,255,255,.025),transparent),var(--panel);border:2px solid var(--line);border-radius:20px;padding:20px;margin:20px 0}
+  .panel h2{font-size:clamp(21px,3.6vw,28px);font-weight:900;margin-bottom:5px;text-transform:uppercase;letter-spacing:.4px}
+  .panel h2 .a-pink{color:var(--pink)} .panel h2 .a-cyan{color:var(--cyan)} .panel h2 .a-lime{color:var(--lime)} .panel h2 .a-vio{color:#c9a6ff}
+  .panel .note{color:var(--dim);font-size:13.5px;margin-bottom:14px}
+  /* NEWS ITEMS */
+  .ev{border:2px solid var(--line);background:var(--panel2);border-radius:14px;padding:12px 15px;margin-bottom:10px}
+  .ev .top{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+  .badge{font-size:11px;font-weight:900;letter-spacing:.7px;padding:3px 9px;border-radius:999px;text-transform:uppercase;border:2px solid}
+  .b-pink{background:#33091f;color:#ffb9d8;border-color:var(--pink)}
+  .b-vio{background:#220b4d;color:#dcc9ff;border-color:var(--vio)}
+  .b-cyan{background:#06303c;color:#b5f0fb;border-color:var(--cyan)}
+  .b-lime{background:#1e3306;color:#dcffb5;border-color:var(--lime)}
+  .b-org{background:#38230f;color:#ffd9ad;border-color:var(--org)}
+  .b-grn{background:#0f2f1e;color:#a9f0cd;border-color:var(--grn)}
+  .ev .t{font-weight:800;font-size:15.5px}
+  /* CARDS */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .card{border:2px solid var(--line);background:var(--panel2);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:7px}
+  .card .ct{font-weight:900;font-size:17px}
+  .card .cd{color:var(--dim);font-size:13.5px;flex:1}
+  .card .cl{font-weight:800;font-size:13.5px}
+  a.card{color:var(--txt);transition:transform .15s ease,border-color .15s ease}
+  a.card:hover{border-color:var(--pink);text-decoration:none;transform:translateY(-3px)}
+  .card.pink{border-color:var(--pink)} .card.vio{border-color:var(--vio)} .card.cyan{border-color:var(--cyan)} .card.lime{border-color:var(--lime)}
+  /* SOURCE ROWS */
+  .srcrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:6px}
+  .srcrow a.row{display:flex;justify-content:space-between;align-items:center;gap:10px;border:2px solid var(--line);background:var(--panel2);border-radius:14px;padding:12px 15px;color:var(--txt)}
+  .srcrow a.row:hover{border-color:var(--cyan);text-decoration:none}
+  .row .rt{font-weight:800}
+  .row .rd{color:var(--dim);font-size:12.5px}
+  .row .arr{font-size:18px;color:var(--dim)}
+  /* GTA VI FEATURE */
+  .gta{border:3px solid var(--pink);background:linear-gradient(120deg,#2b0720,#170b38 55%,#062a33);border-radius:20px;padding:22px;position:relative;overflow:hidden}
+  .gta::after{content:"";position:absolute;inset:0;background:radial-gradient(600px 220px at 85% 0%,rgba(255,46,136,.28),transparent 60%);pointer-events:none}
+  .gta .gt{font-size:clamp(26px,5.5vw,44px);font-weight:900;line-height:1.05;text-transform:uppercase}
+  .gta .gt .g{background:linear-gradient(92deg,var(--pink),var(--org),var(--lime));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .gta .gd{color:#e8dcff;font-size:15px;max-width:720px;margin-top:8px;position:relative;z-index:1}
+  .gta a.btn{display:inline-block;margin-top:14px;background:var(--pink);color:#fff;font-weight:900;font-size:15px;padding:12px 24px;border-radius:999px;position:relative;z-index:1;box-shadow:0 0 22px rgba(255,46,136,.5)}
+  .gta a.btn:hover{text-decoration:none;opacity:.92}
+  .facts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;position:relative;z-index:1}
+  /* COLLAPSIBLE PACK */
+  details.pack{border:2px solid var(--vio);background:var(--panel2);border-radius:16px;padding:6px 16px 14px;margin-bottom:14px}
+  details.pack summary{cursor:pointer;font-weight:900;font-size:16.5px;padding:11px 0}
+  .step{border:2px solid var(--line);background:var(--panel);border-radius:12px;padding:11px 13px;margin-bottom:9px;display:flex;gap:12px}
+  .step .n{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--vio));color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:14px}
+  .step .st{font-weight:800;font-size:14px}
+  .step .sx{color:var(--dim);font-size:13.5px;margin-top:2px}
+  /* JOIN */
+  .join{background:linear-gradient(90deg,#2b0a33,#0d1b3d);border:2px solid var(--vio);border-radius:16px;padding:18px;text-align:center}
+  .join a.btn{display:inline-block;margin-top:9px;background:var(--lime);color:#0c1a02;font-weight:900;padding:12px 24px;border-radius:999px}
+  .join a.btn:hover{text-decoration:none;opacity:.92}
+  /* CROSS LINKS */
+  .xlinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  footer{max-width:1180px;margin:0 auto;padding:0 18px 36px;color:var(--dim);font-size:12.5px}
+  .err{color:var(--org);font-size:13px}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="logo" href="https://hub.artificial-intelligencenow.com" style="text-decoration:none">A.I. <span class="now">NOW</span></a>
+    <span class="pill">🎮 AI × GAMING</span>
+    <div class="clock"><b id="clock">--:--:--</b><br><span id="updated">loading live gaming news…</span></div>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <span class="kicker"><span class="livedot"></span> A.I. NOW Hub — Gaming Desk</span>
+    <h1>AI × <span class="g">GAMING</span></h1>
+    <p class="sub">AI is quietly rewriting how games play, how they're made, and how streamers run their channels. This page tracks it all in <b>plain English</b> — live gaming headlines, what the big ideas actually mean, and the tools players and creators really use. No hype, no cheat talk, no made-up numbers.</p>
+  </section>
+
+  <section class="panel" style="border-color:var(--pink)">
+    <h2><span class="livedot" style="display:inline-block;vertical-align:middle;margin-right:8px"></span>📰 Live gaming <span class="a-pink">news</span></h2>
+    <p class="note">The newest headlines from three gaming newsrooms, pulled live and newest first. Every headline links to the original story at the source.</p>
+    <div id="news"><p class="note">Loading headlines…</p></div>
+    <div class="srcrow">
+      <a class="row" href="https://www.ign.com" target="_blank" rel="noopener"><span><span class="rt">IGN</span><br><span class="rd">Games news, reviews and previews</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://www.polygon.com" target="_blank" rel="noopener"><span><span class="rt">Polygon</span><br><span class="rd">Games, culture and the business</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://www.pcgamer.com" target="_blank" rel="noopener"><span><span class="rt">PC Gamer</span><br><span class="rd">PC gaming news and hardware</span></span><span class="arr">→</span></a>
+    </div>
+  </section>
+
+  <section class="panel" style="border-color:var(--vio)">
+    <h2>🧠 AI in gaming, <span class="a-vio">explained</span></h2>
+    <p class="note">Six ideas you'll keep hearing about — what each one actually is, minus the marketing fog.</p>
+    <div class="cards">
+      <div class="card pink"><div class="ct">🤖 Smart NPCs</div><div class="cd">NPCs are the characters the game controls — shopkeepers, enemies, teammates. Old NPCs run on fixed scripts: same lines, same moves, every time. AI-driven NPCs can react to what you do, change tactics mid-fight, and hold conversations that aren't picked from a menu — so two players can get genuinely different encounters.</div></div>
+      <div class="card vio"><div class="ct">🗺️ AI-built worlds &amp; levels</div><div class="cd">Games have used "procedural generation" for years — algorithms stitching caves, maps and loot together instead of a human placing every rock. Newer AI tools go further: they help artists and level designers draft terrain, textures and layouts much faster, with humans editing and polishing the results.</div></div>
+      <div class="card cyan"><div class="ct">🎙️ AI voice acting — and the fight over it</div><div class="cd">AI can now generate character voices, and some games use it for background lines or temporary placeholder dialogue while recording is still being scheduled. It's genuinely controversial: voice actors and their unions have pushed hard for rules requiring consent — and pay — before a real person's voice is copied or replaced, and many players say soulless delivery pulls them out of the game. Expect consent and credit rules to keep tightening.</div></div>
+      <div class="card lime"><div class="ct">🛡️ Anti-cheat AI</div><div class="cd">The flip side of the coin: big online games now use machine learning to fight cheating. Instead of only scanning for known cheat programs, these systems study how play looks — impossible reaction patterns, inhuman aim movement, accounts that behave like bots — and flag the outliers for review or bans. It's an arms race, but it's the honest side: protecting fair matches for everyone else.</div></div>
+      <div class="card pink"><div class="ct">⚡ Upscaling: DLSS in plain words</div><div class="cd">Your graphics card works hard for every frame. Upscaling cheats the workload, honestly: the game draws the picture at a lower resolution, then AI rebuilds it into a sharp full-size image. You get a smoother frame rate without the picture looking blurry. NVIDIA calls theirs DLSS, AMD's is FSR, Intel's is XeSS — same idea, different brands.</div></div>
+      <div class="card vio"><div class="ct">🎬 AI streaming tools</div><div class="cd">Creators feel AI every day now: it removes a messy room from behind you without a green screen, kills keyboard noise from your mic, writes live captions, and clips your best moments automatically. It's the quiet production crew behind a lot of small streamers who look — and sound — far more pro than their budget.</div></div>
+    </div>
+  </section>
+
+  <section class="gta">
+    <span class="badge b-pink">Launch week</span>
+    <div class="gt" style="margin-top:10px">GTA VI — <span class="g">launch week is here</span></div>
+    <p class="gd">The wait is almost over. Our GTA VI Launch Radar has the countdown, the editions explained, and the gear-up checklist for launch day — built by our store crew in Detroit.</p>
+    <div class="facts">
+      <span class="badge b-vio">Drops Thu Nov 19, 2026</span>
+      <span class="badge b-cyan">PS5 · Xbox Series X|S</span>
+      <span class="badge b-lime">Standard edition $79.99</span>
+    </div>
+    <a class="btn" href="https://artificial-intelligencenow.com/pages/gta-vi-launch-radar">Open the GTA VI Launch Radar →</a>
+  </section>
+
+  <section class="panel" style="border-color:var(--cyan)">
+    <h2>🧰 Tools gamers &amp; streamers <span class="a-cyan">actually use</span></h2>
+    <p class="note">Legit AI tools for playing, streaming and making games — what each one is for, with a straight link to its official site.</p>
+    <!-- AFFILIATE SWAP: tracked links when Impact/PartnerStack approve -->
+    <div class="cards">
+      <div class="card cyan"><div class="ct">NVIDIA Broadcast</div><div class="cd">AI webcam and mic cleanup for streamers — removes background noise and replaces your room with a virtual background, no green screen needed.</div><a class="cl" href="https://www.nvidia.com/en-us/geforce/broadcasting/broadcast-app/" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card pink"><div class="ct">OBS Studio</div><div class="cd">The free streaming and recording software almost everyone uses — and the base for a growing pile of AI plugins for captions, noise removal and auto-clipping.</div><a class="cl" href="https://obsproject.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card vio"><div class="ct">Voicemod</div><div class="cd">Real-time AI voice changer for streams and game chat — sound like a robot, a character, or just a cleaner version of you, live.</div><a class="cl" href="https://www.voicemod.net" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card lime"><div class="ct">ElevenLabs</div><div class="cd">Realistic AI voices for narration, character lines and video voiceovers — the voice tool half of YouTube seems to use. Use it on your own voice and content.</div><a class="cl" href="https://elevenlabs.io" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card cyan"><div class="ct">Scenario</div><div class="cd">AI image generation built for game developers — train it on your own art style, then generate matching game assets, icons and characters.</div><a class="cl" href="https://www.scenario.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card pink"><div class="ct">Ludo.ai</div><div class="cd">AI research and design help for game makers — spot gameplay trends, test concepts and generate game ideas and art references before you build.</div><a class="cl" href="https://ludo.ai" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card vio"><div class="ct">itch.io</div><div class="cd">The indie game marketplace — where small developers (including plenty of AI-assisted game jam projects) publish and sell their games. The best place to see what tiny teams are building.</div><a class="cl" href="https://itch.io" target="_blank" rel="noopener">Official site →</a></div>
+    </div>
+  </section>
+
+  <section class="panel" style="border-color:var(--lime)">
+    <h2>🎁 Free download — <span class="a-lime">ours only</span></h2>
+    <p class="note">Made by A.I. NOW, free to use. We never offer downloads of other companies' software — for the tools themselves, use the official links above.</p>
+
+    <details class="pack" open>
+      <summary>✅ The Streamer Starter Checklist — your first stream, step by step</summary>
+      <p class="note" style="margin-top:4px">Ten real steps, in the order that actually matters. Audio before video, test before live, short before long.</p>
+
+      <div class="step"><div class="n">1</div><div><div class="st">Pick ONE game and one reason</div><div class="sx">"I stream everything" is how channels stay invisible. Start with one game or category you genuinely enjoy, and one sentence for why someone should watch you — funny, skilled, chill, learning out loud. You can widen later.</div></div></div>
+
+      <div class="step"><div class="n">2</div><div><div class="st">Set up OBS (free) before anything else</div><div class="sx">Download OBS Studio from its official site, add three scenes — Starting Soon, Gameplay, Be Right Back — and one of each source: game capture, mic, webcam. That's a working stream. Everything else is decoration.</div></div></div>
+
+      <div class="step"><div class="n">3</div><div><div class="st">Fix your audio first — it matters more than the camera</div><div class="sx">Viewers forgive a soft picture; they leave over bad sound. Get the mic close to your mouth, turn its level down so you don't peak, and use NVIDIA Broadcast or OBS's built-in noise suppression to eat keyboard and fan noise.</div></div></div>
+
+      <div class="step"><div class="n">4</div><div><div class="st">Light your face, any cheap way</div><div class="sx">Face a window or put a desk lamp in front of you, slightly above eye level. Never sit with a bright window behind you — the camera will turn you into a silhouette.</div></div></div>
+
+      <div class="step"><div class="n">5</div><div><div class="st">Run a private test stream</div><div class="sx">Stream unlisted or to a test account for 10 minutes. Play something loud, talk at normal volume, die in-game, laugh. Then watch the recording like a stranger and fix the worst thing you notice.</div></div></div>
+
+      <div class="step"><div class="n">6</div><div><div class="st">Write your title and tags like a viewer searches</div><div class="sx">Game name first, then what you're doing: "First time playing [game] — no spoilers" beats "chilling come hang." Add the game's category and honest tags so the right people can find you.</div></div></div>
+
+      <div class="step"><div class="n">7</div><div><div class="st">Set your ground rules before chat sets them</div><div class="sx">Write three chat rules (no hate, no spoilers, no self-promo is a solid start), turn on your platform's auto-moderation, and ask one trusted friend to be your first mod. Decide this before you're live and emotional.</div></div></div>
+
+      <div class="step"><div class="n">8</div><div><div class="st">Keep your first real stream short — about an hour</div><div class="sx">Talk like someone is watching even at zero viewers (they will watch the replay). Say what you're doing and why out loud — silent gameplay is the number-one beginner killer.</div></div></div>
+
+      <div class="step"><div class="n">9</div><div><div class="st">Watch your own VOD within a day</div><div class="sx">Note three things: one moment that worked, one technical problem, one dead-air stretch. Fix one thing per stream. That loop — stream, watch, fix one thing — is the entire growth engine.</div></div></div>
+
+      <div class="step"><div class="n">10</div><div><div class="st">Clip your best 30 seconds and post it</div><div class="sx">Every stream hides one clip-worthy moment. Cut it, caption it, post it where short videos live, and link your channel. Clips are how strangers find streams — the stream itself is how they stay.</div></div></div>
+    </details>
+
+    <div class="join">
+      <div style="font-weight:900;font-size:17px">Get the next checklists and guides free — plus 10% off your first order</div>
+      <p style="color:var(--dim);font-size:14px">Join the A.I. NOW list at the store: new guides land there first, and list members get 10% off their first store order.</p>
+      <a class="btn" href="https://artificial-intelligencenow.com/pages/join-the-list">Join the List — free</a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>🌐 More from <span class="a-pink">A.I. NOW</span></h2>
+    <p class="note">One family, many doors — the hub, the store, and the live world desk.</p>
+    <div class="xlinks">
+      <a class="card cyan" href="https://hub.artificial-intelligencenow.com"><div class="ct">🏠 The Hub — home</div><div class="cd">Everything AI in one place: live AI news, the tools directory, free prompt packs and every branch.</div><span class="cl">hub.artificial-intelligencenow.com →</span></a>
+      <a class="card pink" href="https://shop.artificial-intelligencenow.com"><div class="ct">🛍️ The Store — new door</div><div class="cd">The A.I. NOW store's new address — trending finds, gifts and gear, same store, new door.</div><span class="cl">shop.artificial-intelligencenow.com →</span></a>
+      <a class="card lime" href="https://world.artificial-intelligencenow.com"><div class="ct">🌍 World Watch</div><div class="cd">Live earthquakes, storms, wildfires and severe weather from official sources — plus free help resources when an event hits.</div><span class="cl">world.artificial-intelligencenow.com →</span></a>
+    </div>
+  </section>
+</main>
+<footer>
+  A.I. NOW — Detroit, Michigan. Gaming headlines are pulled live from IGN, Polygon and PC Gamer; each headline belongs to its publisher and links to the original story. Game and product names belong to their owners — this page uses words only, no game artwork or logos. Directory links go to each tool's official site.
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+function tick(){const d=new Date();$('clock').textContent=d.toLocaleTimeString('en-US',{hour12:true})+' Detroit';}
+setInterval(tick,1000);tick();
+function ago(t){const s=(Date.now()-t)/1000;if(s<0)return 'just now';if(s<3600)return Math.max(1,Math.round(s/60))+'m ago';if(s<86400)return Math.round(s/3600)+'h ago';return Math.round(s/86400)+'d ago';}
+function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+/* Live gaming news: real headlines pulled client-side via the rss2json reader (the same
+   approach the hub front door uses). Each feed fails independently; if every feed fails,
+   the section falls back to a plain note plus the source cards under it — headlines are
+   never invented or hard-coded. Feeds verified live 2026-11-13: all three returned
+   current items through rss2json. */
+const FEEDS=[
+  {name:'IGN',cls:'b-pink',url:'https://feeds.feedburner.com/ign/games-all'},
+  {name:'Polygon',cls:'b-vio',url:'https://www.polygon.com/rss/index.xml'},
+  {name:'PC Gamer',cls:'b-cyan',url:'https://www.pcgamer.com/rss/'}
+];
+async function loadOneFeed(f){
+  const r=await fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(f.url));
+  const j=await r.json();
+  if(j.status!=='ok'||!j.items)return [];
+  return j.items.map(it=>({time:new Date((it.pubDate||'').replace(' ','T')).getTime()||0,title:it.title,url:it.link,src:f.name,cls:f.cls}));
+}
+async function loadNews(){
+  const results=await Promise.allSettled(FEEDS.map(loadOneFeed));
+  let items=[];
+  results.forEach(r=>{if(r.status==='fulfilled')items=items.concat(r.value);});
+  items=items.filter(n=>n.title&&n.url);
+  items.sort((a,b)=>b.time-a.time);
+  if(!items.length){
+    $('news').innerHTML='<p class="err">The live headline feeds aren\'t answering right now — no stale stories shown in their place. Read the latest straight from the sources below.</p>';
+    $('updated').textContent='news feeds unreachable — source links below';
+    return;
+  }
+  $('news').innerHTML=items.slice(0,12).map(n=>
+    '<div class="ev"><div class="top"><span class="badge '+n.cls+'">'+esc(n.src)+'</span><span style="color:var(--dim);font-size:12px">'+(n.time?ago(n.time):'')+'</span></div>'+
+    '<div class="t" style="font-size:15px"><a href="'+esc(n.url)+'" target="_blank" rel="noopener" style="color:var(--txt)">'+esc(n.title)+'</a></div></div>').join('');
+  $('updated').textContent='gaming news updated '+new Date().toLocaleTimeString('en-US');
+}
+loadNews();setInterval(loadNews,600000);
+</script>
+</body>
+</html>

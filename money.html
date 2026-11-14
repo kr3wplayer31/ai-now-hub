@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI × MONEY — Bitcoin, Crypto & Banking, Explained Loud and Plain | A.I. NOW Hub</title>
+<meta name="description" content="AI in Bitcoin, crypto, banking and everyday finance — live prices, live headlines, plain-English explainers, legit tools and a free crypto safety cheat sheet. Education only, never financial advice.">
+<style>
+  :root{--bg:#07030d;--bg2:#0d0620;--panel:#150b24;--panel2:#1e1036;--line:#3d2166;--txt:#ffffff;--dim:#cbb9ec;--pink:#ff3e8a;--vio:#8b5cff;--cyn:#22d3ee;--lime:#a6ff4d;--yel:#ffd166;--org:#ff9f43;--red:#ff4d5e;--grn:#3ddc84}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:radial-gradient(1200px 600px at 15% -5%,#2a1052 0%,transparent 60%),radial-gradient(1000px 500px at 90% 0%,#3d0a2e 0%,transparent 55%),linear-gradient(180deg,var(--bg2),var(--bg));color:var(--txt);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+  a{color:var(--cyn);text-decoration:none}
+  a:hover{text-decoration:underline}
+  header{position:sticky;top:0;z-index:10;background:rgba(7,3,13,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--line)}
+  .bar{max-width:1180px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .logo{font-weight:900;font-size:24px;letter-spacing:.5px;color:var(--txt)}
+  .logo .now{background:linear-gradient(90deg,var(--pink),var(--cyn));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .pill{display:inline-flex;align-items:center;gap:7px;background:#1e1036;border:2px solid var(--lime);color:var(--lime);font-size:12px;font-weight:900;padding:4px 12px;border-radius:999px;letter-spacing:1.5px}
+  .clock{margin-left:auto;color:var(--dim);font-size:13px;text-align:right}
+  .clock b{color:var(--txt);font-size:15px}
+  main{max-width:1180px;margin:0 auto;padding:22px 18px 44px}
+  .grad{background:linear-gradient(92deg,var(--pink) 0%,var(--vio) 34%,var(--cyn) 67%,var(--lime) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero{padding:26px 0 8px}
+  .hero h1{font-size:clamp(54px,11vw,112px);font-weight:900;line-height:.95;letter-spacing:-1px;text-transform:uppercase}
+  .hero .sub{color:var(--dim);font-size:clamp(16px,2.4vw,20px);margin-top:14px;max-width:820px}
+  .hero .sub b{color:var(--txt)}
+  .livebadge{display:inline-flex;align-items:center;gap:8px;background:#2a0f16;border:2px solid var(--red);color:#ffb3ba;font-size:12px;font-weight:900;padding:5px 12px;border-radius:999px;letter-spacing:1.5px;vertical-align:middle}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--red);animation:pulse 1.3s infinite}
+  @keyframes pulse{0%{opacity:1;box-shadow:0 0 0 0 rgba(255,77,94,.6)}50%{opacity:.5;box-shadow:0 0 0 6px rgba(255,77,94,0)}100%{opacity:1}}
+  .disclaimer{margin:18px 0;border:2px solid var(--yel);background:#241a05;border-radius:14px;padding:13px 16px;font-size:14.5px}
+  .disclaimer b{color:var(--yel)}
+  .panel{background:var(--panel);border:2px solid var(--line);border-radius:20px;padding:20px;margin-bottom:20px}
+  .panel h2{font-size:clamp(22px,3.4vw,30px);font-weight:900;margin-bottom:4px;text-transform:uppercase;letter-spacing:.3px}
+  .panel .note{color:var(--dim);font-size:14px;margin-bottom:14px}
+  .prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+  .price{border-radius:16px;padding:18px;background:linear-gradient(160deg,var(--panel2),#12081f);border:2px solid var(--line)}
+  .price.btc{border-color:var(--org)}
+  .price.eth{border-color:var(--vio)}
+  .price .sym{font-weight:900;font-size:15px;letter-spacing:1.5px;color:var(--dim)}
+  .price .val{font-size:clamp(34px,6vw,46px);font-weight:900;line-height:1.05;margin:4px 0}
+  .price .chg{font-size:14px;font-weight:800}
+  .up{color:var(--grn)} .down{color:var(--red)}
+  .ev{border:2px solid var(--line);background:var(--panel2);border-radius:14px;padding:13px 15px;margin-bottom:11px}
+  .ev .top{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+  .badge{font-size:11px;font-weight:900;letter-spacing:.6px;padding:3px 9px;border-radius:999px;text-transform:uppercase;border:2px solid}
+  .b-pink{background:#33091d;color:#ffc2da;border-color:var(--pink)}
+  .b-vio{background:#1e0f3d;color:#d3c2ff;border-color:var(--vio)}
+  .b-cyn{background:#082a33;color:#b8ecfa;border-color:var(--cyn)}
+  .b-lime{background:#1d2f08;color:#dcffb0;border-color:var(--lime)}
+  .b-yel{background:#33270a;color:#ffe9a8;border-color:var(--yel)}
+  .ev .t{font-weight:800;font-size:16px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+  .card{border:2px solid var(--line);background:linear-gradient(165deg,var(--panel2),#12081f);border-radius:16px;padding:17px 18px;display:flex;flex-direction:column;gap:7px}
+  .card:hover{border-color:var(--cyn)}
+  .card .ct{font-weight:900;font-size:18px}
+  .card .cd{color:var(--dim);font-size:14.5px;flex:1}
+  .card .cl{font-weight:800;font-size:14px}
+  a.card{color:var(--txt)}
+  a.card:hover{text-decoration:none;transform:translateY(-2px)}
+  .srcrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:11px;margin-top:4px}
+  .srcrow a.row{display:flex;justify-content:space-between;align-items:center;gap:10px;border:2px solid var(--line);background:var(--panel2);border-radius:14px;padding:13px 15px;color:var(--txt)}
+  .srcrow a.row:hover{border-color:var(--pink);text-decoration:none}
+  .row .rt{font-weight:800}
+  .row .rd{color:var(--dim);font-size:12.5px}
+  .row .arr{font-size:19px;color:var(--dim)}
+  details.pack{border:2px solid var(--lime);background:var(--panel2);border-radius:16px;padding:6px 16px 14px;margin-bottom:14px}
+  details.pack summary{cursor:pointer;font-weight:900;font-size:17px;padding:11px 0}
+  .rule{border:2px solid var(--line);background:var(--panel);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+  .rule .rt2{font-weight:900;font-size:15px;color:var(--lime)}
+  .rule .rx{color:var(--dim);font-size:14px;margin-top:3px}
+  .join{background:linear-gradient(90deg,#3d0a2e,#1e0f3d,#082a33);border:2px solid var(--pink);border-radius:16px;padding:18px;text-align:center}
+  .join a.btn{display:inline-block;margin-top:9px;background:var(--pink);color:#fff;font-weight:900;padding:12px 24px;border-radius:999px;font-size:15px}
+  .join a.btn:hover{text-decoration:none;opacity:.92}
+  .xlinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  footer{max-width:1180px;margin:0 auto;padding:0 18px 36px;color:var(--dim);font-size:13px}
+  .err{color:var(--org);font-size:14px}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <div class="logo">A.I. <span class="now">NOW</span></div>
+    <span class="pill">AI × MONEY</span>
+    <div class="clock"><b id="clock">--:--:--</b><br><span id="updated">loading live prices &amp; news…</span></div>
+  </div>
+</header>
+<main>
+  <div class="hero">
+    <span class="livebadge"><span class="dot"></span>LIVE</span>
+    <h1>AI × <span class="grad">MONEY</span></h1>
+    <p class="sub">Artificial intelligence is inside <b>Bitcoin, crypto, banking and your everyday money apps</b> right now — spotting fraud, moving markets, answering your bank chats and, yes, powering scams too. This page explains how it all works in <b>plain English</b>, with live prices and live headlines, so you can see it clearly instead of hearing the hype.</p>
+  </div>
+
+  <div class="disclaimer">⚠️ <b>Straight talk:</b> this page is <b>education, not financial advice</b>. We don't pick coins, we don't predict prices, and nothing here is a promise that anyone will make money. Crypto is risky and can drop hard and fast — only ever put in money you could afford to lose completely.</div>
+
+  <section class="panel">
+    <h2>💰 Live prices</h2>
+    <p class="note">Real Bitcoin and Ethereum prices, pulled live from CoinGecko's public price feed and refreshed automatically. <b>Prices move fast — always check the current price yourself before you act on anything.</b></p>
+    <div class="prices">
+      <div class="price btc"><div class="sym">₿ BITCOIN — BTC / USD</div><div class="val" id="p-btc">Loading…</div><div class="chg" id="c-btc"></div></div>
+      <div class="price eth"><div class="sym">Ξ ETHEREUM — ETH / USD</div><div class="val" id="p-eth">Loading…</div><div class="chg" id="c-eth"></div></div>
+    </div>
+    <p class="note" id="p-note" style="margin:12px 0 0">Source: CoinGecko public API. The 24-hour change is shown for context — it is not a prediction of what happens next.</p>
+  </section>
+
+  <section class="panel">
+    <h2>📰 Live crypto &amp; money news</h2>
+    <p class="note">The newest headlines from crypto and finance newsrooms, pulled live and newest first. Every headline links to the original story at the source.</p>
+    <div id="news"><p class="note">Loading headlines…</p></div>
+    <div class="srcrow">
+      <a class="row" href="https://www.coindesk.com" target="_blank" rel="noopener"><span><span class="rt">CoinDesk</span><br><span class="rd">Crypto news and market coverage</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://cointelegraph.com" target="_blank" rel="noopener"><span><span class="rt">CoinTelegraph</span><br><span class="rd">Bitcoin, crypto and Web3 news</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://www.bbc.com/news/business" target="_blank" rel="noopener"><span><span class="rt">BBC Business</span><br><span class="rd">Mainstream money and markets news</span></span><span class="arr">→</span></a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>🧠 How AI is changing money</h2>
+    <p class="note">No hype, no jargon — what the technology actually does with your money today.</p>
+    <div class="cards">
+      <div class="card"><div class="ct">🛡️ Fraud detection at your bank</div><div class="cd">Banks run AI that learns what your normal spending looks like — where you shop, what you usually spend, when you're awake. When something doesn't fit, like your card suddenly being used in another state minutes after a purchase at home, the system can flag it, text you, or freeze the transaction before the money is gone. It's the biggest everyday way AI already protects regular people's money.</div></div>
+      <div class="card"><div class="ct">🤖 AI trading bots — what they really are</div><div class="cd">A trading bot is not a fortune-teller. It's software that follows rules a human set — "buy if the price drops this much, sell if it rises that much" — and executes them fast, day and night, without emotion. That's all it is: speed plus rules. The rules can be bad, markets can move in ways nobody programmed for, and most bot products sold to beginners are marketed with promises the software can't keep. Anyone selling a bot as a money machine is selling you the story, not the result.</div></div>
+      <div class="card"><div class="ct">🔎 Crypto research tools</div><div class="cd">AI tools now read thousands of news stories, social posts and blockchain transactions and boil them down into summaries — what a coin's network is actually doing, whether money is moving onto exchanges, what the crowd is feeling. Used well, they help you read more, faster. Used badly, they're a confidence trick: a summary can be wrong, out of date, or confidently made up. Treat every AI research output as a lead to verify, never as the answer.</div></div>
+      <div class="card"><div class="ct">📱 AI budgeting apps</div><div class="cd">Budgeting apps use AI to sort your spending automatically, spot subscriptions you forgot you were paying for, warn you before a big bill lands, and nudge you toward a savings goal. The honest version of what they do: they pay attention to your money every day so you don't have to. They can't fix a short paycheck — but they can find leaks you didn't know you had.</div></div>
+      <div class="card"><div class="ct">🏦 AI inside everyday banking</div><div class="cd">The chat window in your banking app, the instant decision when you deposit a check by photo, the alert that asks "was this you?" — that's AI working the counter now. Banks use it because it answers common questions instantly and never sleeps. The flip side: it can misunderstand you, and for anything serious — a disputed charge, a locked account, a big transfer — you still want a human, and you have the right to ask for one.</div></div>
+      <div class="card"><div class="ct">🎭 The scams AI made worse</div><div class="cd">The same technology powers the ugly side: voice clones that sound exactly like a family member calling for bail money, fake videos of celebrities "endorsing" a coin, and polished fake support accounts that DM you first. The defense is old-fashioned and it works: hang up and call the real number, never trust a DM about money, and treat any "send crypto now" message as a scam until you've proven otherwise through a channel you chose yourself.</div></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>🧰 Legit money &amp; crypto tools</h2>
+    <p class="note">Established, widely used platforms — what each one is for, with a straight link to its official site. Listing a tool here is not a recommendation to put money anywhere; do your own homework before you sign up for anything.</p>
+    <!-- AFFILIATE SWAP: tracked links when Impact/PartnerStack approve -->
+    <div class="cards">
+      <div class="card"><div class="ct">CoinGecko</div><div class="cd">Independent crypto price tracker — live prices, charts and research for thousands of coins, free to read.</div><a class="cl" href="https://www.coingecko.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">CoinMarketCap</div><div class="cd">Crypto prices, rankings and market data — the big scoreboard most people check first.</div><a class="cl" href="https://coinmarketcap.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">TradingView</div><div class="cd">The charting platform traders watch — live charts and analysis tools for crypto, stocks and more.</div><a class="cl" href="https://www.tradingview.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Rocket Money</div><div class="cd">Budgeting app that hunts down forgotten subscriptions and shows where your paycheck actually goes.</div><a class="cl" href="https://www.rocketmoney.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Credit Karma</div><div class="cd">Free credit scores and monitoring, with plain-English explanations of what moved your score and why.</div><a class="cl" href="https://www.creditkarma.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Cleo</div><div class="cd">An AI money assistant you chat with — budgets, spending roasts and savings nudges in plain language.</div><a class="cl" href="https://meetcleo.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Your own bank's app</div><div class="cd">Most major banks now build AI spending insights, smart alerts and chat help right into the app you already have — check before paying for a separate tool.</div></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>🎁 Free download — ours, free forever</h2>
+    <p class="note">Made by A.I. NOW. Read it here, screenshot it, share it — this is the page we'd hand a family member before their first crypto anything.</p>
+
+    <details class="pack" open>
+      <summary>🔐 The Crypto Safety Cheat Sheet — read this before you touch a coin</summary>
+      <p class="note" style="margin-top:4px">Plain rules that stop almost every common crypto scam cold.</p>
+
+      <div class="rule"><div class="rt2">1. Your seed phrase is the whole vault</div><p class="rx">The 12–24 word recovery phrase controls everything. Never type it into a website, never send it to anyone, never store it in a photo, email or cloud note. Write it on paper and keep it somewhere safe and offline. Anyone who gets it gets your money — permanently.</p></div>
+
+      <div class="rule"><div class="rt2">2. Nobody legit will ever ask for it</div><p class="rx">No exchange, no wallet company, no "support agent" will ever ask for your seed phrase, your password, or a code from your phone — in a DM, an email, or anywhere else. If someone asks, it is a scam. Every time. No exceptions.</p></div>
+
+      <div class="rule"><div class="rt2">3. "Guaranteed returns" is a lie by definition</div><p class="rx">Crypto prices swing wildly and nobody — no person, no bot, no AI — can guarantee a return. A promised return is the oldest scam in finance wearing new clothes. The same goes for "send 1 coin, get 2 back" offers and anyone who needs you to recruit friends to get paid.</p></div>
+
+      <div class="rule"><div class="rt2">4. Check the address like your money depends on it — it does</div><p class="rx">Before sending, compare the wallet address character by character, first six and last six at minimum. Malware exists that quietly swaps a pasted address for a thief's. For any large amount, send a small test transaction first and confirm it arrived.</p></div>
+
+      <div class="rule"><div class="rt2">5. Only download apps from official links</div><p class="rx">Fake wallet and exchange apps — including ones in ads at the top of search results — are built to steal logins. Get the link from the company's real website, typed by you, and double-check the spelling of the site itself. One wrong letter can be a clone.</p></div>
+
+      <div class="rule"><div class="rt2">6. Lock every account down</div><p class="rx">Turn on two-factor authentication with an authenticator app (stronger than text codes), use a unique password for your email and every money account, and treat your email as a money account — whoever controls it can reset everything else.</p></div>
+
+      <div class="rule"><div class="rt2">7. The celebrity is not talking to you</div><p class="rx">Videos of famous people pushing a coin are usually deepfakes or hijacked accounts, and a "friend" suddenly pitching crypto in your DMs is usually a stolen account. Verify through a completely separate channel — a call to a number you already have — before believing any of it.</p></div>
+
+      <div class="rule"><div class="rt2">8. Keep records — taxes are real</div><p class="rx">Buying, selling and trading crypto can create tax obligations. Save your transaction history from day one; reconstructing it later is miserable and sometimes impossible.</p></div>
+
+      <div class="rule"><div class="rt2">9. Only risk what you can afford to lose</div><p class="rx">Say it plainly: crypto can lose most of its value, fast, and sometimes for good. Money you need for rent, bills or family does not belong in it — no matter what anyone online is posting about their wins.</p></div>
+    </details>
+
+    <div class="join">
+      <div style="font-weight:900;font-size:17px">Get more plain-English guides free — plus 10% off your first order</div>
+      <p style="color:var(--dim);font-size:14px">Join the A.I. NOW list at the store: new cheat sheets and guides land there first, and list members get 10% off their first store order.</p>
+      <a class="btn" href="https://artificial-intelligencenow.com/pages/join-the-list">Join the List — free</a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>🌐 Keep exploring A.I. NOW</h2>
+    <p class="note">This page is one room in a big house. Here's the rest of it.</p>
+    <div class="xlinks">
+      <a class="card" href="https://hub.artificial-intelligencenow.com"><div class="ct">🏠 The Hub — home</div><div class="cd">Live AI news, the full tools directory, free prompt packs and every A.I. NOW branch.</div><span class="cl">hub.artificial-intelligencenow.com →</span></a>
+      <a class="card" href="https://shop.artificial-intelligencenow.com"><div class="ct">🛍️ The Store — new door</div><div class="cd">The A.I. NOW store's new address — trending finds, gifts and gear from our Detroit shop.</div><span class="cl">shop.artificial-intelligencenow.com →</span></a>
+      <a class="card" href="https://world.artificial-intelligencenow.com"><div class="ct">🌍 World Watch</div><div class="cd">Live earthquakes, storms, wildfires and severe weather from official sources — plus free help resources when an event hits.</div><span class="cl">world.artificial-intelligencenow.com →</span></a>
+    </div>
+  </section>
+</main>
+<footer>
+  A.I. NOW — Detroit, Michigan. <b style="color:var(--yel)">This page is education, not financial advice.</b> Prices are pulled live from CoinGecko's public feed and can change by the second; headlines belong to their publishers and link to the original stories. Tool and platform names belong to their owners — directory links go to each one's official site. Never invest money you can't afford to lose, and never trust anyone who promises you returns.
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+function tick(){const d=new Date();$('clock').textContent=d.toLocaleTimeString('en-US',{hour12:true})+' Detroit';}
+setInterval(tick,1000);tick();
+function ago(t){const s=(Date.now()-t)/1000;if(s<0)return 'just now';if(s<3600)return Math.max(1,Math.round(s/60))+'m ago';if(s<86400)return Math.round(s/3600)+'h ago';return Math.round(s/86400)+'d ago';}
+function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function fmtUSD(n){return '$'+Number(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+
+/* Live prices: real BTC + ETH prices from CoinGecko's free public price endpoint
+   (no API key). Prices are never hard-coded; if the feed fails, the strip says so
+   plainly instead of showing a made-up number. */
+async function loadPrices(){
+  try{
+    const r=await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd&include_24hr_change=true');
+    if(!r.ok)throw new Error('price feed HTTP '+r.status);
+    const j=await r.json();
+    const pairs=[['bitcoin','p-btc','c-btc'],['ethereum','p-eth','c-eth']];
+    let ok=false;
+    pairs.forEach(([id,valId,chgId])=>{
+      const d=j[id];
+      if(!d||typeof d.usd!=='number')return;
+      ok=true;
+      $(valId).textContent=fmtUSD(d.usd);
+      const chg=d.usd_24h_change;
+      if(typeof chg==='number'){
+        const up=chg>=0;
+        $(chgId).innerHTML='<span class="'+(up?'up':'down')+'">'+(up?'▲':'▼')+' '+Math.abs(chg).toFixed(2)+'% in the last 24h</span>';
+      } else { $(chgId).textContent=''; }
+    });
+    if(!ok)throw new Error('price feed returned no prices');
+    $('p-note').innerHTML='Source: CoinGecko public API · updated '+new Date().toLocaleTimeString('en-US')+'. The 24-hour change is shown for context — it is not a prediction of what happens next.';
+  }catch(e){
+    $('p-btc').textContent='—';$('p-eth').textContent='—';
+    $('c-btc').textContent='';$('c-eth').textContent='';
+    $('p-note').innerHTML='<span class="err">⚠️ The live price feed is unavailable right now — we\'d rather show you nothing than a made-up number. Check current prices directly at <a href="https://www.coingecko.com" target="_blank" rel="noopener">CoinGecko</a>.</span>';
+  }
+}
+loadPrices();setInterval(loadPrices,120000);
+
+/* Live news: real headlines pulled client-side via the rss2json reader (the same
+   approach the hub front door uses). Each feed fails independently; if every feed
+   fails, the section falls back to a plain note plus the source cards under it —
+   headlines are never invented or hard-coded. */
+const FEEDS=[
+  {name:'CoinDesk',cls:'b-pink',url:'https://www.coindesk.com/arc/outboundfeeds/rss/'},
+  {name:'CoinTelegraph',cls:'b-vio',url:'https://cointelegraph.com/rss'},
+  {name:'BBC Business',cls:'b-cyn',url:'https://feeds.bbci.co.uk/news/business/rss.xml'}
+];
+async function loadOneFeed(f){
+  const r=await fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(f.url));
+  const j=await r.json();
+  if(j.status!=='ok'||!j.items)return [];
+  return j.items.map(it=>({time:new Date((it.pubDate||'').replace(' ','T')).getTime()||0,title:it.title,url:it.link,src:f.name,cls:f.cls}));
+}
+async function loadNews(){
+  const results=await Promise.allSettled(FEEDS.map(loadOneFeed));
+  let items=[];
+  results.forEach(r=>{if(r.status==='fulfilled')items=items.concat(r.value);});
+  items=items.filter(n=>n.title&&n.url);
+  items.sort((a,b)=>b.time-a.time);
+  if(!items.length){
+    $('news').innerHTML='<p class="err">The live headline feeds aren\'t answering right now — no stale stories shown in their place. Read the latest straight from the sources below.</p>';
+    $('updated').textContent='news feeds unreachable — source links below';
+    return;
+  }
+  $('news').innerHTML=items.slice(0,12).map(n=>
+    '<div class="ev"><div class="top"><span class="badge '+n.cls+'">'+esc(n.src)+'</span><span style="color:var(--dim);font-size:12px">'+(n.time?ago(n.time):'')+'</span></div>'+
+    '<div class="t"><a href="'+esc(n.url)+'" target="_blank" rel="noopener" style="color:var(--txt)">'+esc(n.title)+'</a></div></div>').join('');
+  $('updated').textContent='money news updated '+new Date().toLocaleTimeString('en-US');
+}
+loadNews();setInterval(loadNews,600000);
+</script>
+</body>
+</html>

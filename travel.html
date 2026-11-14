@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI × TRAVEL — Plan Trips, Dodge Scams, Travel Smarter with AI | A.I. NOW Hub</title>
+<meta name="description" content="AI can draft your itinerary, watch your fares, translate the menu and help you spot a fake booking site. AI × TRAVEL explains what travel AI can do, what it can't, and how to check its work — in plain English, with live travel news, honest tool links and a free prompt pack.">
+<style>
+  :root{--bg:#0b0e13;--panel:#131720;--panel2:#171c28;--line:#2a3350;--txt:#eef1f6;--dim:#a7b1c6;--red:#ff4d5e;--org:#ff9f43;--yel:#ffd166;--grn:#3ddc84;--blu:#4da3ff;--cyan:#22d3ee;--pink:#ff3e8a;--violet:#a855f7;--lime:#a3e635}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.45}
+  a{color:var(--cyan);text-decoration:none}
+  a:hover{text-decoration:underline}
+  header{position:sticky;top:0;z-index:10;background:rgba(11,14,19,.94);backdrop-filter:blur(8px);border-bottom:2px solid var(--cyan)}
+  .bar{max-width:1180px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .logo{font-weight:900;font-size:24px;letter-spacing:.5px;color:var(--txt)}
+  .logo .now{background:linear-gradient(90deg,var(--pink),var(--violet),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .pill{display:inline-flex;align-items:center;gap:7px;background:#1c1030;border:2px solid var(--violet);color:#e9d5ff;font-size:12px;font-weight:800;padding:4px 12px;border-radius:999px;letter-spacing:1px}
+  .live{display:inline-flex;align-items:center;gap:7px;background:#2a0f16;border:2px solid var(--red);color:#ffb3ba;font-size:12px;font-weight:800;padding:4px 12px;border-radius:999px;letter-spacing:1px}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--red);animation:pulse 1.4s infinite}
+  @keyframes pulse{0%{opacity:1}50%{opacity:.25}100%{opacity:1}}
+  .clock{margin-left:auto;color:var(--dim);font-size:13px;text-align:right}
+  .clock b{color:var(--txt);font-size:15px}
+  main{max-width:1180px;margin:0 auto;padding:22px 18px 40px}
+  .hero{padding:10px 0 4px}
+  h1{font-size:clamp(46px,11vw,92px);font-weight:900;line-height:.98;letter-spacing:-1px;text-transform:uppercase}
+  h1 .grad{background:linear-gradient(92deg,var(--cyan) 0%,var(--blu) 34%,var(--violet) 68%,var(--pink) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{color:var(--dim);margin-top:12px;max-width:780px;font-size:clamp(15px,2.4vw,18px)}
+  .sub b{color:var(--txt)}
+  .panel{background:var(--panel);border:2px solid var(--line);border-radius:20px;padding:20px;margin-bottom:20px}
+  .panel h2{font-size:clamp(21px,3.4vw,27px);font-weight:900;margin-bottom:4px;text-transform:uppercase;letter-spacing:.3px}
+  .panel .note{color:var(--dim);font-size:13.5px;margin-bottom:12px}
+  .bar-pink{border-top:6px solid var(--pink)} .bar-violet{border-top:6px solid var(--violet)} .bar-cyan{border-top:6px solid var(--cyan)} .bar-lime{border-top:6px solid var(--lime)} .bar-org{border-top:6px solid var(--org)} .bar-red{border-top:6px solid var(--red)}
+  .ev{border:1px solid var(--line);background:var(--panel2);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+  .ev .top{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+  .badge{font-size:11px;font-weight:800;letter-spacing:.6px;padding:3px 9px;border-radius:999px;text-transform:uppercase}
+  .b-pink{background:#3d0f27;color:#ffc2da;border:1px solid var(--pink)}
+  .b-violet{background:#2a1245;color:#e9d5ff;border:1px solid var(--violet)}
+  .b-cyan{background:#0b2f3a;color:#a5f3fc;border:1px solid var(--cyan)}
+  .b-lime{background:#22330a;color:#d9f99d;border:1px solid var(--lime)}
+  .b-org{background:#38230f;color:#ffd9ad;border:1px solid var(--org)}
+  .b-red{background:#3a1218;color:#ffb3ba;border:1px solid var(--red)}
+  .b-dim{background:#1a2030;color:var(--dim);border:1px solid var(--line)}
+  .ev .t{font-weight:800;font-size:15.5px}
+  .ev .m{color:var(--dim);font-size:13px;margin-top:2px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+  .card{border:2px solid var(--line);background:var(--panel2);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:7px}
+  .card .ct{font-weight:900;font-size:18px}
+  .card .cd{color:var(--dim);font-size:14px;flex:1}
+  .card .cd b{color:var(--txt)}
+  .card .cl{font-weight:800;font-size:14px}
+  .a-pink{border-top:7px solid var(--pink)} .a-violet{border-top:7px solid var(--violet)} .a-cyan{border-top:7px solid var(--cyan)} .a-lime{border-top:7px solid var(--lime)} .a-org{border-top:7px solid var(--org)} .a-yel{border-top:7px solid var(--yel)}
+  a.card{color:var(--txt)}
+  a.card:hover{border-color:var(--cyan);text-decoration:none}
+  .srcrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:4px}
+  .srcrow a.row{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);background:var(--panel2);border-radius:12px;padding:12px 14px;color:var(--txt)}
+  .srcrow a.row:hover{border-color:var(--cyan);text-decoration:none}
+  .row .rt{font-weight:800}
+  .row .rd{color:var(--dim);font-size:12.5px}
+  .row .arr{font-size:18px;color:var(--dim)}
+  details.pack{border:2px solid var(--violet);background:var(--panel2);border-radius:16px;padding:6px 16px 14px;margin-bottom:14px}
+  details.pack summary{cursor:pointer;font-weight:900;font-size:17px;padding:12px 0}
+  .prompt{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:11px 12px;margin-bottom:9px}
+  .prompt .pt{font-weight:800;font-size:14px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .prompt .px{color:var(--dim);font-size:13.5px;margin-top:5px;white-space:pre-wrap}
+  .copybtn{background:linear-gradient(90deg,var(--pink),var(--violet));border:0;color:#fff;font-weight:800;font-size:12px;padding:6px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  .copybtn:hover{opacity:.9}
+  .emg{background:#0b2f3a;border:2px solid var(--cyan);border-radius:16px;padding:16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .emg .et{font-weight:900;font-size:18px}
+  .emg .ed{color:var(--dim);font-size:14px}
+  .emg a.btn{margin-left:auto;background:var(--cyan);color:#04222b;font-weight:900;padding:11px 20px;border-radius:999px;white-space:nowrap}
+  .emg a.btn:hover{text-decoration:none;opacity:.92}
+  .join{background:linear-gradient(92deg,#3d0f27,#2a1245 55%,#0b2f3a);border:2px solid var(--pink);border-radius:16px;padding:18px;text-align:center}
+  .join a.btn{display:inline-block;margin-top:8px;background:linear-gradient(90deg,var(--pink),var(--violet));color:#fff;font-weight:900;padding:12px 24px;border-radius:999px}
+  .join a.btn:hover{text-decoration:none;opacity:.92}
+  footer{max-width:1180px;margin:0 auto;padding:0 18px 34px;color:var(--dim);font-size:12.5px}
+  footer .xlinks{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+  footer .xlinks a{flex:1;min-width:220px;text-align:center;border:2px solid var(--line);background:var(--panel2);border-radius:12px;padding:13px 14px;color:var(--txt);font-weight:900;font-size:14.5px}
+  footer .xlinks a:hover{border-color:var(--pink);text-decoration:none}
+  .err{color:var(--org);font-size:13px}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <div class="logo">A.I. <span class="now">NOW</span></div>
+    <span class="pill">THE HUB</span>
+    <span class="live"><span class="dot"></span>LIVE</span>
+    <div class="clock"><b id="clock">--:--:--</b><br><span id="updated">loading live news…</span></div>
+  </div>
+</header>
+<main>
+  <div class="hero">
+    <h1>AI × <span class="grad">TRAVEL</span></h1>
+    <p class="sub">AI can <b>draft your itinerary, watch your fares, translate the menu and help you spot a fake booking site</b> — if you know how to use it and where it fibs. This page explains what travel AI can do, what it <b>can't</b>, and how to check its work before you hand over a dollar. Plain English, no hype.</p>
+  </div>
+
+  <section class="panel bar-cyan">
+    <h2>📰 Live news — travel, right now</h2>
+    <p class="note">The newest headlines from Skift, The Points Guy and The Verge, pulled live and newest first. Every headline links to the original story at the source.</p>
+    <div id="news"><p class="note">Loading headlines…</p></div>
+    <div class="srcrow">
+      <a class="row" href="https://skift.com" target="_blank" rel="noopener"><span><span class="rt">Skift</span><br><span class="rd">The travel industry, covered daily</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://thepointsguy.com" target="_blank" rel="noopener"><span><span class="rt">The Points Guy</span><br><span class="rd">Flights, fares, points and travel news</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://www.theverge.com" target="_blank" rel="noopener"><span><span class="rt">The Verge</span><br><span class="rd">Technology and how it moves us</span></span><span class="arr">→</span></a>
+    </div>
+  </section>
+
+  <section class="panel bar-lime">
+    <h2>🧳 AI for travel, explained</h2>
+    <p class="note">Five ways AI already shows up in a trip — what each one is genuinely good at, and the catch nobody puts in the ads. Balanced on purpose.</p>
+    <div class="cards">
+      <div class="card a-lime">
+        <div class="ct">🗺️ AI itinerary builders</div>
+        <div class="cd">Give an AI your dates, budget and pace and it drafts a day-by-day plan in seconds — neighborhoods, sights, even rough timing. <b>The catch:</b> it plans from patterns in old information, so it can cheerfully schedule a museum on its closed day or a restaurant that shut down last year. Use it as a strong first draft, then <b>check every hour, price and address on the official site</b> before you build your day around it.</div>
+      </div>
+      <div class="card a-cyan">
+        <div class="ct">💸 Price-prediction &amp; fare-watching AI</div>
+        <div class="cd">Tools like Hopper and Google Flights study fare history and nudge you: "prices usually rise soon" or "this is likely to drop." Fare watching is genuinely useful — set the alert and let it stare at the price so you don't have to. <b>The honest limit:</b> a prediction is an educated guess, not a promise. Fares jump for reasons no model sees coming, so treat "buy now" advice as a weather forecast, not a guarantee.</div>
+      </div>
+      <div class="card a-violet">
+        <div class="ct">🗣️ Translation AI</div>
+        <div class="cd">Point your camera at a sign or menu and read it in your language; hold a two-way conversation with a stranger through the phone. For menus, signs, directions and polite small talk, this is close to magic. <b>The limit:</b> nuance, slang, dialect and anything legal or medical can come out wrong — download the offline language pack before you go, and for anything that truly matters, get a human to confirm.</div>
+      </div>
+      <div class="card a-org">
+        <div class="ct">🕵️ Fake reviews &amp; booking scams</div>
+        <div class="cd">Review sections are full of bought praise, and scam sites copy real hotels almost perfectly. AI can help you read smarter: scan for reviews that repeat the same phrases, check whether praise sounds like an ad, and cross-check a "deal" against the hotel's own site. <b>Your best defenses cost nothing:</b> book through the official site or app, be suspicious of prices that beat everyone by a mile, and never pay by gift card or wire transfer.</div>
+      </div>
+      <div class="card a-pink">
+        <div class="ct">📱 AI assistants in airline &amp; hotel apps</div>
+        <div class="cd">When a flight gets canceled, the airline app's assistant can rebook you, reissue a boarding pass and answer baggage questions at 2 a.m. — often faster than the phone line. Hotels use the same tech for check-in and requests. <b>The limit:</b> bots handle the routine stuff and fumble the weird stuff. If your situation involves money, a missed connection or a mistake the airline made, push politely for a human — you're allowed.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel bar-pink">
+    <h2>🧰 Travel AI tools directory</h2>
+    <p class="note">Legit tools for planning and taking a trip — what each one is for, with a straight link to its official site. We don't post fares or "deals" here; prices change by the minute, so check them live at the source.</p>
+    <!-- AFFILIATE SWAP: tracked links when Impact/PartnerStack approve -->
+    <div class="cards">
+      <div class="card"><div class="ct">Google Travel</div><div class="cd">Search flights and hotels, compare across airlines, and turn on price tracking so Google watches the fare for you.</div><a class="cl" href="https://www.google.com/travel" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Gemini</div><div class="cd">Google's AI chat — brainstorm destinations, draft day-by-day itineraries and ask follow-ups in plain language.</div><a class="cl" href="https://gemini.google.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Hopper</div><div class="cd">An app built on price prediction: it forecasts whether a flight or hotel price is likely to rise or drop, and watches it for you.</div><a class="cl" href="https://www.hopper.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">TripIt</div><div class="cd">Forward your booking emails and TripIt assembles flights, hotels and cars into one master itinerary you can actually follow.</div><a class="cl" href="https://www.tripit.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Booking.com — AI Trip Planner</div><div class="cd">A chat-based planner inside Booking.com: describe the trip you want and it suggests places and stays you can book in the same flow.</div><a class="cl" href="https://www.booking.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">GuideGeek</div><div class="cd">A free AI travel assistant that works inside WhatsApp and Messenger — ask it questions and get itineraries without a new app.</div><a class="cl" href="https://guidegeek.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card"><div class="ct">Rome2Rio</div><div class="cd">The "how do I actually get there?" machine: planes, trains, buses, ferries and driving, door to door, anywhere on Earth.</div><a class="cl" href="https://www.rome2rio.com" target="_blank" rel="noopener">Official site →</a></div>
+    </div>
+  </section>
+
+  <section class="panel" style="padding:14px">
+    <div class="emg">
+      <div>
+        <div class="et">🌦️ Going somewhere? Check it first.</div>
+        <div class="ed">Before you book — and again before you leave — check the weather, disasters and official alerts for your destination. World Watch tracks live earthquakes, storms, wildfires and severe weather from official sources, all in one place, free.</div>
+      </div>
+      <a class="btn" href="https://world.artificial-intelligencenow.com">Check World Watch →</a>
+    </div>
+  </section>
+
+  <section class="panel bar-violet">
+    <h2>🎁 Free download — our own stuff</h2>
+    <p class="note">Made by A.I. NOW, free to use, right on this page. We never offer downloads of other companies' software — for the tools themselves, use the official links above.</p>
+
+    <details class="pack" open>
+      <summary>📋 The Trip Planner Prompt Pack — plan it with AI, check it like a skeptic</summary>
+      <p class="note" style="margin-top:4px">Hit Copy, paste into ChatGPT, Gemini or any AI chat, and swap the [brackets] for your details. Then verify anything important at the official source — the pack is a planner, not a travel agent.</p>
+
+      <div class="prompt"><div class="pt">Draft my itinerary <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Draft a [number]-day itinerary for [destination] for [number] travelers, at a relaxed pace, with a total budget of about $[amount] not counting flights. Keep each day in one neighborhood or area so we're not crossing town all day. Mix one big sight with downtime, note anything that usually needs booking in advance, and mark anything you're unsure about so I can verify it before I count on it.</p></div>
+
+      <div class="prompt"><div class="pt">Split my trip budget <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">I have $[amount] total for a [number]-day trip to [destination] for [number] people, after flights. Split it into a simple daily budget: lodging, food, local transport, activities, and a cushion for surprises. Show it as a table, flag the category most likely to blow up, and give me two honest ways to trim if money gets tight. No made-up prices — use ranges and tell me to check real prices live.</p></div>
+
+      <div class="prompt"><div class="pt">Build my packing list <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Build me a packing list for [number] days in [destination] in [month], [carry-on only / checked bag OK]. Typical weather that time of year, walking-heavy days, one nicer dinner. Group it by: wear on the plane, in the bag, documents & money, chargers & tech, and a short "glad I brought it" section of small things people forget. Keep it realistic — if it doesn't fit a carry-on, say so.</p></div>
+
+      <div class="prompt"><div class="pt">Local phrases that matter <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Teach me the 20 most useful phrases for a trip to [destination], in [language]: hello, please, thank you, excuse me, where is…?, how much?, the check please, water, bathroom, help, emergency, I don't understand, slower please, taxi phrases, and ordering food. For each: the phrase, how to say it out loud in simple English sounds, and one short note on local politeness if it matters.</p></div>
+
+      <div class="prompt"><div class="pt">Check my plan like a skeptic <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Here is a trip plan another AI made for me. Read it like a skeptic: flag anything that might not exist, sounds closed or out of season, assumes impossible timing, or needs a booking I haven't made. List what I should verify, and where to verify it (official site, map, or phone call). Don't rewrite the whole plan — just give me the check-list.
+[PASTE THE PLAN HERE]</p></div>
+    </details>
+
+    <div class="join">
+      <div style="font-weight:900;font-size:17px">Get the next packs free — plus 10% off your first order</div>
+      <p style="color:var(--dim);font-size:14px">Join the A.I. NOW list at the store: new prompt packs and plain-English guides land there first, and list members get 10% off their first store order.</p>
+      <a class="btn" href="https://artificial-intelligencenow.com/pages/join-the-list">Join the List — free</a>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="xlinks">
+    <a href="https://hub.artificial-intelligencenow.com">🏠 Hub home — A.I. NOW</a>
+    <a href="https://shop.artificial-intelligencenow.com">🛍️ The store's new door — shop.</a>
+  </div>
+  A.I. NOW — Detroit, Michigan. News headlines are pulled live from Skift, The Points Guy and The Verge; each headline belongs to its publisher and links to the original story. Tool names belong to their owners — directory links go to each tool's official site.<br><br>
+  ✈️ <b>Straight talk:</b> AI itineraries and fare predictions are drafts and educated guesses, not guarantees. This page never posts fares or deals — prices change by the minute, so check them live at the official source, and verify hours, bookings and addresses before you rely on them.
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+function tick(){const d=new Date();$('clock').textContent=d.toLocaleTimeString('en-US',{hour12:true})+' Detroit';}
+setInterval(tick,1000);tick();
+function ago(t){const s=(Date.now()-t)/1000;if(s<0)return 'just now';if(s<3600)return Math.max(1,Math.round(s/60))+'m ago';if(s<86400)return Math.round(s/3600)+'h ago';return Math.round(s/86400)+'d ago';}
+function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function copyPrompt(btn){
+  const box=btn.closest('.prompt');const txt=box?box.querySelector('.px').innerText:'';
+  const done=()=>{const old=btn.textContent;btn.textContent='Copied ✓';setTimeout(()=>{btn.textContent=old;},1600);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(()=>fallbackCopy(txt,done));}
+  else{fallbackCopy(txt,done);}
+}
+function fallbackCopy(txt,done){
+  const ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');done();}catch(e){}
+  document.body.removeChild(ta);
+}
+/* Live news for AI × TRAVEL: real headlines pulled client-side via the rss2json reader
+   (the same approach the hub front door uses). Feeds were tested before selection —
+   Skift, The Points Guy and The Verge all return live items; BBC Travel, Lonely Planet,
+   AFAR and Travel + Leisure feeds did not answer and were dropped. Each feed fails
+   independently; if every feed fails, the section falls back to a plain note plus the
+   source cards under it — headlines are never invented or hard-coded. */
+const FEEDS=[
+  {name:'Skift',cls:'b-cyan',url:'https://skift.com/feed/'},
+  {name:'The Points Guy',cls:'b-lime',url:'https://thepointsguy.com/feed/'},
+  {name:'The Verge',cls:'b-pink',url:'https://www.theverge.com/rss/index.xml'}
+];
+async function loadOneFeed(f){
+  const r=await fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(f.url));
+  const j=await r.json();
+  if(j.status!=='ok'||!j.items)return [];
+  return j.items.map(it=>({time:new Date((it.pubDate||'').replace(' ','T')).getTime()||0,title:it.title,url:it.link,src:f.name,cls:f.cls}));
+}
+async function loadNews(){
+  const results=await Promise.allSettled(FEEDS.map(loadOneFeed));
+  let items=[];
+  results.forEach(r=>{if(r.status==='fulfilled')items=items.concat(r.value);});
+  items=items.filter(n=>n.title&&n.url);
+  items.sort((a,b)=>b.time-a.time);
+  if(!items.length){
+    $('news').innerHTML='<p class="err">The live headline feeds aren\'t answering right now — no stale stories shown in their place. Read the latest straight from the sources below.</p>';
+    $('updated').textContent='news feeds unreachable — source links below';
+    return;
+  }
+  $('news').innerHTML=items.slice(0,12).map(n=>
+    '<div class="ev"><div class="top"><span class="badge '+n.cls+'">'+esc(n.src)+'</span><span style="color:var(--dim);font-size:12px">'+(n.time?ago(n.time):'')+'</span></div>'+
+    '<div class="t" style="font-size:15px"><a href="'+esc(n.url)+'" target="_blank" rel="noopener" style="color:var(--txt)">'+esc(n.title)+'</a></div></div>').join('');
+  $('updated').textContent='travel news updated '+new Date().toLocaleTimeString('en-US');
+}
+loadNews();setInterval(loadNews,600000);
+</script>
+</body>
+</html>

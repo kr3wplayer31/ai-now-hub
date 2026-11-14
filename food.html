@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI × FOOD — Recipes, Meal Plans &amp; Kitchen Help, Explained | A.I. NOW Hub</title>
+<meta name="description" content="AI in the kitchen, explained in plain English: recipe generators from what's in your fridge, meal planning on a budget, grocery-list automation, honest nutrition info, and delivery AI. Live food headlines from Serious Eats, Eater and BBC Technology.">
+<style>
+  :root{
+    --bg:#07050f;--panel:#100b22;--panel2:#171030;--line:#33235c;
+    --txt:#f5f1ff;--dim:#b3a8d9;
+    --pink:#ff2e88;--vio:#8b3dff;--cyan:#22d3ee;--lime:#a6f750;
+    --org:#ff9f43;--red:#ff4d5e;--grn:#3ddc84
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:
+      radial-gradient(900px 480px at 12% -6%, rgba(139,61,255,.34), transparent 60%),
+      radial-gradient(800px 420px at 88% 0%, rgba(255,46,136,.26), transparent 60%),
+      radial-gradient(700px 500px at 50% 108%, rgba(34,211,238,.16), transparent 60%),
+      var(--bg);
+    color:var(--txt);
+    font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.45;
+  }
+  a{color:var(--cyan);text-decoration:none}
+  a:hover{text-decoration:underline}
+  header{position:sticky;top:0;z-index:10;background:rgba(7,5,15,.92);backdrop-filter:blur(8px);border-bottom:2px solid var(--line)}
+  .bar{max-width:1180px;margin:0 auto;padding:13px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .logo{font-weight:900;font-size:23px;letter-spacing:.5px;color:var(--txt)}
+  .logo .now{background:linear-gradient(90deg,var(--pink),var(--vio),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .pill{display:inline-flex;align-items:center;gap:7px;background:#1b0f33;border:2px solid var(--vio);color:#d9c6ff;font-size:12px;font-weight:800;padding:4px 11px;border-radius:999px;letter-spacing:1px}
+  .livedot{width:9px;height:9px;border-radius:50%;background:var(--pink);box-shadow:0 0 10px var(--pink);animation:pulse 1.3s infinite}
+  @keyframes pulse{0%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.8)}100%{opacity:1;transform:scale(1)}}
+  .clock{margin-left:auto;color:var(--dim);font-size:13px;text-align:right}
+  .clock b{color:var(--txt);font-size:15px}
+  main{max-width:1180px;margin:0 auto;padding:22px 18px 44px}
+  /* HERO */
+  .hero{padding:22px 4px 8px;text-align:left}
+  .kicker{display:inline-flex;align-items:center;gap:8px;background:#24082a;border:2px solid var(--pink);color:#ffd3e8;font-weight:900;font-size:12.5px;letter-spacing:2px;padding:5px 13px;border-radius:999px;text-transform:uppercase}
+  h1{font-size:clamp(46px,9.5vw,92px);font-weight:900;line-height:.98;letter-spacing:-1px;margin:16px 0 6px;text-transform:uppercase}
+  h1 .g{background:linear-gradient(92deg,var(--pink) 5%,var(--vio) 42%,var(--cyan) 78%,var(--lime) 105%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 0 18px rgba(139,61,255,.45))}
+  .sub{color:var(--dim);font-size:clamp(15px,2.4vw,19px);max-width:820px;margin-top:8px}
+  .sub b{color:var(--txt)}
+  /* PANELS */
+  .panel{background:linear-gradient(180deg,rgba(255,255,255,.025),transparent),var(--panel);border:2px solid var(--line);border-radius:20px;padding:20px;margin:20px 0}
+  .panel h2{font-size:clamp(21px,3.6vw,28px);font-weight:900;margin-bottom:5px;text-transform:uppercase;letter-spacing:.4px}
+  .panel h2 .a-pink{color:var(--pink)} .panel h2 .a-cyan{color:var(--cyan)} .panel h2 .a-lime{color:var(--lime)} .panel h2 .a-vio{color:#c9a6ff}
+  .panel .note{color:var(--dim);font-size:13.5px;margin-bottom:14px}
+  /* NEWS ITEMS */
+  .ev{border:2px solid var(--line);background:var(--panel2);border-radius:14px;padding:12px 15px;margin-bottom:10px}
+  .ev .top{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+  .badge{font-size:11px;font-weight:900;letter-spacing:.7px;padding:3px 9px;border-radius:999px;text-transform:uppercase;border:2px solid}
+  .b-pink{background:#33091f;color:#ffb9d8;border-color:var(--pink)}
+  .b-vio{background:#220b4d;color:#dcc9ff;border-color:var(--vio)}
+  .b-cyan{background:#06303c;color:#b5f0fb;border-color:var(--cyan)}
+  .b-lime{background:#1e3306;color:#dcffb5;border-color:var(--lime)}
+  .b-org{background:#38230f;color:#ffd9ad;border-color:var(--org)}
+  .b-grn{background:#0f2f1e;color:#a9f0cd;border-color:var(--grn)}
+  .ev .t{font-weight:800;font-size:15.5px}
+  /* CARDS */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .card{border:2px solid var(--line);background:var(--panel2);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:7px}
+  .card .ct{font-weight:900;font-size:17px}
+  .card .cd{color:var(--dim);font-size:13.5px;flex:1}
+  .card .cl{font-weight:800;font-size:13.5px}
+  a.card{color:var(--txt);transition:transform .15s ease,border-color .15s ease}
+  a.card:hover{border-color:var(--pink);text-decoration:none;transform:translateY(-3px)}
+  .card.pink{border-color:var(--pink)} .card.vio{border-color:var(--vio)} .card.cyan{border-color:var(--cyan)} .card.lime{border-color:var(--lime)}
+  /* HONEST LINE */
+  .honest{border:2px solid var(--org);background:#241505;border-radius:14px;padding:14px 16px;font-size:14.5px;margin-top:14px}
+  .honest b{color:#ffd9ad}
+  /* SOURCE ROWS */
+  .srcrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:6px}
+  .srcrow a.row{display:flex;justify-content:space-between;align-items:center;gap:10px;border:2px solid var(--line);background:var(--panel2);border-radius:14px;padding:12px 15px;color:var(--txt)}
+  .srcrow a.row:hover{border-color:var(--cyan);text-decoration:none}
+  .row .rt{font-weight:800}
+  .row .rd{color:var(--dim);font-size:12.5px}
+  .row .arr{font-size:18px;color:var(--dim)}
+  /* COLLAPSIBLE PACK */
+  details.pack{border:2px solid var(--vio);background:var(--panel2);border-radius:16px;padding:6px 16px 14px;margin-bottom:14px}
+  details.pack summary{cursor:pointer;font-weight:900;font-size:16.5px;padding:11px 0}
+  .prompt{border:2px solid var(--line);background:var(--panel);border-radius:12px;padding:12px 13px;margin-bottom:10px}
+  .prompt .pt{font-weight:800;font-size:14.5px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .prompt .px{color:var(--dim);font-size:14px;margin-top:5px;white-space:pre-wrap}
+  .copybtn{background:linear-gradient(92deg,var(--pink),var(--vio));border:0;color:#fff;font-weight:900;font-size:12.5px;padding:6px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  /* JOIN */
+  .join{background:linear-gradient(90deg,#2b0a33,#0d1b3d);border:2px solid var(--vio);border-radius:16px;padding:18px;text-align:center}
+  .join a.btn{display:inline-block;margin-top:9px;background:var(--lime);color:#0c1a02;font-weight:900;padding:12px 24px;border-radius:999px}
+  .join a.btn:hover{text-decoration:none;opacity:.92}
+  /* CROSS LINKS */
+  .xlinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  footer{max-width:1180px;margin:0 auto;padding:0 18px 36px;color:var(--dim);font-size:12.5px}
+  .err{color:var(--org);font-size:13px}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="logo" href="https://hub.artificial-intelligencenow.com" style="text-decoration:none">A.I. <span class="now">NOW</span></a>
+    <span class="pill">🍳 AI × FOOD</span>
+    <div class="clock"><b id="clock">--:--:--</b><br><span id="updated">loading live food news…</span></div>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <span class="kicker"><span class="livedot"></span> A.I. NOW Hub — Food Desk</span>
+    <h1>AI × <span class="g">FOOD</span></h1>
+    <p class="sub">AI can turn whatever is sitting in your fridge into dinner, stretch a grocery budget across a whole week, and build your shopping list while you think about something else. This desk explains it in <b>plain English</b> — live food headlines, what the kitchen tech actually does, and the honest places it can get things wrong.</p>
+  </section>
+
+  <section class="panel" style="border-color:var(--pink)">
+    <h2><span class="livedot" style="display:inline-block;vertical-align:middle;margin-right:8px"></span>📰 Live food <span class="a-pink">news</span></h2>
+    <p class="note">The newest headlines from food writers and the tech desk, pulled live and newest first. Every headline links to the original story at the source.</p>
+    <div id="news"><p class="note">Loading headlines…</p></div>
+    <div class="srcrow">
+      <a class="row" href="https://www.seriouseats.com" target="_blank" rel="noopener"><span><span class="rt">Serious Eats</span><br><span class="rd">Recipes and kitchen science</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://www.eater.com" target="_blank" rel="noopener"><span><span class="rt">Eater</span><br><span class="rd">Restaurants and food news</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://www.bbc.com/news/technology" target="_blank" rel="noopener"><span><span class="rt">BBC Technology</span><br><span class="rd">The tech behind the food world</span></span><span class="arr">→</span></a>
+    </div>
+  </section>
+
+  <section class="panel" style="border-color:var(--vio)">
+    <h2>🧠 AI in the kitchen, <span class="a-vio">explained</span></h2>
+    <p class="note">Five places AI is already helping people eat — what each one really does, and where you should double-check it.</p>
+    <div class="cards">
+      <div class="card pink"><div class="ct">🥕 Recipe generators — dinner from what's in the fridge</div><div class="cd">Tell an AI what you have — half an onion, chicken thighs, rice going stale — and it will build a recipe around exactly those ingredients, in the order you should cook them. It's the fastest cure for the 6 p.m. "there's nothing to eat" stare. One catch: AI invents confidently, so skim the recipe before you start — odd quantities and missing steps show up, and a sauce that sounds exotic can be a typo in disguise.</div></div>
+      <div class="card vio"><div class="ct">🛒 Meal planning on a budget</div><div class="cd">Give an AI your weekly budget, your store, and how many people are eating, and it can lay out a week of dinners that share ingredients — the big pack of chicken shows up twice, the herbs get used before they wilt — so less money rots in the crisper drawer. Prices it quotes are guesses, though: treat the plan as a smart draft and let the store's actual prices have the final word.</div></div>
+      <div class="card cyan"><div class="ct">📝 Grocery-list automation</div><div class="cd">The quiet time-saver: meal-planning apps and AI chats turn your chosen recipes into one combined shopping list — three recipes needing garlic become one line for "2 heads of garlic" — sorted by store aisle. Some apps remember what you buy every week and draft the basics before you ask. You still walk the store, but the list writes itself.</div></div>
+      <div class="card lime"><div class="ct">🏷️ Nutrition-info apps — the honest version</div><div class="cd">Snap a photo of your plate or scan a barcode and these apps estimate calories, protein and ingredients. Useful as a rough guide for everyday awareness — but they are estimates, sometimes rough ones, and an app does not know a food's full recipe or what matters for your body. Nothing here replaces a doctor or dietitian, and no app output should ever decide what's safe for someone with an allergy or a medical condition.</div></div>
+      <div class="card pink"><div class="ct">🛵 Delivery &amp; restaurant AI</div><div class="cd">Behind the delivery apps, AI predicts when your food will actually arrive, groups orders so one driver can carry three dinners, and powers the chat that fixes a missing side of fries. Restaurants use the same ideas to forecast busy nights and prep the right amount of food. It mostly runs invisibly — you notice it on the nights the estimate is suspiciously perfect, and the ones where it isn't.</div></div>
+    </div>
+    <div class="honest"><b>⚠️ Allergy safety — read this one:</b> AI can be wrong about ingredients. It guesses, it confuses similar products, and it cannot see the actual label on the package in your hand. If anyone at your table has a food allergy, <b>always check the real ingredient label yourself</b> — never let an app, a chatbot, or this page decide whether a food is safe.</div>
+  </section>
+
+  <section class="panel" style="border-color:var(--cyan)">
+    <h2>🧰 Food tools people <span class="a-cyan">actually use</span></h2>
+    <p class="note">Legit AI-powered food tools — what each one is for, with a straight link to its official site.</p>
+    <!-- AFFILIATE SWAP: tracked links when Impact/PartnerStack approve -->
+    <div class="cards">
+      <div class="card cyan"><div class="ct">Samsung Food</div><div class="cd">A recipe and meal-planning app that saves recipes from anywhere, builds your week, and turns it all into a shopping list — with AI help personalizing suggestions to your tastes.</div><a class="cl" href="https://samsungfood.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card pink"><div class="ct">Yummly</div><div class="cd">A recipe finder that learns what you like and what you avoid, then surfaces dinners to match — handy when you're bored of your own rotation.</div><a class="cl" href="https://www.yummly.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card vio"><div class="ct">ChatGPT — your recipe brainstorm partner</div><div class="cd">Describe what's in your fridge, your budget, or your picky eater, and brainstorm dinner ideas, swaps and full meal plans in a back-and-forth conversation.</div><a class="cl" href="https://chatgpt.com" target="_blank" rel="noopener">Official site →</a></div>
+      <div class="card lime"><div class="ct">Gemini — your recipe brainstorm partner</div><div class="cd">Google's AI chat does the same kitchen brainstorming trick, and can work from a photo of your fridge or pantry shelf to suggest what to cook first.</div><a class="cl" href="https://gemini.google.com" target="_blank" rel="noopener">Official site →</a></div>
+    </div>
+  </section>
+
+  <section class="panel" style="border-color:var(--lime)">
+    <h2>🎁 Free download — <span class="a-lime">ours only</span></h2>
+    <p class="note">Made by A.I. NOW, free to use. We never offer downloads of other companies' software — for the tools themselves, use the official links above.</p>
+
+    <details class="pack" open>
+      <summary>🍽️ The Meal Plan Prompt Pack — ask any AI chat, in plain words</summary>
+      <p class="note" style="margin-top:4px">Hit Copy on any prompt and paste it into ChatGPT, Gemini, Claude or any AI chat. Swap the [brackets] for your details. One rule from us: if anyone eating has an allergy, tell the AI — then still check every real label yourself, like the safety box above says.</p>
+
+      <div class="prompt"><div class="pt">A week of dinners on a budget <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Plan 5 weeknight dinners for [number] people on a $[amount] grocery budget. Reuse ingredients across meals so nothing goes to waste, keep each dinner under 45 minutes, and give me one combined shopping list sorted by store section. After the plan, list the 3 most expensive items and a cheaper swap for each.</p></div>
+
+      <div class="prompt"><div class="pt">Use up the fridge <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Here is what's in my fridge and pantry right now: [LIST EVERYTHING]. Suggest 3 dinners I can make using mostly these ingredients, starting with whatever will go bad first. For each one, list any extra ingredients I'd need to buy (keep it under 5) and flag any step you are unsure about so I can double-check it.</p></div>
+
+      <div class="prompt"><div class="pt">Swap an ingredient <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">I'm making [recipe name] and I don't have [missing ingredient]. Give me the 3 best substitutes, what changes in taste or texture with each one, and the exact amount to use instead. If the ingredient is the star of the dish and there's no honest substitute, say so instead of guessing.</p></div>
+
+      <div class="prompt"><div class="pt">The picky-kid version <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Here is a dinner recipe my family likes: [PASTE RECIPE]. Make a kid-friendly version for a [age]-year-old who won't eat [foods/textures they reject]. Keep the same basic meal so I'm not cooking twice, keep strong flavors on the side where possible, and don't hide ingredients deceptively — tell me plainly what changed.</p></div>
+    </details>
+
+    <div class="join">
+      <div style="font-weight:900;font-size:17px">Get the next packs and guides free — plus 10% off your first order</div>
+      <p style="color:var(--dim);font-size:14px">Join the A.I. NOW list at the store: new guides land there first, and list members get 10% off their first store order.</p>
+      <a class="btn" href="https://artificial-intelligencenow.com/pages/join-the-list">Join the List — free</a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>🌐 More from <span class="a-pink">A.I. NOW</span></h2>
+    <p class="note">One family, many doors — the hub, the store, and the live world desk.</p>
+    <div class="xlinks">
+      <a class="card cyan" href="https://hub.artificial-intelligencenow.com"><div class="ct">🏠 The Hub — home</div><div class="cd">Everything AI in one place: live AI news, the tools directory, free prompt packs and every branch.</div><span class="cl">hub.artificial-intelligencenow.com →</span></a>
+      <a class="card pink" href="https://shop.artificial-intelligencenow.com"><div class="ct">🛍️ The Store — new door</div><div class="cd">The A.I. NOW store's new address — trending finds, gifts and gear, same store, new door.</div><span class="cl">shop.artificial-intelligencenow.com →</span></a>
+      <a class="card lime" href="https://world.artificial-intelligencenow.com"><div class="ct">🌍 World Watch</div><div class="cd">Live earthquakes, storms, wildfires and severe weather from official sources — plus free help resources when an event hits.</div><span class="cl">world.artificial-intelligencenow.com →</span></a>
+    </div>
+  </section>
+</main>
+<footer>
+  A.I. NOW — Detroit, Michigan. Food headlines are pulled live from Serious Eats, Eater and BBC Technology; each headline belongs to its publisher and links to the original story. Product and brand names belong to their owners — this page uses words only, no logos, photos or artwork. Directory links go to each tool's official site. And once more, because it matters: AI makes mistakes about ingredients and nutrition — for allergies and medical needs, trust the real label and real professionals, never an app.
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+function tick(){const d=new Date();$('clock').textContent=d.toLocaleTimeString('en-US',{hour12:true})+' Detroit';}
+setInterval(tick,1000);tick();
+function ago(t){const s=(Date.now()-t)/1000;if(s<0)return 'just now';if(s<3600)return Math.max(1,Math.round(s/60))+'m ago';if(s<86400)return Math.round(s/3600)+'h ago';return Math.round(s/86400)+'d ago';}
+function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+function copyPrompt(btn){
+  const box=btn.closest('.prompt');const txt=box?box.querySelector('.px').innerText:'';
+  const done=()=>{const old=btn.textContent;btn.textContent='Copied ✓';setTimeout(()=>{btn.textContent=old;},1600);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(()=>fallbackCopy(txt,done));}
+  else{fallbackCopy(txt,done);}
+}
+function fallbackCopy(txt,done){
+  const ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');done();}catch(e){}
+  document.body.removeChild(ta);
+}
+/* Live food news: real headlines pulled client-side via the rss2json reader (the same
+   approach the hub front door uses). Each feed fails independently; if every feed fails,
+   the section falls back to a plain note plus the source cards under it — headlines are
+   never invented or hard-coded. BBC Technology is the reliability anchor feed. */
+const FEEDS=[
+  {name:'Serious Eats',cls:'b-lime',url:'https://www.seriouseats.com/rss'},
+  {name:'Eater',cls:'b-pink',url:'https://www.eater.com/rss/index.xml'},
+  {name:'BBC Technology',cls:'b-cyan',url:'https://feeds.bbci.co.uk/news/technology/rss.xml'}
+];
+async function loadOneFeed(f){
+  const r=await fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(f.url));
+  const j=await r.json();
+  if(j.status!=='ok'||!j.items)return [];
+  return j.items.map(it=>({time:new Date((it.pubDate||'').replace(' ','T')).getTime()||0,title:it.title,url:it.link,src:f.name,cls:f.cls}));
+}
+async function loadNews(){
+  const results=await Promise.allSettled(FEEDS.map(loadOneFeed));
+  let items=[];
+  results.forEach(r=>{if(r.status==='fulfilled')items=items.concat(r.value);});
+  items=items.filter(n=>n.title&&n.url);
+  items.sort((a,b)=>b.time-a.time);
+  if(!items.length){
+    $('news').innerHTML='<p class="err">The live headline feeds aren\'t answering right now — no stale stories shown in their place. Read the latest straight from the sources below.</p>';
+    $('updated').textContent='news feeds unreachable — source links below';
+    return;
+  }
+  $('news').innerHTML=items.slice(0,12).map(n=>
+    '<div class="ev"><div class="top"><span class="badge '+n.cls+'">'+esc(n.src)+'</span><span style="color:var(--dim);font-size:12px">'+(n.time?ago(n.time):'')+'</span></div>'+
+    '<div class="t" style="font-size:15px"><a href="'+esc(n.url)+'" target="_blank" rel="noopener" style="color:var(--txt)">'+esc(n.title)+'</a></div></div>').join('');
+  $('updated').textContent='food news updated '+new Date().toLocaleTimeString('en-US');
+}
+loadNews();setInterval(loadNews,600000);
+</script>
+</body>
+</html>
