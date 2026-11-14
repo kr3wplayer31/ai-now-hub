@@ -13,9 +13,9 @@
     background-attachment:fixed}
   a{color:var(--cyan);text-decoration:none}
   a:hover{text-decoration:underline}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+  .wrap{max-width:1320px;margin:0 auto;padding:0 18px}
   header{position:sticky;top:0;z-index:20;background:rgba(10,6,24,.92);backdrop-filter:blur(8px);border-bottom:3px solid;border-image:linear-gradient(90deg,var(--pink),var(--violet),var(--cyan),var(--lime)) 1}
-  .bar{max-width:1180px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .bar{max-width:1320px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
   .logo{font-weight:900;font-size:27px;letter-spacing:.5px;color:var(--txt)}
   .grad{background:linear-gradient(92deg,var(--pink),var(--violet) 48%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
   .pill{display:inline-flex;align-items:center;gap:7px;background:var(--pink);color:#fff;font-size:12px;font-weight:900;padding:5px 12px;border-radius:999px;letter-spacing:1.5px;box-shadow:0 0 18px rgba(255,46,136,.55)}
@@ -93,8 +93,66 @@
   .join a.btn{display:inline-block;margin-top:14px;background:#0a0618;color:#fff;border:2.5px solid #fff}
   footer{color:var(--dim);font-size:13px;padding:6px 0 36px}
   .err{color:var(--yel);font-size:14px;font-weight:600}
+  .vstat{font-size:11.5px;color:var(--dim);padding:7px 13px;background:#0d0722;letter-spacing:.3px;border-top:1.5px solid var(--line)}
+  .vstat b{color:var(--lime)}
+  .vname{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .frame .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--dim);font-weight:800;font-size:14px;letter-spacing:.4px;text-align:center;padding:0 12px}
   @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+
+  .appband{margin:26px 0 6px;background:linear-gradient(92deg,rgba(255,46,136,.20),rgba(139,61,255,.20) 48%,rgba(0,229,255,.20));border:2px solid var(--violet);border-radius:18px;padding:24px 22px;text-align:center}
+  .appband .jt{font-size:clamp(22px,4.4vw,32px)}
+  .appband p{max-width:640px;margin:8px auto 0}
+  .askband{margin:26px 0 6px;background:linear-gradient(92deg,rgba(0,229,255,.14),rgba(139,61,255,.16) 52%,rgba(255,46,136,.16));border:2px solid var(--cyan);border-radius:18px;padding:24px 22px}
+  .askband .jt{font-size:clamp(22px,4.4vw,32px);text-align:center}
+  .askchips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:16px 0 4px}
+  .askchip{cursor:pointer;border:2px solid var(--violet);background:rgba(10,6,24,.55);color:var(--txt);border-radius:999px;padding:9px 16px;font-weight:700;font-size:15px;font-family:inherit}
+  .askchip:hover{border-color:var(--pink)}
+  .askchip.on{background:linear-gradient(92deg,var(--pink),var(--violet) 55%,var(--cyan));border-color:transparent;color:#fff}
+  .askbox{max-width:720px;margin:14px auto 0;background:rgba(10,6,24,.6);border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-align:left}
+  .asklive{margin-top:14px;text-align:center}
+  #installBtn{cursor:pointer;border:none;font-family:inherit}
+  #installHint{font-size:14.5px;color:var(--dim);margin-top:12px}
 </style>
+
+<style id="ainav-css">
+/* ===== A.I. NOW shared top nav + breaking strip (hub v3, injected uniformly) ===== */
+.ainav{display:flex;flex-wrap:wrap;gap:2px;background:rgba(6,3,16,.72);border-top:1px solid #3b2a7a}
+.ainav-item{position:relative}
+.ainav-tab{display:flex;align-items:center;gap:6px;background:transparent;border:0;color:#f5f2ff;font-family:inherit;font-weight:900;font-size:14.5px;letter-spacing:1.2px;padding:11px 16px;cursor:pointer;text-transform:uppercase;white-space:nowrap}
+.ainav-tab .car{font-size:11px;opacity:.85}
+.ainav-tab[data-acc="pink"]{box-shadow:inset 0 -3px 0 #ff2e88}
+.ainav-tab[data-acc="lime"]{box-shadow:inset 0 -3px 0 #a6ff00}
+.ainav-tab[data-acc="violet"]{box-shadow:inset 0 -3px 0 #8b3dff}
+.ainav-tab[data-acc="cyan"]{box-shadow:inset 0 -3px 0 #00e5ff}
+.ainav-tab[data-acc="yel"]{box-shadow:inset 0 -3px 0 #ffd400}
+.ainav-tab:hover{background:rgba(139,61,255,.20)}
+.ainav-drop{display:none;position:absolute;left:0;top:100%;min-width:min(252px,86vw);background:#150b31;border:2px solid #3b2a7a;border-radius:0 0 14px 14px;padding:8px;z-index:200;box-shadow:0 18px 40px rgba(0,0,0,.55)}
+.ainav-item[data-acc="pink"] .ainav-drop{border-top:3px solid #ff2e88}
+.ainav-item[data-acc="lime"] .ainav-drop{border-top:3px solid #a6ff00}
+.ainav-item[data-acc="violet"] .ainav-drop{border-top:3px solid #8b3dff}
+.ainav-item[data-acc="cyan"] .ainav-drop{border-top:3px solid #00e5ff}
+.ainav-item[data-acc="yel"] .ainav-drop{border-top:3px solid #ffd400}
+.ainav-item:last-child .ainav-drop{left:auto;right:0}
+.ainav-drop a{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#f5f2ff;font-weight:800;font-size:14.5px;padding:9px 11px;border-radius:9px}
+.ainav-drop a:hover{background:rgba(0,229,255,.13);text-decoration:none}
+.ainav-drop a .ext{color:#00e5ff;font-size:12px;font-weight:900}
+.ainav-item.open .ainav-drop{display:block}
+@media(hover:hover) and (min-width:761px){.ainav-item:hover .ainav-drop{display:block}}
+.ainav-chip{display:inline-block;background:linear-gradient(92deg,#ff2e88,#8b3dff);color:#fff;font-size:11px;font-weight:900;padding:3px 9px;border-radius:999px;letter-spacing:.5px;white-space:nowrap}
+.breaking{display:flex;align-items:center;gap:10px;background:linear-gradient(90deg,#3d0518,#1c0f42);border-bottom:3px solid #ff3355;padding:8px 16px;font-size:14px}
+.breaking .blabel{background:#ff3355;color:#fff;font-weight:900;font-size:11.5px;letter-spacing:1.4px;padding:4px 10px;border-radius:999px;white-space:nowrap;box-shadow:0 0 14px rgba(255,51,85,.6)}
+.breaking a{color:#f5f2ff;font-weight:800}
+.breaking a:hover{text-decoration:underline}
+.breaking .bsrc{margin-left:auto;color:#bdb2e8;font-size:11.5px;white-space:nowrap}
+.ainav-top{position:fixed;right:16px;bottom:16px;z-index:300;background:linear-gradient(92deg,#ff2e88,#8b3dff);color:#fff;border:0;font-family:inherit;font-weight:900;font-size:13px;letter-spacing:1px;padding:11px 16px;border-radius:999px;cursor:pointer;box-shadow:0 8px 24px rgba(255,46,136,.45);opacity:0;pointer-events:none;transition:opacity .25s}
+.ainav-top.show{opacity:1;pointer-events:auto}
+@media(max-width:760px){.breaking .bsrc{display:none}.ainav-tab{padding:10px 12px;font-size:13.5px}}
+</style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0A0618">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="A.I. NOW">
 </head>
 <body>
 <header>
@@ -103,7 +161,52 @@
     <span class="pill">THE HUB</span>
     <div class="clock"><b id="clock">--:--:--</b><br><span id="updated">loading live AI news…</span></div>
   </div>
+<nav class="ainav" aria-label="Hub sections">
+  <div class="ainav-item" data-acc="pink"><button type="button" class="ainav-tab" data-acc="pink" aria-haspopup="true" aria-expanded="false">AI News <span class="car">▾</span></button>
+    <div class="ainav-drop">
+      <a href="index.html">🏠 Front Door</a>
+      <a href="index.html#livewall">🔴 Live Video Wall</a>
+      <a href="index.html#ainews">📰 Live AI News</a>
+      <a href="index.html#tools">🧰 Tools Directory</a>
+      <a href="index.html#freebies">🎁 Free Downloads</a>
+      <a href="index.html#explore">🧭 Explore the Hub</a>
+    </div>
+  </div>
+  <div class="ainav-item" data-acc="lime"><button type="button" class="ainav-tab" data-acc="lime" aria-haspopup="true" aria-expanded="false">Money <span class="car">▾</span></button>
+    <div class="ainav-drop">
+      <a href="money.html">💰 AI × Money</a>
+      <a href="business.html">💼 AI × Business</a>
+      <a href="studio.html">🛠️ A.I. NOW Studio</a>
+    </div>
+  </div>
+  <div class="ainav-item" data-acc="violet"><button type="button" class="ainav-tab" data-acc="violet" aria-haspopup="true" aria-expanded="false">Play <span class="car">▾</span></button>
+    <div class="ainav-drop">
+      <a href="gaming.html">🎮 AI × Gaming</a>
+      <a href="gaming.html">🚀 GTA VI Launch<span class="ainav-chip" data-gta-countdown>counting…</span></a>
+      <a href="sports.html">🏟️ AI × Sports</a>
+      <a href="creator.html">🎨 AI × Creator</a>
+    </div>
+  </div>
+  <div class="ainav-item" data-acc="cyan"><button type="button" class="ainav-tab" data-acc="cyan" aria-haspopup="true" aria-expanded="false">Life <span class="car">▾</span></button>
+    <div class="ainav-drop">
+      <a href="life.html">🌱 AI × Life</a>
+      <a href="food.html">🍳 AI × Food</a>
+      <a href="home.html">🏠 AI × Home</a>
+      <a href="travel.html">✈️ AI × Travel</a>
+    </div>
+  </div>
+  <div class="ainav-item" data-acc="yel"><button type="button" class="ainav-tab" data-acc="yel" aria-haspopup="true" aria-expanded="false">Community <span class="car">▾</span></button>
+    <div class="ainav-drop">
+      <a href="community.html">💬 The Community</a>
+      <a href="blog.html">📡 The Signal — Blog</a>
+      <a href="https://world.artificial-intelligencenow.com">🌍 World Watch<span class="ext">↗</span></a>
+      <a href="https://shop.artificial-intelligencenow.com">🛍️ The Store<span class="ext">↗</span></a>
+    </div>
+  </div>
+</nav>
 </header>
+<div class="breaking" id="breakingStrip" hidden><span class="blabel">🚨 BREAKING</span><a href="https://world.artificial-intelligencenow.com" target="_blank" rel="noopener"><span id="breakingText">Loading live alerts…</span></a><span class="bsrc" id="breakingSrc"></span></div>
+
 <main class="wrap">
   <div class="hero">
     <div class="kicker">⚡ Detroit-built · Live around the clock</div>
@@ -116,49 +219,55 @@
     </div>
   </div>
 
-  <div class="ticker" aria-hidden="true"><div class="track" id="ticker"><span id="ticker-a">Live AI news<span class="sep">⚡</span>Live video wall<span class="sep">⚡</span>New AI tools<span class="sep">⚡</span>Free prompt pack<span class="sep">⚡</span>World Watch<span class="sep">⚡</span>Drop Radar<span class="sep">⚡</span>The store is moving to shop.artificial-intelligencenow.com<span class="sep">⚡</span></span><span id="ticker-b"></span></div></div>
+  <div class="ticker" aria-hidden="true"><div class="track" id="ticker"><span id="ticker-a">Live AI news<span class="sep">⚡</span>Live video wall<span class="sep">⚡</span>New AI tools<span class="sep">⚡</span>Free prompt pack<span class="sep">⚡</span>World Watch<span class="sep">⚡</span>Drop Radar<span class="sep">⚡</span>The store lives at shop.artificial-intelligencenow.com<span class="sep">⚡</span></span><span id="ticker-b"></span></div></div>
 
   <section class="panel" id="livewall">
     <div class="stitle">🔴 <span class="u">Live</span> Video Wall <span class="livebadge"><span class="livedot"></span>Live now</span></div>
-    <p class="note">Real 24/7 live channels, streaming free — the same newsrooms the whole internet watches when something big happens. These channels carry whatever the world is talking about, as it happens: breaking news, launches, markets, weather, all of it. Press play on any screen. If one ever shows "offline," that newsroom is between broadcasts — pick another; there's always one rolling.</p>
-    <div class="vgrid">
-      <div class="vid feat">
-        <div class="vlabel"><span class="livedot"></span>ABC News Live<a class="watch" href="https://www.youtube.com/channel/UCBi2mrWuNuyYy4gbM6fU18Q/live" target="_blank" rel="noopener">Watch on YouTube →</a></div>
-        <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCBi2mrWuNuyYy4gbM6fU18Q" title="ABC News Live — live stream" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+    <p class="note">Real 24/7 live channels, streaming free — the same newsrooms the whole internet watches when something big happens. These channels carry whatever the world is talking about, as it happens: breaking news, launches, markets, weather, all of it. Press play on any screen. Every screen watches itself: if a channel ever drops, stalls or refuses to play on your device, the wall swaps in a backup newsroom on its own — a dead tile never just sits here.</p>
+    <div class="vgrid" id="wallGrid">
+      <div class="vid feat" id="wall0">
+        <div class="vlabel"><span class="livedot"></span><span class="vname">Top Story · loading…</span><a class="watch" href="#" target="_blank" rel="noopener">Watch on YouTube →</a></div>
+        <div class="frame"><div class="ph">Tuning in the live feed…</div></div>
+        <div class="vstat">Self-check on — if this channel drops, a backup swaps in automatically.</div>
       </div>
-      <div class="vid">
-        <div class="vlabel"><span class="livedot"></span>NBC News<a class="watch" href="https://www.youtube.com/channel/UCeY0bbntWzzVIaj2z3QigXg/live" target="_blank" rel="noopener">Watch on YouTube →</a></div>
-        <div class="frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCeY0bbntWzzVIaj2z3QigXg" title="NBC News — live stream" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="vid" id="wall1">
+        <div class="vlabel"><span class="livedot"></span><span class="vname">US News · loading…</span><a class="watch" href="#" target="_blank" rel="noopener">Watch on YouTube →</a></div>
+        <div class="frame"><div class="ph">Tuning in the live feed…</div></div>
+        <div class="vstat">Self-check on — if this channel drops, a backup swaps in automatically.</div>
       </div>
-      <div class="vid">
-        <div class="vlabel"><span class="livedot"></span>Sky News<a class="watch" href="https://www.youtube.com/channel/UCoMdktPbSTixAyNGwb-UYkQ/live" target="_blank" rel="noopener">Watch on YouTube →</a></div>
-        <div class="frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCoMdktPbSTixAyNGwb-UYkQ" title="Sky News — live stream" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="vid" id="wall2">
+        <div class="vlabel"><span class="livedot"></span><span class="vname">World · loading…</span><a class="watch" href="#" target="_blank" rel="noopener">Watch on YouTube →</a></div>
+        <div class="frame"><div class="ph">Tuning in the live feed…</div></div>
+        <div class="vstat">Self-check on — if this channel drops, a backup swaps in automatically.</div>
       </div>
-      <div class="vid">
-        <div class="vlabel"><span class="livedot"></span>Bloomberg Television<a class="watch" href="https://www.youtube.com/channel/UCIALMKvObZNtJ6AmdCLP7Lg/live" target="_blank" rel="noopener">Watch on YouTube →</a></div>
-        <div class="frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCIALMKvObZNtJ6AmdCLP7Lg" title="Bloomberg Television — live stream" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="vid" id="wall3">
+        <div class="vlabel"><span class="livedot"></span><span class="vname">Money Live · loading…</span><a class="watch" href="#" target="_blank" rel="noopener">Watch on YouTube →</a></div>
+        <div class="frame"><div class="ph">Tuning in the live feed…</div></div>
+        <div class="vstat">Self-check on — if this channel drops, a backup swaps in automatically.</div>
       </div>
-      <div class="vid">
-        <div class="vlabel"><span class="livedot"></span>DW News<a class="watch" href="https://www.youtube.com/channel/UCknLrEdhRCp1aegoMqRaCZg/live" target="_blank" rel="noopener">Watch on YouTube →</a></div>
-        <div class="frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCknLrEdhRCp1aegoMqRaCZg" title="DW News — live stream" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="vid" id="wall4">
+        <div class="vlabel"><span class="livedot"></span><span class="vname">Europe · loading…</span><a class="watch" href="#" target="_blank" rel="noopener">Watch on YouTube →</a></div>
+        <div class="frame"><div class="ph">Tuning in the live feed…</div></div>
+        <div class="vstat">Self-check on — if this channel drops, a backup swaps in automatically.</div>
       </div>
-      <div class="vid">
-        <div class="vlabel"><span class="livedot"></span>Al Jazeera English<a class="watch" href="https://www.youtube.com/channel/UCNye-wNBqNL5ZzHSJj3l8Bg/live" target="_blank" rel="noopener">Watch on YouTube →</a></div>
-        <div class="frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/live_stream?channel=UCNye-wNBqNL5ZzHSJj3l8Bg" title="Al Jazeera English — live stream" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="vid" id="wall5">
+        <div class="vlabel"><span class="livedot"></span><span class="vname">Global · loading…</span><a class="watch" href="#" target="_blank" rel="noopener">Watch on YouTube →</a></div>
+        <div class="frame"><div class="ph">Tuning in the live feed…</div></div>
+        <div class="vstat">Self-check on — if this channel drops, a backup swaps in automatically.</div>
       </div>
     </div>
     <p class="note" style="margin-top:16px"><b style="color:var(--txt)">Live &amp; trending:</b> want the full-screen version, the live chat, or whatever else is streaming right this second? Open any channel's live page on YouTube:</p>
     <div class="srcrow">
-      <a class="row" href="https://www.youtube.com/channel/UCBi2mrWuNuyYy4gbM6fU18Q/live" target="_blank" rel="noopener"><span><span class="rt">ABC News Live</span><br><span class="rd">Breaking US news, live</span></span><span class="arr">→</span></a>
       <a class="row" href="https://www.youtube.com/channel/UCeY0bbntWzzVIaj2z3QigXg/live" target="_blank" rel="noopener"><span><span class="rt">NBC News</span><br><span class="rd">Top stories &amp; special coverage</span></span><span class="arr">→</span></a>
-      <a class="row" href="https://www.youtube.com/channel/UCoMdktPbSTixAyNGwb-UYkQ/live" target="_blank" rel="noopener"><span><span class="rt">Sky News</span><br><span class="rd">UK &amp; world news, live</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://www.youtube.com/channel/UC8p1vwvWtl6T73JiExfWs1g/live" target="_blank" rel="noopener"><span><span class="rt">CBS News</span><br><span class="rd">Breaking US news, live</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://www.youtube.com/channel/UCNye-wNBqNL5ZzHSJj3l8Bg/live" target="_blank" rel="noopener"><span><span class="rt">Al Jazeera English</span><br><span class="rd">Global coverage, live</span></span><span class="arr">→</span></a>
       <a class="row" href="https://www.youtube.com/channel/UCIALMKvObZNtJ6AmdCLP7Lg/live" target="_blank" rel="noopener"><span><span class="rt">Bloomberg Television</span><br><span class="rd">Markets &amp; money, live</span></span><span class="arr">→</span></a>
       <a class="row" href="https://www.youtube.com/channel/UCknLrEdhRCp1aegoMqRaCZg/live" target="_blank" rel="noopener"><span><span class="rt">DW News</span><br><span class="rd">World news from Europe</span></span><span class="arr">→</span></a>
-      <a class="row" href="https://www.youtube.com/channel/UCNye-wNBqNL5ZzHSJj3l8Bg/live" target="_blank" rel="noopener"><span><span class="rt">Al Jazeera English</span><br><span class="rd">Global coverage, live</span></span><span class="arr">→</span></a>
+      <a class="row" href="https://www.youtube.com/channel/UC83jt4dlz1Gjl58fzQrrKZg/live" target="_blank" rel="noopener"><span><span class="rt">CNA</span><br><span class="rd">Asia &amp; world, 24/7 live</span></span><span class="arr">→</span></a>
     </div>
   </section>
 
-  <section class="panel">
+  <section class="panel" id="ainews">
     <div class="stitle">📰 Live <span class="u">AI News</span></div>
     <p class="note">The newest AI headlines from three newsrooms we trust, pulled live and newest first — the same stories scrolling in the ticker up top. Every headline links to the original story at the source.</p>
     <div id="news"><p class="note">Loading headlines…</p></div>
@@ -169,7 +278,7 @@
     </div>
   </section>
 
-  <section class="panel">
+  <section class="panel" id="tools">
     <div class="stitle">🧰 AI Tools <span class="u">Directory</span></div>
     <p class="note">The major AI tools, in plain English — what each one is for, and a straight link to its official site. No rankings to buy, no fake scores: just the map.</p>
     <!-- AFFILIATE SWAP: when Impact / PartnerStack approvals land, replace the plain official-site links in this directory with the tracked affiliate links for each tool, and add rel="sponsored noopener" to each swapped link. Until then every link below is a plain link to the tool's official site — A.I. NOW earns nothing from them. -->
@@ -187,7 +296,7 @@
     </div>
   </section>
 
-  <section class="panel">
+  <section class="panel" id="freebies">
     <div class="stitle">🎁 Free <span class="u">Downloads</span> — Our Own Stuff</div>
     <p class="note">Everything here is made by A.I. NOW and free to use. We never offer downloads of other companies' software — for the tools themselves, use the official links in the directory above.</p>
 
@@ -224,7 +333,30 @@
   <div class="join">
     <div class="jt">Get the next packs free — plus 10% off your first order</div>
     <p>Join the A.I. NOW list at the store: new prompt packs and guides land there first, and list members get 10% off their first store order.</p>
-    <a class="btn" href="https://artificial-intelligencenow.com/pages/join-the-list">Join the List — free</a>
+    <a class="btn" href="https://shop.artificial-intelligencenow.com/pages/join-the-list">Join the List — free</a>
+  </div>
+
+  <div class="appband" id="appCard">
+    <div class="jt">📱 GET THE APP</div>
+    <p>The hub as an app — full-screen, on your home screen, free. One tap installs it right here: no app store, no download wait.</p>
+    <p style="margin-top:16px"><button class="btn" id="installBtn" hidden>📲 Install A.I. NOW</button></p>
+    <p id="installHint" hidden></p>
+    <p id="installedMsg" hidden>✅ You're in — A.I. NOW is already installed on this device.</p>
+  </div>
+
+  <div class="askband" id="askGuide">
+    <div class="jt">💬 ASK A.I. NOW</div>
+    <p style="text-align:center;max-width:640px;margin:8px auto 0">Instant answers — no waiting. Tap a question:</p>
+    <div class="askchips" id="askChips">
+      <button type="button" class="askchip" data-q="best">🤖 What's the best free AI for…?</button>
+      <button type="button" class="askchip" data-q="scam">🛡️ Is this AI tool a scam?</button>
+      <button type="button" class="askchip" data-q="gta">🎮 When does GTA VI drop?</button>
+      <button type="button" class="askchip" data-q="build">🛠️ Build my website</button>
+      <button type="button" class="askchip" data-q="store">🛍️ Where's the store?</button>
+      <button type="button" class="askchip" data-q="agent">🧠 What is an AI agent?</button>
+    </div>
+    <div class="askbox" id="askBox">Tap any question above and the answer lands right here — straight links, no runaround.</div>
+    <p class="asklive">Something else on your mind? <a href="#" id="askLive">Chat with us live</a> — tap the chat bubble in the corner and we'll take it from there.</p>
   </div>
 
   <section class="panel" id="explore">
@@ -232,7 +364,7 @@
     <p class="note">Twelve doors, one roof — every A.I. NOW page, live now. Pick a world: money, games, food, your house, your next trip. Each one carries live headlines, plain-English explainers, the real tools, and a free pack to take with you.</p>
     <div class="cards">
       <a class="card" href="money.html" style="border-top:6px solid #a6ff4d"><div class="ct">💰 AI × MONEY</div><div class="cd">AI in Bitcoin, crypto and banking — live prices, live headlines, plain-English explainers and a free crypto safety cheat sheet. Education, never advice.</div><span class="cl">Enter →</span></a>
-      <a class="card" href="gaming.html" style="border-top:6px solid #8b3dff"><div class="ct">🎮 AI × GAMING</div><div class="cd">How AI is changing games, game-making and streaming — smart NPCs, AI-built worlds, anti-cheat and the tools players actually use, with live gaming headlines.</div><span class="cl">Enter →</span></a>
+      <a class="card" href="gaming.html" style="border-top:6px solid #8b3dff"><div class="ct">🎮 AI × GAMING</div><div class="cd">How AI is changing games, game-making and streaming — smart NPCs, AI-built worlds, anti-cheat and the tools players actually use, with live gaming headlines.</div><span class="ainav-chip" data-gta-countdown style="align-self:flex-start">🚀 GTA VI countdown</span><span class="cl">Enter →</span></a>
       <a class="card" href="business.html" style="border-top:6px solid #ffd400"><div class="ct">💼 AI × BUSINESS</div><div class="cd">AI for small business owners, workers and job hunters — live business news, the tools that help at work, and a free Small Business AI Starter Pack.</div><span class="cl">Enter →</span></a>
       <a class="card" href="creator.html" style="border-top:6px solid #ff3e8a"><div class="ct">🎨 AI × CREATOR</div><div class="cd">Art, video, music &amp; words — the tools turning anyone into an artist, filmmaker, musician or author.</div><span class="cl">Enter →</span></a>
       <a class="card" href="life.html" style="border-top:6px solid #a3e635"><div class="ct">🌱 AI × LIFE</div><div class="cd">AI in your health, home, learning, shopping and travel — what it can do, what it can't, in plain English.</div><span class="cl">Enter →</span></a>
@@ -250,7 +382,7 @@
     <div class="stitle">🌐 The <span class="u">Branches</span> — Everything Under A.I. NOW</div>
     <p class="note">One family, many doors. Statuses are printed honestly: if it doesn't say LIVE, it isn't yet.</p>
     <div class="cards">
-      <a class="card" href="https://shop.artificial-intelligencenow.com"><div class="ct">🛍️ The Store <span class="badge b-pink">New door</span> <span class="badge b-lime">Live</span></div><div class="cd">Same store, new address — we're moving the shop here over the next few days while this main site becomes all-AI. Same products, same checkout.</div><span class="cl">shop.artificial-intelligencenow.com →</span><span class="cl" style="font-size:12.5px;color:var(--dim)">Still at <a href="https://artificial-intelligencenow.com" style="color:var(--dim)">artificial-intelligencenow.com</a> until the move finishes</span></a>
+      <a class="card" href="https://shop.artificial-intelligencenow.com"><div class="ct">🛍️ The Store <span class="badge b-lime">Live</span></div><div class="cd">The store has its own door now — same products, same checkout. This main address is all AI; the shop lives at shop.</div><span class="cl">shop.artificial-intelligencenow.com →</span></a>
       <a class="card" href="https://world.artificial-intelligencenow.com"><div class="ct">🌍 World Watch <span class="badge b-yel">Built — deploying soon</span></div><div class="cd">Live earthquakes, storms, wildfires and severe weather from official sources — plus free help resources when an event hits.</div><span class="cl">world.artificial-intelligencenow.com →</span></a>
       <a class="card" href="https://radar.artificial-intelligencenow.com"><div class="ct">🎯 Drop Radar <span class="badge b-yel">Built — deploying soon</span></div><div class="cd">A live price-drop feed — deals and glitches spotted across the big stores, checked before they're posted.</div><span class="cl">radar.artificial-intelligencenow.com →</span></a>
       <div class="card"><div class="ct">⚖️ Legal <span class="badge b-dim">In the works</span></div><div class="cd">Court records, forms and legal processes explained in plain language — so you understand the paper in front of you.</div></div>
@@ -274,7 +406,7 @@
   </section>
 </main>
 <footer class="wrap">
-  A.I. NOW — Detroit, Michigan. This hub becomes the main site at <a href="https://artificial-intelligencenow.com">artificial-intelligencenow.com</a> over the next few days; the store is moving to <a href="https://shop.artificial-intelligencenow.com">shop.artificial-intelligencenow.com</a>. Live video streams are the channels' own YouTube live broadcasts, embedded with YouTube's official player. News headlines are pulled live from the BBC, TechCrunch and The Verge; each headline belongs to its publisher and links to the original story. Tool names belong to their owners — directory links go to each tool's official site.
+  A.I. NOW — Detroit, Michigan. This hub is the main site at <a href="https://artificial-intelligencenow.com">artificial-intelligencenow.com</a>; the store lives at <a href="https://shop.artificial-intelligencenow.com">shop.artificial-intelligencenow.com</a>. Live video streams are the channels' own YouTube live broadcasts, embedded with YouTube's official player. News headlines are pulled live from the BBC, TechCrunch and The Verge; each headline belongs to its publisher and links to the original story. Tool names belong to their owners — directory links go to each tool's official site.
 </footer>
 
 <script>
@@ -333,5 +465,210 @@ async function loadNews(){
 }
 loadNews();setInterval(loadNews,600000);
 </script>
+
+<script id="ainav-js">
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.ainav-item'));
+  function closeAll(except){items.forEach(function(it){if(it!==except){it.classList.remove('open');var b=it.querySelector('.ainav-tab');if(b)b.setAttribute('aria-expanded','false');}});}
+  items.forEach(function(it){var btn=it.querySelector('.ainav-tab');if(!btn)return;btn.addEventListener('click',function(e){e.stopPropagation();var open=it.classList.contains('open');closeAll(it);it.classList.toggle('open',!open);btn.setAttribute('aria-expanded',String(!open));});});
+  document.addEventListener('click',function(){closeAll(null);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll(null);});
+  /* GTA VI countdown — launch Thu Nov 19, 2026 */
+  var launch=Date.UTC(2026,10,19,5,0,0),days=Math.ceil((launch-Date.now())/864e5);
+  var gtaTxt=days>0?('🚀 GTA VI · '+days+' days to launch'):('🚀 GTA VI · OUT NOW');
+  document.querySelectorAll('[data-gta-countdown]').forEach(function(el){el.textContent=gtaTxt;});
+  /* Breaking strip — top NWS severe alert, else top USGS M4.5+ quake; stays hidden if neither answers */
+  var strip=document.getElementById('breakingStrip'),bt=document.getElementById('breakingText'),bs=document.getElementById('breakingSrc');
+  function showBreaking(text,src){if(!strip||!bt)return;bt.textContent=text;if(bs)bs.textContent=src;strip.hidden=false;}
+  async function loadBreaking(){
+    try{
+      var r=await fetch('https://api.weather.gov/alerts/active?status=actual&message_type=alert&limit=50');
+      var j=await r.json();
+      var feats=(j.features||[]).map(function(f){return f.properties;}).filter(function(p){return p&&p.headline;});
+      var rank={Extreme:0,Severe:1,Moderate:2,Minor:3,Unknown:4};
+      feats.sort(function(a,b){return (rank[a.severity]!=null?rank[a.severity]:4)-(rank[b.severity]!=null?rank[b.severity]:4);});
+      if(feats.length){showBreaking(feats[0].headline,'NWS live · World Watch →');return;}
+    }catch(e){}
+    try{
+      var r2=await fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson');
+      var j2=await r2.json();
+      var fs=(j2.features||[]).map(function(f){return f.properties;}).filter(function(p){return p&&p.place;});
+      fs.sort(function(a,b){return b.mag-a.mag;});
+      if(fs.length){showBreaking('M'+fs[0].mag.toFixed(1)+' earthquake — '+fs[0].place,'USGS live · World Watch →');return;}
+    }catch(e){}
+  }
+  if(strip){loadBreaking();setInterval(loadBreaking,600000);}
+  /* Back to top */
+  var topBtn=document.createElement('button');
+  topBtn.className='ainav-top';topBtn.type='button';topBtn.textContent='↑ TOP';topBtn.setAttribute('aria-label','Back to top');
+  topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.body.appendChild(topBtn);
+  addEventListener('scroll',function(){topBtn.classList.toggle('show',window.scrollY>650);},{passive:true});
+})();
+</script>
+
+<script id="wall-js">
+/* ==== SELF-HEALING LIVE VIDEO WALL (hub v3) ====
+   Every slot carries a ranked list of verified-embeddable 24/7 channels.
+   A slot advances to its next candidate automatically when the YouTube
+   IFrame API reports an error (100/101/150/5) or the player never becomes
+   ready. A slow health re-check retries the primary when the viewer is
+   not actively watching the fallback. Server-side verification of every
+   channel in this pool: WALL-WATCH.md. */
+const WALL=[
+ {theme:'Top Story',cands:[['NBC News','UCeY0bbntWzzVIaj2z3QigXg'],['CBS News','UC8p1vwvWtl6T73JiExfWs1g'],['ABC News Live','UCBi2mrWuNuyYy4gbM6fU18Q'],['Reuters','UChqUTb7kYRX8-EiaN3XFrSQ']]},
+ {theme:'US News',cands:[['CBS News','UC8p1vwvWtl6T73JiExfWs1g'],['ABC News Live','UCBi2mrWuNuyYy4gbM6fU18Q'],['Associated Press','UC52X5wxOL_s5yw0dQk7NtgA'],['NBC News','UCeY0bbntWzzVIaj2z3QigXg']]},
+ {theme:'World',cands:[['Al Jazeera English','UCNye-wNBqNL5ZzHSJj3l8Bg'],['Sky News','UCoMdktPbSTixAyNGwb-UYkQ'],['DW News','UCknLrEdhRCp1aegoMqRaCZg'],['CNA','UC83jt4dlz1Gjl58fzQrrKZg']]},
+ {theme:'Money Live',cands:[['Bloomberg Television','UCIALMKvObZNtJ6AmdCLP7Lg'],['CNBC','UCvJJ_dzjViJCoLf5uKUTwoA'],['NBC News','UCeY0bbntWzzVIaj2z3QigXg'],['CBS News','UC8p1vwvWtl6T73JiExfWs1g']]},
+ {theme:'Europe',cands:[['DW News','UCknLrEdhRCp1aegoMqRaCZg'],['euronews','UCSrZ3UV4jOidv8ppoVuvW9Q'],['TRT World','UC7fWeaHhqgM4Ry-RMpM2YYw'],['Sky News','UCoMdktPbSTixAyNGwb-UYkQ']]},
+ {theme:'Global',cands:[['CNA','UC83jt4dlz1Gjl58fzQrrKZg'],['WION','UC_gUM8rL-Lrg6O3adPW9K1g'],['NDTV 24x7','UCZFMm1mMw0F81Z37aaEzTUA'],['Al Jazeera English','UCNye-wNBqNL5ZzHSJj3l8Bg']]}
+];
+const wallSlots=[];
+function wallInit(){
+  WALL.forEach(function(cfg,i){
+    const root=document.getElementById('wall'+i);
+    if(!root)return;
+    const slot={cfg:cfg,idx:0,ready:false,userWatching:false,player:null,timer:null,
+      root:root,frame:root.querySelector('.frame'),nameEl:root.querySelector('.vname'),
+      watchEl:root.querySelector('.watch'),statEl:root.querySelector('.vstat')};
+    wallSlots.push(slot);
+  });
+  let started=false;
+  function start(){if(started)return;started=true;wallSlots.forEach(function(s,i){setTimeout(function(){wallTry(s);},i*450);});}
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){start();io.disconnect();}});},{rootMargin:'500px'});
+    const grid=document.getElementById('wallGrid');if(grid)io.observe(grid);
+    setTimeout(start,3500); /* never leave the wall blank */
+  } else { start(); }
+  /* If the IFrame API itself never arrives, fall back to plain embeds of the primaries */
+  setTimeout(function(){
+    if(!(window.YT&&YT.Player)){
+      wallSlots.forEach(function(s){if(!s.ready)wallPlain(s);});
+    }
+  },12000);
+  /* Health re-check: retry a beaten primary every 20 min when nobody is watching the fallback */
+  setInterval(function(){
+    wallSlots.forEach(function(s){
+      if(s.idx>0&&s.ready&&!s.userWatching){s.idx=0;s.ready=false;wallTry(s);}
+    });
+  },20*60*1000);
+}
+function wallPlain(slot){
+  const c=slot.cfg.cands[slot.idx];
+  slot.frame.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/live_stream?channel='+c[1]+'" title="'+c[0]+' — live stream" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+  slot.nameEl.textContent=slot.cfg.theme+' · '+c[0];
+  slot.watchEl.href='https://www.youtube.com/channel/'+c[1]+'/live';
+  slot.statEl.innerHTML='Live: <b>'+c[0]+'</b> (basic mode)';
+  slot.ready=true;
+}
+function wallTry(slot){
+  const c=slot.cfg.cands[slot.idx];
+  slot.nameEl.textContent=slot.cfg.theme+' · '+c[0];
+  slot.watchEl.href='https://www.youtube.com/channel/'+c[1]+'/live';
+  slot.statEl.innerHTML='Checking <b>'+c[0]+'</b>…';
+  try{if(slot.player&&slot.player.destroy)slot.player.destroy();}catch(e){}
+  slot.player=null;slot.ready=false;
+  slot.frame.innerHTML='';
+  const ifr=document.createElement('iframe');
+  ifr.src='https://www.youtube.com/embed/live_stream?channel='+c[1]+'&enablejsapi=1&playsinline=1&rel=0';
+  ifr.title=c[0]+' — live stream';
+  ifr.setAttribute('allow','accelerometer; autoplay; encrypted-media; picture-in-picture');
+  ifr.setAttribute('allowfullscreen','');
+  slot.frame.appendChild(ifr);
+  clearTimeout(slot.timer);
+  slot.timer=setTimeout(function(){if(!slot.ready)wallAdvance(slot,'no answer');},11000);
+  try{
+    slot.player=new YT.Player(ifr,{events:{
+      onReady:function(){slot.ready=true;clearTimeout(slot.timer);
+        slot.statEl.innerHTML='Live: <b>'+c[0]+'</b>'+(slot.idx>0?' · backup swapped in automatically':'');},
+      onError:function(ev){wallAdvance(slot,'error '+(ev&&ev.data));},
+      onStateChange:function(ev){if(ev.data===1||ev.data===2)slot.userWatching=true;}
+    }});
+  }catch(e){wallAdvance(slot,'api exception');}
+}
+function wallAdvance(slot,why){
+  if(slot.advancing)return;slot.advancing=true;
+  clearTimeout(slot.timer);
+  setTimeout(function(){slot.advancing=false;},300);
+  slot.idx++;
+  if(slot.idx>=slot.cfg.cands.length){
+    slot.statEl.innerHTML='Every backup is having a moment — auto-retrying shortly.';
+    slot.idx=slot.cfg.cands.length-1;
+    setTimeout(function(){slot.idx=0;slot.ready=false;wallTry(slot);},60000);
+    return;
+  }
+  slot.ready=false;
+  wallTry(slot);
+}
+const wallApiTag=document.createElement('script');
+wallApiTag.src='https://www.youtube.com/iframe_api';
+document.head.appendChild(wallApiTag);
+const wallPrevReady=window.onYouTubeIframeAPIReady;
+window.onYouTubeIframeAPIReady=function(){if(typeof wallPrevReady==='function')wallPrevReady();wallInit();};
+</script>
+
+<script id="app-install-js">
+(function(){
+  var btn=document.getElementById('installBtn'),hint=document.getElementById('installHint'),done=document.getElementById('installedMsg');
+  if(!btn)return;
+  function standalone(){return window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;}
+  if(standalone()){done.hidden=false;return;}
+  var deferred=null;
+  window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;btn.hidden=false;hint.hidden=true;});
+  window.addEventListener('appinstalled',function(){deferred=null;btn.hidden=true;hint.hidden=true;done.hidden=false;});
+  btn.addEventListener('click',function(){
+    if(!deferred)return;
+    deferred.prompt();
+    deferred.userChoice.then(function(){deferred=null;btn.hidden=true;});
+  });
+  setTimeout(function(){
+    if(deferred||standalone())return;
+    var ios=/iphone|ipad|ipod/i.test(navigator.userAgent);
+    hint.textContent=ios
+      ? 'On iPhone or iPad: tap the Share button, then "Add to Home Screen" — same app, two taps.'
+      : 'No install button in this browser? Open the browser menu and tap "Install app" or "Add to Home screen".';
+    hint.hidden=false;
+  },1500);
+})();
+</script>
+<script id="ask-guide-js">
+(function(){
+  var box=document.getElementById('askBox');if(!box)return;
+  var answers={
+    best:'Start with the free heavy-hitters: <b>ChatGPT</b> for all-round questions and writing, <b>Gemini</b> if you live in Google apps, <b>Perplexity</b> when you want answers with sources you can check, and <b>Canva</b> for design. The full map — what each tool is actually for — is in our <a href="#tools">AI Tools Directory</a>, and the free picks are broken down in <a href="blog-free-ai-tools.html">our free-tools guide</a>.',
+    scam:'Good instinct — AI scams are everywhere right now. The big red flags: a tool that asks for payment before showing you anything, fake celebrity endorsements, and \'AI\' apps that want your bank login. Our plain-English breakdown: <a href="blog-ai-scams-2026.html">AI Scams in 2026 — how to spot them</a>. Rule of thumb: only ever download from the official links in our <a href="#tools">directory</a>.',
+    gta:'<b>Thursday, November 19, 2026</b> — on PS5 and Xbox Series X|S, standard edition $79.99. No PC version at launch. The countdown, the verified facts and launch-week coverage live on our <a href="gaming.html">AI × Gaming page</a>.',
+    build:'That\'s what <b>A.I. NOW Studio</b> does — done-for-you websites, stores and AI projects, with honest starting prices and a flat written quote before anything goes public. See what we build and what it costs: <a href="studio.html">A.I. NOW Studio</a>.',
+    store:'The store lives at its own address now: <a href="https://shop.artificial-intelligencenow.com">shop.artificial-intelligencenow.com</a> — same products, same codes, secure Shopify checkout. This main address is all AI; the shop is one door over.',
+    agent:'Short version: a normal chatbot answers you — an <b>AI agent</b> goes and <i>does</i> things: runs steps, uses tools, checks its own work. The full plain-English explainer, with examples: <a href="blog-what-is-an-ai-agent.html">What is an AI agent?</a>'
+  };
+  var chips=document.querySelectorAll('#askChips .askchip');
+  chips.forEach(function(ch){
+    ch.addEventListener('click',function(){
+      chips.forEach(function(c){c.classList.remove('on');});
+      ch.classList.add('on');
+      box.innerHTML=answers[ch.getAttribute('data-q')]||'';
+    });
+  });
+  var live=document.getElementById('askLive');
+  if(live){live.addEventListener('click',function(e){e.preventDefault();if(window.Tawk_API&&typeof Tawk_API.maximize==='function'){Tawk_API.maximize();}else{box.innerHTML='The live chat bubble sits in the bottom-right corner of this page — tap it and say hi.';}});}
+})();
+</script>
+<script>
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').catch(()=>{}); }
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6aef788aa3c2893c2c94aa40/1k6rmtnk6';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 </body>
 </html>

@@ -1,8 +1,6 @@
-# A.I. NOW Hub — hub.artificial-intelligencenow.com
+# A.I. NOW Hub - artificial-intelligencenow.com (the main domain, post-flip)
 # Allow everything: the hub is a public content site, full crawl is the point.
-# After the domain flip, this same file ships at the root with the
-# Sitemap line swapped to https://artificial-intelligencenow.com/sitemap.xml
 User-agent: *
 Allow: /
 
-Sitemap: https://hub.artificial-intelligencenow.com/sitemap.xml
+Sitemap: https://artificial-intelligencenow.com/sitemap.xml

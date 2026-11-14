@@ -12,7 +12,7 @@
   a{color:var(--cyan);text-decoration:none}
   a:hover{text-decoration:underline}
   header{position:sticky;top:0;z-index:10;background:rgba(8,6,15,.94);backdrop-filter:blur(8px);border-bottom:2px solid var(--line)}
-  .bar{max-width:1180px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .bar{max-width:1320px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
   .logo{font-weight:900;font-size:22px;letter-spacing:.5px;color:var(--txt)}
   .logo .now{background:linear-gradient(90deg,var(--pink),var(--violet),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
   .pill{display:inline-flex;align-items:center;gap:7px;background:#1c1440;border:1px solid var(--violet);color:#d9ccff;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;letter-spacing:1px}
@@ -21,7 +21,7 @@
   @keyframes pulse{0%{opacity:1}50%{opacity:.25}100%{opacity:1}}
   .clock{margin-left:auto;color:var(--dim);font-size:13px;text-align:right}
   .clock b{color:var(--txt);font-size:15px}
-  main{max-width:1180px;margin:0 auto;padding:20px 18px 40px}
+  main{max-width:1320px;margin:0 auto;padding:20px 18px 40px}
   .hero{position:relative;border:2px solid var(--line);border-radius:22px;padding:34px 24px 28px;margin-bottom:20px;overflow:hidden;background:
     radial-gradient(560px 300px at 8% -10%,rgba(255,62,138,.30),transparent 60%),
     radial-gradient(560px 320px at 95% -10%,rgba(37,213,245,.26),transparent 60%),
@@ -82,11 +82,51 @@
   .join a.btn{display:inline-block;margin-top:10px;background:#fff;color:#191233;font-weight:900;padding:11px 24px;border-radius:999px}
   .join a.btn:hover{text-decoration:none;opacity:.92}
   .xlinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-  footer{max-width:1180px;margin:0 auto;padding:0 18px 34px;color:var(--dim);font-size:12.5px}
+  footer{max-width:1320px;margin:0 auto;padding:0 18px 34px;color:var(--dim);font-size:12.5px}
   .err{color:var(--org);font-size:13px}
   .honest{border:1px solid var(--lime);background:#141f0a;border-radius:12px;padding:13px 15px;font-size:14px;margin-top:12px}
   .honest b{color:var(--lime)}
 </style>
+
+<style id="ainav-css">
+/* ===== A.I. NOW shared top nav + breaking strip (hub v3, injected uniformly) ===== */
+.ainav{display:flex;flex-wrap:wrap;gap:2px;background:rgba(6,3,16,.72);border-top:1px solid #3b2a7a}
+.ainav-item{position:relative}
+.ainav-tab{display:flex;align-items:center;gap:6px;background:transparent;border:0;color:#f5f2ff;font-family:inherit;font-weight:900;font-size:14.5px;letter-spacing:1.2px;padding:11px 16px;cursor:pointer;text-transform:uppercase;white-space:nowrap}
+.ainav-tab .car{font-size:11px;opacity:.85}
+.ainav-tab[data-acc="pink"]{box-shadow:inset 0 -3px 0 #ff2e88}
+.ainav-tab[data-acc="lime"]{box-shadow:inset 0 -3px 0 #a6ff00}
+.ainav-tab[data-acc="violet"]{box-shadow:inset 0 -3px 0 #8b3dff}
+.ainav-tab[data-acc="cyan"]{box-shadow:inset 0 -3px 0 #00e5ff}
+.ainav-tab[data-acc="yel"]{box-shadow:inset 0 -3px 0 #ffd400}
+.ainav-tab:hover{background:rgba(139,61,255,.20)}
+.ainav-drop{display:none;position:absolute;left:0;top:100%;min-width:min(252px,86vw);background:#150b31;border:2px solid #3b2a7a;border-radius:0 0 14px 14px;padding:8px;z-index:200;box-shadow:0 18px 40px rgba(0,0,0,.55)}
+.ainav-item[data-acc="pink"] .ainav-drop{border-top:3px solid #ff2e88}
+.ainav-item[data-acc="lime"] .ainav-drop{border-top:3px solid #a6ff00}
+.ainav-item[data-acc="violet"] .ainav-drop{border-top:3px solid #8b3dff}
+.ainav-item[data-acc="cyan"] .ainav-drop{border-top:3px solid #00e5ff}
+.ainav-item[data-acc="yel"] .ainav-drop{border-top:3px solid #ffd400}
+.ainav-item:last-child .ainav-drop{left:auto;right:0}
+.ainav-drop a{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#f5f2ff;font-weight:800;font-size:14.5px;padding:9px 11px;border-radius:9px}
+.ainav-drop a:hover{background:rgba(0,229,255,.13);text-decoration:none}
+.ainav-drop a .ext{color:#00e5ff;font-size:12px;font-weight:900}
+.ainav-item.open .ainav-drop{display:block}
+@media(hover:hover) and (min-width:761px){.ainav-item:hover .ainav-drop{display:block}}
+.ainav-chip{display:inline-block;background:linear-gradient(92deg,#ff2e88,#8b3dff);color:#fff;font-size:11px;font-weight:900;padding:3px 9px;border-radius:999px;letter-spacing:.5px;white-space:nowrap}
+.breaking{display:flex;align-items:center;gap:10px;background:linear-gradient(90deg,#3d0518,#1c0f42);border-bottom:3px solid #ff3355;padding:8px 16px;font-size:14px}
+.breaking .blabel{background:#ff3355;color:#fff;font-weight:900;font-size:11.5px;letter-spacing:1.4px;padding:4px 10px;border-radius:999px;white-space:nowrap;box-shadow:0 0 14px rgba(255,51,85,.6)}
+.breaking a{color:#f5f2ff;font-weight:800}
+.breaking a:hover{text-decoration:underline}
+.breaking .bsrc{margin-left:auto;color:#bdb2e8;font-size:11.5px;white-space:nowrap}
+.ainav-top{position:fixed;right:16px;bottom:16px;z-index:300;background:linear-gradient(92deg,#ff2e88,#8b3dff);color:#fff;border:0;font-family:inherit;font-weight:900;font-size:13px;letter-spacing:1px;padding:11px 16px;border-radius:999px;cursor:pointer;box-shadow:0 8px 24px rgba(255,46,136,.45);opacity:0;pointer-events:none;transition:opacity .25s}
+.ainav-top.show{opacity:1;pointer-events:auto}
+@media(max-width:760px){.breaking .bsrc{display:none}.ainav-tab{padding:10px 12px;font-size:13.5px}}
+</style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0A0618">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="A.I. NOW">
 </head>
 <body>
 <header>
@@ -96,7 +136,52 @@
     <span class="live"><span class="dot"></span>LIVE</span>
     <div class="clock"><b id="clock">--:--:--</b><br><span id="updated">loading live AI news…</span></div>
   </div>
+<nav class="ainav" aria-label="Hub sections">
+  <div class="ainav-item" data-acc="pink"><button type="button" class="ainav-tab" data-acc="pink" aria-haspopup="true" aria-expanded="false">AI News <span class="car">▾</span></button>
+    <div class="ainav-drop">
+      <a href="index.html">🏠 Front Door</a>
+      <a href="index.html#livewall">🔴 Live Video Wall</a>
+      <a href="index.html#ainews">📰 Live AI News</a>
+      <a href="index.html#tools">🧰 Tools Directory</a>
+      <a href="index.html#freebies">🎁 Free Downloads</a>
+      <a href="index.html#explore">🧭 Explore the Hub</a>
+    </div>
+  </div>
+  <div class="ainav-item" data-acc="lime"><button type="button" class="ainav-tab" data-acc="lime" aria-haspopup="true" aria-expanded="false">Money <span class="car">▾</span></button>
+    <div class="ainav-drop">
+      <a href="money.html">💰 AI × Money</a>
+      <a href="business.html">💼 AI × Business</a>
+      <a href="studio.html">🛠️ A.I. NOW Studio</a>
+    </div>
+  </div>
+  <div class="ainav-item" data-acc="violet"><button type="button" class="ainav-tab" data-acc="violet" aria-haspopup="true" aria-expanded="false">Play <span class="car">▾</span></button>
+    <div class="ainav-drop">
+      <a href="gaming.html">🎮 AI × Gaming</a>
+      <a href="gaming.html">🚀 GTA VI Launch<span class="ainav-chip" data-gta-countdown>counting…</span></a>
+      <a href="sports.html">🏟️ AI × Sports</a>
+      <a href="creator.html">🎨 AI × Creator</a>
+    </div>
+  </div>
+  <div class="ainav-item" data-acc="cyan"><button type="button" class="ainav-tab" data-acc="cyan" aria-haspopup="true" aria-expanded="false">Life <span class="car">▾</span></button>
+    <div class="ainav-drop">
+      <a href="life.html">🌱 AI × Life</a>
+      <a href="food.html">🍳 AI × Food</a>
+      <a href="home.html">🏠 AI × Home</a>
+      <a href="travel.html">✈️ AI × Travel</a>
+    </div>
+  </div>
+  <div class="ainav-item" data-acc="yel"><button type="button" class="ainav-tab" data-acc="yel" aria-haspopup="true" aria-expanded="false">Community <span class="car">▾</span></button>
+    <div class="ainav-drop">
+      <a href="community.html">💬 The Community</a>
+      <a href="blog.html">📡 The Signal — Blog</a>
+      <a href="https://world.artificial-intelligencenow.com">🌍 World Watch<span class="ext">↗</span></a>
+      <a href="https://shop.artificial-intelligencenow.com">🛍️ The Store<span class="ext">↗</span></a>
+    </div>
+  </div>
+</nav>
 </header>
+<div class="breaking" id="breakingStrip" hidden><span class="blabel">🚨 BREAKING</span><a href="https://world.artificial-intelligencenow.com" target="_blank" rel="noopener"><span id="breakingText">Loading live alerts…</span></a><span class="bsrc" id="breakingSrc"></span></div>
+
 <main>
   <div class="hero">
     <h1>AI × <span class="grad">CREATOR</span></h1>
@@ -180,21 +265,21 @@
     <div class="join">
       <div class="jt">Get the next packs free — plus 10% off your first order</div>
       <p>Join the A.I. NOW list: new prompt packs and guides land there first, and list members get 10% off their first store order.</p>
-      <a class="btn" href="https://artificial-intelligencenow.com/pages/join-the-list">Join the List — free</a>
+      <a class="btn" href="https://shop.artificial-intelligencenow.com/pages/join-the-list">Join the List — free</a>
     </div>
   </section>
 
   <section class="panel">
     <h2>🌐 Keep exploring A.I. NOW<span class="bar"></span></h2>
     <div class="xlinks">
-      <a class="card a-vio" href="https://hub.artificial-intelligencenow.com"><div class="ct">🏠 The Hub — home</div><div class="cd">Everything AI, one place: live news, every tool directory, free packs and all the branches.</div><span class="cl">hub.artificial-intelligencenow.com →</span></a>
-      <a class="card a-pink" href="https://shop.artificial-intelligencenow.com"><div class="ct">🛍️ The Store — new door</div><div class="cd">The A.I. NOW store is moving to its own address: same store, same finds, new front door.</div><span class="cl">shop.artificial-intelligencenow.com →</span></a>
+      <a class="card a-vio" href="https://artificial-intelligencenow.com/"><div class="ct">🏠 The Hub — home</div><div class="cd">Everything AI, one place: live news, every tool directory, free packs and all the branches.</div><span class="cl">artificial-intelligencenow.com →</span></a>
+      <a class="card a-pink" href="https://shop.artificial-intelligencenow.com"><div class="ct">🛍️ The Store — new door</div><div class="cd">The A.I. NOW store lives at its own address: same store, same finds, its own front door.</div><span class="cl">shop.artificial-intelligencenow.com →</span></a>
       <a class="card a-cyan" href="https://world.artificial-intelligencenow.com"><div class="ct">🌍 World Watch</div><div class="cd">Live earthquakes, storms and severe weather from official sources — plus free help resources when an event hits.</div><span class="cl">world.artificial-intelligencenow.com →</span></a>
     </div>
   </section>
 </main>
 <footer>
-  A.I. NOW — Detroit, Michigan. Part of the <a href="https://hub.artificial-intelligencenow.com">A.I. NOW Hub</a>. News headlines are pulled live from The Verge, TechCrunch and the BBC; each headline belongs to its publisher and links to the original story. Tool names belong to their owners — directory links go to each tool's official site. Work you make with AI should be labeled as AI-made.
+  A.I. NOW — Detroit, Michigan. Part of the <a href="https://artificial-intelligencenow.com/">A.I. NOW Hub</a>. News headlines are pulled live from The Verge, TechCrunch and the BBC; each headline belongs to its publisher and links to the original story. Tool names belong to their owners — directory links go to each tool's official site. Work you make with AI should be labeled as AI-made.
 </footer>
 
 <script>
@@ -248,5 +333,62 @@ async function loadNews(){
 }
 loadNews();setInterval(loadNews,600000);
 </script>
+
+<script id="ainav-js">
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.ainav-item'));
+  function closeAll(except){items.forEach(function(it){if(it!==except){it.classList.remove('open');var b=it.querySelector('.ainav-tab');if(b)b.setAttribute('aria-expanded','false');}});}
+  items.forEach(function(it){var btn=it.querySelector('.ainav-tab');if(!btn)return;btn.addEventListener('click',function(e){e.stopPropagation();var open=it.classList.contains('open');closeAll(it);it.classList.toggle('open',!open);btn.setAttribute('aria-expanded',String(!open));});});
+  document.addEventListener('click',function(){closeAll(null);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll(null);});
+  /* GTA VI countdown — launch Thu Nov 19, 2026 */
+  var launch=Date.UTC(2026,10,19,5,0,0),days=Math.ceil((launch-Date.now())/864e5);
+  var gtaTxt=days>0?('🚀 GTA VI · '+days+' days to launch'):('🚀 GTA VI · OUT NOW');
+  document.querySelectorAll('[data-gta-countdown]').forEach(function(el){el.textContent=gtaTxt;});
+  /* Breaking strip — top NWS severe alert, else top USGS M4.5+ quake; stays hidden if neither answers */
+  var strip=document.getElementById('breakingStrip'),bt=document.getElementById('breakingText'),bs=document.getElementById('breakingSrc');
+  function showBreaking(text,src){if(!strip||!bt)return;bt.textContent=text;if(bs)bs.textContent=src;strip.hidden=false;}
+  async function loadBreaking(){
+    try{
+      var r=await fetch('https://api.weather.gov/alerts/active?status=actual&message_type=alert&limit=50');
+      var j=await r.json();
+      var feats=(j.features||[]).map(function(f){return f.properties;}).filter(function(p){return p&&p.headline;});
+      var rank={Extreme:0,Severe:1,Moderate:2,Minor:3,Unknown:4};
+      feats.sort(function(a,b){return (rank[a.severity]!=null?rank[a.severity]:4)-(rank[b.severity]!=null?rank[b.severity]:4);});
+      if(feats.length){showBreaking(feats[0].headline,'NWS live · World Watch →');return;}
+    }catch(e){}
+    try{
+      var r2=await fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson');
+      var j2=await r2.json();
+      var fs=(j2.features||[]).map(function(f){return f.properties;}).filter(function(p){return p&&p.place;});
+      fs.sort(function(a,b){return b.mag-a.mag;});
+      if(fs.length){showBreaking('M'+fs[0].mag.toFixed(1)+' earthquake — '+fs[0].place,'USGS live · World Watch →');return;}
+    }catch(e){}
+  }
+  if(strip){loadBreaking();setInterval(loadBreaking,600000);}
+  /* Back to top */
+  var topBtn=document.createElement('button');
+  topBtn.className='ainav-top';topBtn.type='button';topBtn.textContent='↑ TOP';topBtn.setAttribute('aria-label','Back to top');
+  topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.body.appendChild(topBtn);
+  addEventListener('scroll',function(){topBtn.classList.toggle('show',window.scrollY>650);},{passive:true});
+})();
+</script>
+<script>
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').catch(()=>{}); }
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6aef788aa3c2893c2c94aa40/1k6rmtnk6';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 </body>
 </html>
