@@ -74,23 +74,51 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="A.I. NOW">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+<style>
+/* A.I. NOW layout (Nov 19): Consultio-style topbar + white nav, royal-blue accents, Sora/Inter type */
+body{font-family:'Inter',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+h1,h2,h3,.stitle,.sname,.ct,.st,.dt,.at,.sh,.mt,.pname,.pbname,.hline{font-family:'Sora','Inter',sans-serif}
+.topbar{background:#EDF2FB;color:#1E3A5F;font-size:13px;border-bottom:1px solid #D9E4F2}
+.topbar-in{max-width:1120px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;justify-content:space-between;gap:6px 26px;flex-wrap:wrap}
+.topbar a{color:#1E3A5F;font-weight:600}
+.topbar a:hover{color:#2E5BFF}
+header{position:sticky;top:0;z-index:50;background:#FFFFFF;border-bottom:1px solid #E3E9F2;box-shadow:0 4px 18px rgba(30,58,95,.07);backdrop-filter:none}
+header .bar{flex-direction:row;align-items:center;text-align:left;gap:14px;padding:14px 20px;flex-wrap:wrap}
+header .logo{font-family:'Sora',sans-serif;font-weight:800;font-size:30px;letter-spacing:-.5px;line-height:1.05;color:#101E30}
+header .logo:hover{text-decoration:none}
+header .logo .grad{background:linear-gradient(92deg,#FF3E8A 0%,#A855F7 52%,#22D3EE 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+header nav.mainnav{margin-left:auto;justify-content:flex-end;gap:20px}
+header nav.mainnav a{color:#161513}
+header nav.mainnav a:hover{color:#2E5BFF;text-decoration:none}
+header nav.mainnav a.btn-audit{background:#2E5BFF;color:#FFFFFF;padding:10px 20px;border-radius:8px;font-weight:800}
+header nav.mainnav a.btn-audit:hover{background:#1E44D6;color:#FFFFFF}
+footer .logo{font-family:'Sora',sans-serif}
+@media(max-width:860px){header nav.mainnav{margin-left:0;justify-content:flex-start}}
+@media(max-width:640px){header .bar{padding:12px 14px}header nav.mainnav{margin-left:0;gap:14px}.topbar-in{justify-content:center;text-align:center}}
+</style>
 </head>
 <body>
+<div class="topbar">
+  <div class="topbar-in">
+    <span>Welcome to A.I. NOW — AI services for local business</span>
+    <span><a href="tel:+15862008282">(586) 200-8282</a> &nbsp;·&nbsp; <a href="mailto:support@artificial-intelligencenow.com">support@artificial-intelligencenow.com</a> &nbsp;·&nbsp; Macomb Township, MI</span>
+  </div>
+</div>
 <header>
   <div class="bar">
-    <div class="logo">A.I. <span class="grad">NOW</span></div>
-    <span class="pill">AI SERVICES</span>
+    <a class="logo" href="/">A.I. <span class="grad">NOW</span></a>
     <nav class="mainnav" aria-label="Main">
-      <a href="index.html">Home</a>
+      <a href="/">Home</a>
       <a href="services.html">Services</a>
       <a href="pricing.html">Pricing</a>
-      <a href="industries.html" class="on">Industries</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="faq.html">FAQ</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
       <a href="print.html">Print &amp; Promo</a>
-      <a class="btn btn-hot btn-sm" href="audit.html">Get Started</a>
+      <a href="industries.html">Industries</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn-audit" href="audit.html">Free AI Audit</a>
     </nav>
   </div>
 </header>
@@ -141,22 +169,22 @@
       <div class="card">
         <div class="ct">💬 AI Website Chatbot</div>
         <div class="cd">Takes reservation requests ahead of time, answers menu and hours questions, and handles large-party and catering inquiries — asking the right questions up front: date, headcount, occasion, contact info.</div>
-        <div class="price">$599 setup <span>+ $89/mo</span></div>
+        <div class="price">$419 setup <span>+ $62/mo</span></div>
       </div>
       <div class="card">
         <div class="ct">⭐ AI Review Responder</div>
         <div class="cd">Every Google review answered professionally, plus review requests sent to happy guests — so your rating climbs while you run the kitchen, and your review page reads like a place that's looked after.</div>
-        <div class="price">$149/mo <span>· no setup fee</span></div>
+        <div class="price">$99/mo <span>· no setup fee</span></div>
       </div>
       <div class="card">
         <div class="ct">⚡ AI Lead Follow-Up</div>
         <div class="cd">Catering and event inquiries get an instant reply — not a two-day wait — with automatic follow-up until you've had the conversation. No event slips away because the inbox was busy.</div>
-        <div class="price">$299 setup <span>+ $79/mo</span></div>
+        <div class="price">$209 setup <span>+ $55/mo</span></div>
       </div>
       <div class="card">
         <div class="ct">📱 AI Social Media Manager</div>
         <div class="cd">Daily posts, captions and hashtags across your social accounts — specials, events, new dishes — done for you, so the pages guests check before visiting never look abandoned.</div>
-        <div class="price">$599/mo <span>· no setup fee</span></div>
+        <div class="price">$419/mo <span>· no setup fee</span></div>
       </div>
     </div>
   </section>
@@ -169,7 +197,7 @@
       <div class="plan pop">
         <div class="popflag">RECOMMENDED</div>
         <div class="pname">BOOKING PRO</div>
-        <div class="pprice">$899 setup<br><small>+ $199/month</small></div>
+        <div class="pprice">$629 setup<br><small>+ $139/month</small></div>
         <ul>
           <li>AI Website Chatbot</li>
           <li>Reservation &amp; booking help built in</li>
@@ -181,12 +209,12 @@
       </div>
       <div class="plan">
         <div class="pname">START WITH REVIEWS — AI REVIEW RESPONDER</div>
-        <div class="pprice">$149/month<br><small>no setup fee</small></div>
+        <div class="pprice">$99/month<br><small>no setup fee</small></div>
         <ul>
           <li>Every Google review answered for you</li>
           <li>Review requests sent to happy guests</li>
           <li>The simplest first step — live fast, no website work needed</li>
-          <li>Add the chatbot later, or step up to SOCIAL PRO ($499 setup + $499/mo) when you want your social pages handled too</li>
+          <li>Add the chatbot later, or step up to SOCIAL PRO ($349 setup + $349/mo) when you want your social pages handled too</li>
         </ul>
         <a class="btn btn-ghost" href="audit.html">Ask about review responder</a>
       </div>
@@ -202,7 +230,7 @@
       <div class="card">
         <div class="ct">⭐ AI Review Responder</div>
         <div class="cd">Every Google review answered fast, in your voice — gracious to the five-star regulars, calm and professional on the rough ones. And when a bad review lands, it's flagged to you privately first, so you hear about it from us before the whole internet does — not left sitting unanswered where the next guest reads it.</div>
-        <div class="price">$149/mo <span>· no setup fee</span></div>
+        <div class="price">$99/mo <span>· no setup fee</span></div>
       </div>
       <div class="card">
         <div class="ct">🖼️ A reviews showcase on your own website</div>

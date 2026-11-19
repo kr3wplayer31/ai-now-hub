@@ -66,23 +66,51 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="A.I. NOW">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+<style>
+/* A.I. NOW layout (Nov 19): Consultio-style topbar + white nav, royal-blue accents, Sora/Inter type */
+body{font-family:'Inter',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+h1,h2,h3,.stitle,.sname,.ct,.st,.dt,.at,.sh,.mt,.pname,.pbname,.hline{font-family:'Sora','Inter',sans-serif}
+.topbar{background:#EDF2FB;color:#1E3A5F;font-size:13px;border-bottom:1px solid #D9E4F2}
+.topbar-in{max-width:1120px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;justify-content:space-between;gap:6px 26px;flex-wrap:wrap}
+.topbar a{color:#1E3A5F;font-weight:600}
+.topbar a:hover{color:#2E5BFF}
+header{position:sticky;top:0;z-index:50;background:#FFFFFF;border-bottom:1px solid #E3E9F2;box-shadow:0 4px 18px rgba(30,58,95,.07);backdrop-filter:none}
+header .bar{flex-direction:row;align-items:center;text-align:left;gap:14px;padding:14px 20px;flex-wrap:wrap}
+header .logo{font-family:'Sora',sans-serif;font-weight:800;font-size:30px;letter-spacing:-.5px;line-height:1.05;color:#101E30}
+header .logo:hover{text-decoration:none}
+header .logo .grad{background:linear-gradient(92deg,#FF3E8A 0%,#A855F7 52%,#22D3EE 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+header nav.mainnav{margin-left:auto;justify-content:flex-end;gap:20px}
+header nav.mainnav a{color:#161513}
+header nav.mainnav a:hover{color:#2E5BFF;text-decoration:none}
+header nav.mainnav a.btn-audit{background:#2E5BFF;color:#FFFFFF;padding:10px 20px;border-radius:8px;font-weight:800}
+header nav.mainnav a.btn-audit:hover{background:#1E44D6;color:#FFFFFF}
+footer .logo{font-family:'Sora',sans-serif}
+@media(max-width:860px){header nav.mainnav{margin-left:0;justify-content:flex-start}}
+@media(max-width:640px){header .bar{padding:12px 14px}header nav.mainnav{margin-left:0;gap:14px}.topbar-in{justify-content:center;text-align:center}}
+</style>
 </head>
 <body>
+<div class="topbar">
+  <div class="topbar-in">
+    <span>Welcome to A.I. NOW — AI services for local business</span>
+    <span><a href="tel:+15862008282">(586) 200-8282</a> &nbsp;·&nbsp; <a href="mailto:support@artificial-intelligencenow.com">support@artificial-intelligencenow.com</a> &nbsp;·&nbsp; Macomb Township, MI</span>
+  </div>
+</div>
 <header>
   <div class="bar">
-    <div class="logo">A.I. <span class="grad">NOW</span></div>
-    <span class="pill">AI SERVICES</span>
+    <a class="logo" href="/">A.I. <span class="grad">NOW</span></a>
     <nav class="mainnav" aria-label="Main">
-      <a href="index.html">Home</a>
+      <a href="/">Home</a>
       <a href="services.html">Services</a>
       <a href="pricing.html">Pricing</a>
-      <a href="industries.html">Industries</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="faq.html">FAQ</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
       <a href="print.html">Print &amp; Promo</a>
-      <a class="btn btn-hot btn-sm" href="get-started.html">Get Started</a>
+      <a href="industries.html">Industries</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn-audit" href="audit.html">Free AI Audit</a>
     </nav>
   </div>
 </header>
@@ -105,7 +133,7 @@
     <div class="stitle">Money &amp; terms</div>
     <p class="snote">What it costs, how you're billed, and how you leave if you ever want to.</p>
 
-    <details class="faq"><summary>How much does it cost?</summary><p>Every price is published on our <a href="pricing.html">Pricing page</a> — no "call for a quote" games. As a guide: an AI Website Chatbot is <b>$599 setup + $89/month</b>, packages run from <b>$599 setup + $89/month</b> (Starter) to <b>$1,999 setup + $599/month</b> (All-In Empire), and every price is set at <b>60% of what typical agencies charge</b> for the same work. Prices are "starting at" because a one-page site for a barber and a multi-location dental practice aren't the same job — your exact total is confirmed in a written quote before any work begins, and the quoted price is the price you pay.</p></details>
+    <details class="faq"><summary>How much does it cost?</summary><p>Every price is published on our <a href="pricing.html">Pricing page</a> — no "call for a quote" games. As a guide: an AI Website Chatbot is <b>$419 setup + $62/month</b>, packages run from <b>$419 setup + $62/month</b> (Starter) to <b>$1,399 setup + $419/month</b> (All-In Empire), and every price is set at <b>60% of what typical agencies charge</b> for the same work. Prices are "starting at" because a one-page site for a barber and a multi-location dental practice aren't the same job — your exact total is confirmed in a written quote before any work begins, and the quoted price is the price you pay.</p></details>
 
     <details class="faq"><summary>Is there a contract? Am I locked in?</summary><p>No long-term contract. After setup, every plan is <b>month-to-month</b>. You can cancel anytime — no cancellation fees, no exit interviews, no hard feelings. We'd rather earn your renewal every month than lock you into one. Full details are in our <a href="terms.html">Terms &amp; Conditions</a>.</p></details>
 
@@ -147,7 +175,7 @@
 
     <details class="faq"><summary>What exactly is the free AI audit?</summary><p>A plain-English report on your current website: how customers find you, where inquiries are getting dropped — the unanswered form, the after-hours visitor, the slow reply — and exactly what AI would do about it, with the price if you want it done. <b>Free means free</b>: no charge, no obligation, and if AI isn't a good fit for your business, the audit will tell you that instead. Request it on the <a href="audit.html">Free AI Audit page</a>.</p></details>
 
-    <details class="faq"><summary>I don't have a website yet. Can you still help?</summary><p>Yes — that's what the <b>AI-Ready Website Build</b> is for: a new professional website with the chatbot and lead capture built in from day one, <b>starting at $1,499</b> plus a hosting plan. It's on the <a href="services.html">Services page</a> with everything else we install.</p></details>
+    <details class="faq"><summary>I don't have a website yet. Can you still help?</summary><p>Yes — that's what the <b>AI-Ready Website Build</b> is for: a new professional website with the chatbot and lead capture built in from day one, <b>starting at $1,049</b> plus a hosting plan. It's on the <a href="services.html">Services page</a> with everything else we install.</p></details>
   </section>
 
   <!-- AUDIT BAND -->
