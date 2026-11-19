@@ -3,150 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A.I. NOW — Everything AI, One Place | Live Video, Live AI News, Tools & Free Guides</title>
-<meta name="description" content="The loud front door of A.I. NOW: a live video wall of 24/7 news channels, live AI news from the BBC, TechCrunch and The Verge, a plain-English directory of the AI tools that matter, free prompt packs, and every A.I. NOW branch under one roof.">
+<title>A.I. NOW — AI Chatbots & AI Services for Local Business Websites | Detroit</title>
+<meta name="description" content="A.I. NOW installs AI on your business website: 24/7 AI chatbots, AI voice receptionists, instant lead follow-up and review responses for doctors, dentists, roofers, landscapers, contractors and local businesses. Published pricing, month-to-month plans, free AI audit.">
 <style>
-  :root{--bg:#0a0618;--panel:#150b31;--panel2:#1c0f42;--line:#3b2a7a;--txt:#f5f2ff;--dim:#bdb2e8;--pink:#ff2e88;--violet:#8b3dff;--cyan:#00e5ff;--lime:#a6ff00;--yel:#ffd400;--red:#ff3355}
+  :root{--bg:#0A0618;--panel:#120A2C;--panel2:#170E38;--line:#2B2160;--txt:#F5F2FF;--dim:#BDB2E8;--pink:#FF2E88;--violet:#8B3DFF;--cyan:#00E5FF;--lime:#A6FF00}
   *{margin:0;padding:0;box-sizing:border-box}
-  body{background:var(--bg);color:var(--txt);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.45;
-    background-image:radial-gradient(900px 480px at 12% -6%,rgba(255,46,136,.30),transparent 60%),radial-gradient(900px 520px at 88% 4%,rgba(0,229,255,.22),transparent 60%),radial-gradient(760px 600px at 50% 108%,rgba(139,61,255,.28),transparent 60%);
-    background-attachment:fixed}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
   a{color:var(--cyan);text-decoration:none}
   a:hover{text-decoration:underline}
-  .wrap{max-width:1320px;margin:0 auto;padding:0 18px}
-  header{position:sticky;top:0;z-index:20;background:rgba(10,6,24,.92);backdrop-filter:blur(8px);border-bottom:3px solid;border-image:linear-gradient(90deg,var(--pink),var(--violet),var(--cyan),var(--lime)) 1}
-  .bar{max-width:1320px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-  .logo{font-weight:900;font-size:27px;letter-spacing:.5px;color:var(--txt)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(10,6,24,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .bar{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .logo{font-weight:900;font-size:26px;letter-spacing:.5px;color:var(--txt)}
   .grad{background:linear-gradient(92deg,var(--pink),var(--violet) 48%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .pill{display:inline-flex;align-items:center;gap:7px;background:var(--pink);color:#fff;font-size:12px;font-weight:900;padding:5px 12px;border-radius:999px;letter-spacing:1.5px;box-shadow:0 0 18px rgba(255,46,136,.55)}
-  .clock{margin-left:auto;color:var(--dim);font-size:13px;text-align:right}
-  .clock b{color:var(--txt);font-size:15px}
-  .hero{padding:40px 0 8px}
-  .hero .kicker{font-weight:900;letter-spacing:3px;font-size:13px;color:var(--lime);text-transform:uppercase}
-  .hero h1{font-size:clamp(46px,10.5vw,112px);font-weight:900;line-height:.94;letter-spacing:-1.5px;text-transform:uppercase;margin:10px 0 6px}
-  .stroke{color:transparent;-webkit-text-stroke:2.5px var(--cyan)}
-  .hero .sub{font-size:clamp(16px,2.4vw,21px);font-weight:600;color:#ddd6ff;max-width:840px;margin-top:12px}
-  .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-  .btn{display:inline-block;font-weight:900;font-size:16px;padding:14px 26px;border-radius:999px;letter-spacing:.4px}
-  .btn:hover{text-decoration:none;transform:translateY(-2px)}
-  .btn-hot{background:linear-gradient(92deg,var(--pink),var(--violet));color:#fff;box-shadow:0 6px 24px rgba(255,46,136,.45)}
-  .btn-cool{background:transparent;color:var(--lime);border:2.5px solid var(--lime)}
-  .ticker{background:#000;border-top:3px solid var(--pink);border-bottom:3px solid var(--pink);overflow:hidden;white-space:nowrap;margin:26px 0 6px}
-  .ticker .track{display:inline-block;padding:10px 0;font-weight:900;letter-spacing:.6px;font-size:15px;text-transform:uppercase;animation:tick 55s linear infinite;will-change:transform}
-  .ticker .sep{color:var(--pink);padding:0 12px}
-  .ticker .src{color:var(--cyan)}
-  @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-  section.panel{background:linear-gradient(180deg,var(--panel),#100826);border:2px solid var(--line);border-radius:20px;padding:22px;margin:26px 0;box-shadow:8px 8px 0 rgba(139,61,255,.25)}
-  .stitle{font-size:clamp(27px,5vw,42px);font-weight:900;text-transform:uppercase;line-height:1.05;letter-spacing:.2px}
-  .stitle .u{display:inline-block;border-bottom:6px solid var(--pink)}
-  .note{color:var(--dim);font-size:14.5px;margin:8px 0 16px;max-width:860px}
-  .livedot{width:11px;height:11px;border-radius:50%;background:var(--red);display:inline-block;animation:pulse 1.3s infinite;box-shadow:0 0 12px var(--red)}
-  @keyframes pulse{0%{opacity:1}50%{opacity:.25}100%{opacity:1}}
-  .livebadge{display:inline-flex;align-items:center;gap:8px;background:#2a0a18;border:2px solid var(--red);color:#ffb3c2;font-size:12.5px;font-weight:900;padding:5px 12px;border-radius:999px;letter-spacing:1.5px;vertical-align:middle}
-  .vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
-  .vid{border:2.5px solid var(--cyan);border-radius:16px;overflow:hidden;background:#000;box-shadow:6px 6px 0 rgba(0,229,255,.22)}
-  .vid:nth-child(2){border-color:var(--pink);box-shadow:6px 6px 0 rgba(255,46,136,.22)}
-  .vid:nth-child(3){border-color:var(--lime);box-shadow:6px 6px 0 rgba(166,255,0,.20)}
-  .vid:nth-child(4){border-color:var(--yel);box-shadow:6px 6px 0 rgba(255,212,0,.20)}
-  .vid:nth-child(5){border-color:var(--violet);box-shadow:6px 6px 0 rgba(139,61,255,.3)}
-  .vid.feat{grid-column:1/-1;border-color:var(--pink);box-shadow:8px 8px 0 rgba(255,46,136,.3)}
-  .vlabel{display:flex;align-items:center;gap:9px;background:linear-gradient(90deg,#1d0b3d,#0a2436);padding:11px 14px;font-weight:900;font-size:15.5px;letter-spacing:.3px}
-  .vlabel .watch{margin-left:auto;font-size:12.5px;font-weight:800;color:var(--cyan);white-space:nowrap}
-  .frame{position:relative;padding-top:56.25%;background:#000}
-  .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-  .ev{border:2px solid var(--line);background:var(--panel2);border-radius:14px;padding:13px 15px;margin-bottom:11px}
-  .ev .top{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
-  .badge{font-size:11px;font-weight:900;letter-spacing:.7px;padding:4px 9px;border-radius:999px;text-transform:uppercase;border:1.5px solid}
-  .b-pink{background:#2a0a22;color:#ffb0d4;border-color:var(--pink)}
-  .b-cyan{background:#062a36;color:#a8f2ff;border-color:var(--cyan)}
-  .b-lime{background:#1d2f06;color:#dcffb0;border-color:var(--lime)}
-  .b-yel{background:#33290a;color:#ffe98a;border-color:var(--yel)}
-  .b-viol{background:#22104d;color:#d3b8ff;border-color:var(--violet)}
-  .b-dim{background:#191233;color:var(--dim);border-color:var(--line)}
-  .ev .t{font-weight:800;font-size:16px}
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
-  .card{border:2px solid var(--line);background:var(--panel2);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:7px;box-shadow:5px 5px 0 rgba(0,229,255,.14)}
-  .card .ct{font-weight:900;font-size:17px}
-  .card .cd{color:var(--dim);font-size:14px;flex:1}
-  .card .cl{font-weight:900;font-size:14px}
-  a.card{color:var(--txt)}
-  a.card:hover{border-color:var(--pink);text-decoration:none;transform:translateY(-2px)}
-  .srcrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:6px}
-  .srcrow a.row{display:flex;justify-content:space-between;align-items:center;gap:10px;border:2px solid var(--line);background:var(--panel2);border-radius:14px;padding:13px 15px;color:var(--txt)}
-  .srcrow a.row:hover{border-color:var(--cyan);text-decoration:none}
-  .row .rt{font-weight:900}
-  .row .rd{color:var(--dim);font-size:12.5px}
-  .row .arr{font-size:19px;color:var(--pink);font-weight:900}
-  details.pack{border:2px solid var(--violet);background:var(--panel2);border-radius:16px;padding:6px 16px 14px;margin-bottom:14px}
-  details.pack summary{cursor:pointer;font-weight:900;font-size:17px;padding:12px 0}
-  .prompt{border:1.5px solid var(--line);background:var(--panel);border-radius:12px;padding:12px 13px;margin-bottom:10px}
-  .prompt .pt{font-weight:800;font-size:14.5px;display:flex;justify-content:space-between;align-items:center;gap:10px}
-  .prompt .px{color:var(--dim);font-size:14px;margin-top:5px;white-space:pre-wrap}
-  .copybtn{background:linear-gradient(92deg,var(--pink),var(--violet));border:0;color:#fff;font-weight:900;font-size:12.5px;padding:6px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
-  .emg{background:linear-gradient(92deg,#2a0a18,#1a0533);border:2.5px solid var(--red);border-radius:16px;padding:18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-  .emg .et{font-weight:900;font-size:19px}
-  .emg .ed{color:var(--dim);font-size:14px;max-width:720px}
-  .emg a.btn{margin-left:auto;background:var(--red);color:#fff;box-shadow:0 6px 20px rgba(255,51,85,.4)}
-  .join{background:linear-gradient(92deg,var(--pink),var(--violet) 55%,var(--cyan));border-radius:20px;padding:26px 22px;text-align:center;margin:26px 0;box-shadow:8px 8px 0 rgba(0,229,255,.25)}
-  .join .jt{font-weight:900;font-size:clamp(21px,3.6vw,30px);text-transform:uppercase}
-  .join p{font-size:15px;font-weight:600;margin-top:6px}
-  .join a.btn{display:inline-block;margin-top:14px;background:#0a0618;color:#fff;border:2.5px solid #fff}
-  footer{color:var(--dim);font-size:13px;padding:6px 0 36px}
-  .err{color:var(--yel);font-size:14px;font-weight:600}
-  .vstat{font-size:11.5px;color:var(--dim);padding:7px 13px;background:#0d0722;letter-spacing:.3px;border-top:1.5px solid var(--line)}
-  .vstat b{color:var(--lime)}
-  .vname{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .frame .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--dim);font-weight:800;font-size:14px;letter-spacing:.4px;text-align:center;padding:0 12px}
-  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
-
-  .appband{margin:26px 0 6px;background:linear-gradient(92deg,rgba(255,46,136,.20),rgba(139,61,255,.20) 48%,rgba(0,229,255,.20));border:2px solid var(--violet);border-radius:18px;padding:24px 22px;text-align:center}
-  .appband .jt{font-size:clamp(22px,4.4vw,32px)}
-  .appband p{max-width:640px;margin:8px auto 0}
-  .askband{margin:26px 0 6px;background:linear-gradient(92deg,rgba(0,229,255,.14),rgba(139,61,255,.16) 52%,rgba(255,46,136,.16));border:2px solid var(--cyan);border-radius:18px;padding:24px 22px}
-  .askband .jt{font-size:clamp(22px,4.4vw,32px);text-align:center}
-  .askchips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:16px 0 4px}
-  .askchip{cursor:pointer;border:2px solid var(--violet);background:rgba(10,6,24,.55);color:var(--txt);border-radius:999px;padding:9px 16px;font-weight:700;font-size:15px;font-family:inherit}
-  .askchip:hover{border-color:var(--pink)}
-  .askchip.on{background:linear-gradient(92deg,var(--pink),var(--violet) 55%,var(--cyan));border-color:transparent;color:#fff}
-  .askbox{max-width:720px;margin:14px auto 0;background:rgba(10,6,24,.6);border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-align:left}
-  .asklive{margin-top:14px;text-align:center}
-  #installBtn{cursor:pointer;border:none;font-family:inherit}
-  #installHint{font-size:14.5px;color:var(--dim);margin-top:12px}
-</style>
-
-<style id="ainav-css">
-/* ===== A.I. NOW shared top nav + breaking strip (hub v3, injected uniformly) ===== */
-.ainav{display:flex;flex-wrap:wrap;gap:2px;background:rgba(6,3,16,.72);border-top:1px solid #3b2a7a}
-.ainav-item{position:relative}
-.ainav-tab{display:flex;align-items:center;gap:6px;background:transparent;border:0;color:#f5f2ff;font-family:inherit;font-weight:900;font-size:14.5px;letter-spacing:1.2px;padding:11px 16px;cursor:pointer;text-transform:uppercase;white-space:nowrap}
-.ainav-tab .car{font-size:11px;opacity:.85}
-.ainav-tab[data-acc="pink"]{box-shadow:inset 0 -3px 0 #ff2e88}
-.ainav-tab[data-acc="lime"]{box-shadow:inset 0 -3px 0 #a6ff00}
-.ainav-tab[data-acc="violet"]{box-shadow:inset 0 -3px 0 #8b3dff}
-.ainav-tab[data-acc="cyan"]{box-shadow:inset 0 -3px 0 #00e5ff}
-.ainav-tab[data-acc="yel"]{box-shadow:inset 0 -3px 0 #ffd400}
-.ainav-tab:hover{background:rgba(139,61,255,.20)}
-.ainav-drop{display:none;position:absolute;left:0;top:100%;min-width:min(252px,86vw);background:#150b31;border:2px solid #3b2a7a;border-radius:0 0 14px 14px;padding:8px;z-index:200;box-shadow:0 18px 40px rgba(0,0,0,.55)}
-.ainav-item[data-acc="pink"] .ainav-drop{border-top:3px solid #ff2e88}
-.ainav-item[data-acc="lime"] .ainav-drop{border-top:3px solid #a6ff00}
-.ainav-item[data-acc="violet"] .ainav-drop{border-top:3px solid #8b3dff}
-.ainav-item[data-acc="cyan"] .ainav-drop{border-top:3px solid #00e5ff}
-.ainav-item[data-acc="yel"] .ainav-drop{border-top:3px solid #ffd400}
-.ainav-item:last-child .ainav-drop{left:auto;right:0}
-.ainav-drop a{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#f5f2ff;font-weight:800;font-size:14.5px;padding:9px 11px;border-radius:9px}
-.ainav-drop a:hover{background:rgba(0,229,255,.13);text-decoration:none}
-.ainav-drop a .ext{color:#00e5ff;font-size:12px;font-weight:900}
-.ainav-item.open .ainav-drop{display:block}
-@media(hover:hover) and (min-width:761px){.ainav-item:hover .ainav-drop{display:block}}
-.ainav-chip{display:inline-block;background:linear-gradient(92deg,#ff2e88,#8b3dff);color:#fff;font-size:11px;font-weight:900;padding:3px 9px;border-radius:999px;letter-spacing:.5px;white-space:nowrap}
-.breaking{display:flex;align-items:center;gap:10px;background:linear-gradient(90deg,#3d0518,#1c0f42);border-bottom:3px solid #ff3355;padding:8px 16px;font-size:14px}
-.breaking .blabel{background:#ff3355;color:#fff;font-weight:900;font-size:11.5px;letter-spacing:1.4px;padding:4px 10px;border-radius:999px;white-space:nowrap;box-shadow:0 0 14px rgba(255,51,85,.6)}
-.breaking a{color:#f5f2ff;font-weight:800}
-.breaking a:hover{text-decoration:underline}
-.breaking .bsrc{margin-left:auto;color:#bdb2e8;font-size:11.5px;white-space:nowrap}
-.ainav-top{position:fixed;right:16px;bottom:16px;z-index:300;background:linear-gradient(92deg,#ff2e88,#8b3dff);color:#fff;border:0;font-family:inherit;font-weight:900;font-size:13px;letter-spacing:1px;padding:11px 16px;border-radius:999px;cursor:pointer;box-shadow:0 8px 24px rgba(255,46,136,.45);opacity:0;pointer-events:none;transition:opacity .25s}
-.ainav-top.show{opacity:1;pointer-events:auto}
-@media(max-width:760px){.breaking .bsrc{display:none}.ainav-tab{padding:10px 12px;font-size:13.5px}}
+  .pill{display:inline-flex;align-items:center;background:var(--pink);color:#fff;font-size:11px;font-weight:900;padding:5px 12px;border-radius:999px;letter-spacing:1.5px}
+  nav.mainnav{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+  nav.mainnav a{color:var(--txt);font-weight:700;font-size:14.5px}
+  nav.mainnav a:hover{color:var(--cyan);text-decoration:none}
+  .btn{display:inline-block;font-weight:800;font-size:15.5px;padding:13px 26px;border-radius:10px;letter-spacing:.2px;border:0;cursor:pointer}
+  .btn:hover{text-decoration:none}
+  .btn-hot{background:linear-gradient(92deg,var(--pink),var(--violet));color:#fff}
+  .btn-ghost{background:transparent;color:var(--txt);border:1.5px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+  .btn-sm{padding:10px 20px;font-size:14px}
+  /* hero */
+  .hero{padding:64px 0 20px;text-align:left}
+  .kicker{font-weight:800;letter-spacing:2.5px;font-size:12.5px;color:var(--cyan);text-transform:uppercase}
+  .hero h1{font-size:clamp(36px,6vw,58px);font-weight:900;line-height:1.08;letter-spacing:-.5px;margin:14px 0 16px;max-width:820px}
+  .hero .sub{font-size:clamp(16.5px,2.2vw,20px);color:#DDD6FF;max-width:760px}
+  .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .hero .fineprint{color:var(--dim);font-size:14px;margin-top:16px}
+  /* trust strip */
+  .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:44px;padding:18px 0}
+  .trust .tlabel{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--dim);text-transform:uppercase;margin-bottom:10px}
+  .trust .trow{display:flex;flex-wrap:wrap;gap:8px 22px;font-weight:700;font-size:15.5px;color:#E7E2FF}
+  /* sections */
+  section{padding:52px 0 8px}
+  .stitle{font-size:clamp(27px,4.4vw,38px);font-weight:900;line-height:1.12;letter-spacing:-.3px}
+  .snote{color:var(--dim);font-size:16px;margin:10px 0 26px;max-width:780px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .card{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:9px}
+  .card .ct{font-weight:800;font-size:18.5px}
+  .card .cd{color:var(--dim);font-size:15px;flex:1}
+  .card .price{font-weight:900;font-size:17px;color:var(--txt)}
+  .card .price span{color:var(--cyan)}
+  .card ul{color:var(--dim);font-size:14.5px;padding-left:18px}
+  .card ul li{margin:3px 0}
+  /* pricing */
+  .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:stretch}
+  .plan{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;gap:10px;position:relative}
+  .plan.pop{border:2px solid var(--pink);background:var(--panel2)}
+  .popflag{position:absolute;top:-13px;left:24px;background:var(--pink);color:#fff;font-size:11.5px;font-weight:900;letter-spacing:1.2px;padding:5px 12px;border-radius:999px}
+  .plan .pname{font-weight:900;font-size:15px;letter-spacing:1.6px;color:var(--cyan)}
+  .plan.pop .pname{color:var(--pink)}
+  .plan .pprice{font-size:30px;font-weight:900;line-height:1.15}
+  .plan .pprice small{font-size:15px;color:var(--dim);font-weight:700}
+  .plan ul{color:#DDD6FF;font-size:15px;padding-left:18px;flex:1}
+  .plan ul li{margin:5px 0}
+  .plan .btn{text-align:center;margin-top:8px}
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+  .step{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:22px}
+  .step .num{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:linear-gradient(92deg,var(--pink),var(--violet));color:#fff;font-weight:900;font-size:17px;margin-bottom:12px}
+  .step .st{font-weight:800;font-size:17.5px;margin-bottom:6px}
+  .step .sd{color:var(--dim);font-size:14.5px}
+  /* industries */
+  .inds{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .ind{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:17px 18px}
+  .ind .it{font-weight:800;font-size:16px;margin-bottom:4px}
+  .ind .id{color:var(--dim);font-size:14px}
+  /* faq */
+  details.faq{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:4px 20px 14px;margin-bottom:12px}
+  details.faq summary{cursor:pointer;font-weight:800;font-size:16.5px;padding:13px 0 6px}
+  details.faq p{color:var(--dim);font-size:15px;padding-bottom:6px;max-width:860px}
+  /* audit band */
+  .auditband{margin:52px 0 8px;background:linear-gradient(92deg,rgba(255,46,136,.16),rgba(139,61,255,.16) 52%,rgba(0,229,255,.14));border:1px solid var(--violet);border-radius:16px;padding:30px 26px;text-align:center}
+  .auditband .at{font-weight:900;font-size:clamp(23px,4vw,32px)}
+  .auditband p{color:#DDD6FF;font-size:16px;max-width:680px;margin:10px auto 0}
+  .auditband .btn{margin-top:20px}
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .contact-card{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:24px}
+  .contact-card .ct{font-weight:800;font-size:18px;margin-bottom:8px}
+  .contact-card p{color:var(--dim);font-size:15px}
+  .contact-card .big{font-size:18px;font-weight:800;color:var(--txt);word-break:break-all}
+  /* footer */
+  footer{border-top:1px solid var(--line);margin-top:60px;padding:30px 0 40px;color:var(--dim);font-size:13.5px}
+  footer .frow{display:flex;flex-wrap:wrap;gap:10px 26px;margin-bottom:12px}
+  footer a{color:var(--dim);font-weight:700}
+  footer a:hover{color:var(--cyan)}
+  @media(max-width:640px){nav.mainnav{margin-left:0;gap:14px}.hero{padding:44px 0 12px}}
 </style>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0A0618">
@@ -158,502 +106,216 @@
 <header>
   <div class="bar">
     <div class="logo">A.I. <span class="grad">NOW</span></div>
-    <span class="pill">THE HUB</span>
-    <div class="clock"><b id="clock">--:--:--</b><br><span id="updated">loading live AI news…</span></div>
+    <span class="pill">AI SERVICES</span>
+    <nav class="mainnav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#industries">Industries</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://shop.artificial-intelligencenow.com">Store</a>
+      <a class="btn btn-hot btn-sm" href="#contact">Free AI Audit</a>
+    </nav>
   </div>
-<nav class="ainav" aria-label="Hub sections">
-  <div class="ainav-item" data-acc="pink"><button type="button" class="ainav-tab" data-acc="pink" aria-haspopup="true" aria-expanded="false">AI News <span class="car">▾</span></button>
-    <div class="ainav-drop">
-      <a href="index.html">🏠 Front Door</a>
-      <a href="index.html#livewall">🔴 Live Video Wall</a>
-      <a href="index.html#ainews">📰 Live AI News</a>
-      <a href="index.html#tools">🧰 Tools Directory</a>
-      <a href="index.html#freebies">🎁 Free Downloads</a>
-      <a href="index.html#explore">🧭 Explore the Hub</a>
-    </div>
-  </div>
-  <div class="ainav-item" data-acc="lime"><button type="button" class="ainav-tab" data-acc="lime" aria-haspopup="true" aria-expanded="false">Money <span class="car">▾</span></button>
-    <div class="ainav-drop">
-      <a href="money.html">💰 AI × Money</a>
-      <a href="business.html">💼 AI × Business</a>
-      <a href="studio.html">🛠️ A.I. NOW Studio</a>
-    </div>
-  </div>
-  <div class="ainav-item" data-acc="violet"><button type="button" class="ainav-tab" data-acc="violet" aria-haspopup="true" aria-expanded="false">Play <span class="car">▾</span></button>
-    <div class="ainav-drop">
-      <a href="gaming.html">🎮 AI × Gaming</a>
-      <a href="gaming.html">🚀 GTA VI Launch<span class="ainav-chip" data-gta-countdown>counting…</span></a>
-      <a href="sports.html">🏟️ AI × Sports</a>
-      <a href="creator.html">🎨 AI × Creator</a>
-    </div>
-  </div>
-  <div class="ainav-item" data-acc="cyan"><button type="button" class="ainav-tab" data-acc="cyan" aria-haspopup="true" aria-expanded="false">Life <span class="car">▾</span></button>
-    <div class="ainav-drop">
-      <a href="life.html">🌱 AI × Life</a>
-      <a href="food.html">🍳 AI × Food</a>
-      <a href="home.html">🏠 AI × Home</a>
-      <a href="travel.html">✈️ AI × Travel</a>
-    </div>
-  </div>
-  <div class="ainav-item" data-acc="yel"><button type="button" class="ainav-tab" data-acc="yel" aria-haspopup="true" aria-expanded="false">Community <span class="car">▾</span></button>
-    <div class="ainav-drop">
-      <a href="community.html">💬 The Community</a>
-      <a href="blog.html">📡 The Signal — Blog</a>
-      <a href="https://world.artificial-intelligencenow.com">🌍 World Watch<span class="ext">↗</span></a>
-      <a href="https://shop.artificial-intelligencenow.com">🛍️ The Store<span class="ext">↗</span></a>
-    </div>
-  </div>
-</nav>
 </header>
-<div class="breaking" id="breakingStrip" hidden><span class="blabel">🚨 BREAKING</span><a href="https://world.artificial-intelligencenow.com" target="_blank" rel="noopener"><span id="breakingText">Loading live alerts…</span></a><span class="bsrc" id="breakingSrc"></span></div>
 
 <main class="wrap">
+  <!-- HERO -->
   <div class="hero">
-    <div class="kicker">⚡ Detroit-built · Live around the clock</div>
-    <h1>Everything AI.<br><span class="grad">Happening</span> <span class="stroke">Now.</span></h1>
-    <p class="sub">Live video of what the world is talking about, AI news the minute it breaks, the AI tools that actually matter in plain English, and free guides you can use today — every A.I. NOW branch under one loud roof.</p>
+    <div class="kicker">AI implementation for local businesses · Detroit, Michigan</div>
+    <h1>We put AI to work on your business website.</h1>
+    <p class="sub">Your customers ask questions at 9 PM, on weekends, and from their phones — and they expect an answer in minutes, not the next business day. A.I. NOW installs AI on your website that answers them around the clock, captures their name and number, and follows up instantly — so the jobs you used to miss while you were on a roof, under a sink, or with a patient stop slipping away.</p>
     <div class="ctas">
-      <a class="btn btn-hot" href="#livewall">🔴 Watch it live</a>
-      <a class="btn btn-cool" href="#explore">🧭 Explore the hub</a>
-      <a class="btn btn-cool" href="https://shop.artificial-intelligencenow.com">🛍️ Shop the store</a>
+      <a class="btn btn-hot" href="mailto:support@artificial-intelligencenow.com?subject=AI%20SERVICES%20%E2%80%94%20Free%20AI%20Audit">Get my free AI audit</a>
+      <a class="btn btn-ghost" href="#pricing">See services &amp; pricing</a>
+    </div>
+    <p class="fineprint">Free audit, no charge and no obligation. Published prices below — no quote games. Month-to-month plans, cancel anytime.</p>
+  </div>
+
+  <!-- TRUST STRIP -->
+  <div class="trust">
+    <div class="tlabel">Built for local businesses like yours</div>
+    <div class="trow">
+      <span>Doctors &amp; Dentists</span><span>Roofing</span><span>Landscaping</span><span>Construction</span><span>HVAC</span><span>Plumbing</span><span>Law Firms</span><span>Salons &amp; Barbers</span><span>Restaurants</span><span>Real Estate</span><span>Auto Shops</span>
     </div>
   </div>
 
-  <div class="ticker" aria-hidden="true"><div class="track" id="ticker"><span id="ticker-a">Live AI news<span class="sep">⚡</span>Live video wall<span class="sep">⚡</span>New AI tools<span class="sep">⚡</span>Free prompt pack<span class="sep">⚡</span>World Watch<span class="sep">⚡</span>Drop Radar<span class="sep">⚡</span>The store lives at shop.artificial-intelligencenow.com<span class="sep">⚡</span></span><span id="ticker-b"></span></div></div>
-
-  <section class="panel" id="livewall">
-    <div class="stitle">🔴 <span class="u">Live</span> Video Wall <span class="livebadge"><span class="livedot"></span>Live now</span></div>
-    <p class="note">Real 24/7 live channels, streaming free — the same newsrooms the whole internet watches when something big happens. These channels carry whatever the world is talking about, as it happens: breaking news, launches, markets, weather, all of it. Press play on any screen. Every screen watches itself: if a channel ever drops, stalls or refuses to play on your device, the wall swaps in a backup newsroom on its own — a dead tile never just sits here.</p>
-    <div class="vgrid" id="wallGrid">
-      <div class="vid feat" id="wall0">
-        <div class="vlabel"><span class="livedot"></span><span class="vname">Top Story · loading…</span><a class="watch" href="#" target="_blank" rel="noopener">Watch on YouTube →</a></div>
-        <div class="frame"><div class="ph">Tuning in the live feed…</div></div>
-        <div class="vstat">Self-check on — if this channel drops, a backup swaps in automatically.</div>
-      </div>
-      <div class="vid" id="wall1">
-        <div class="vlabel"><span class="livedot"></span><span class="vname">US News · loading…</span><a class="watch" href="#" target="_blank" rel="noopener">Watch on YouTube →</a></div>
-        <div class="frame"><div class="ph">Tuning in the live feed…</div></div>
-        <div class="vstat">Self-check on — if this channel drops, a backup swaps in automatically.</div>
-      </div>
-      <div class="vid" id="wall2">
-        <div class="vlabel"><span class="livedot"></span><span class="vname">World · loading…</span><a class="watch" href="#" target="_blank" rel="noopener">Watch on YouTube →</a></div>
-        <div class="frame"><div class="ph">Tuning in the live feed…</div></div>
-        <div class="vstat">Self-check on — if this channel drops, a backup swaps in automatically.</div>
-      </div>
-      <div class="vid" id="wall3">
-        <div class="vlabel"><span class="livedot"></span><span class="vname">Money Live · loading…</span><a class="watch" href="#" target="_blank" rel="noopener">Watch on YouTube →</a></div>
-        <div class="frame"><div class="ph">Tuning in the live feed…</div></div>
-        <div class="vstat">Self-check on — if this channel drops, a backup swaps in automatically.</div>
-      </div>
-      <div class="vid" id="wall4">
-        <div class="vlabel"><span class="livedot"></span><span class="vname">Europe · loading…</span><a class="watch" href="#" target="_blank" rel="noopener">Watch on YouTube →</a></div>
-        <div class="frame"><div class="ph">Tuning in the live feed…</div></div>
-        <div class="vstat">Self-check on — if this channel drops, a backup swaps in automatically.</div>
-      </div>
-      <div class="vid" id="wall5">
-        <div class="vlabel"><span class="livedot"></span><span class="vname">Global · loading…</span><a class="watch" href="#" target="_blank" rel="noopener">Watch on YouTube →</a></div>
-        <div class="frame"><div class="ph">Tuning in the live feed…</div></div>
-        <div class="vstat">Self-check on — if this channel drops, a backup swaps in automatically.</div>
-      </div>
-    </div>
-    <p class="note" style="margin-top:16px"><b style="color:var(--txt)">Live &amp; trending:</b> want the full-screen version, the live chat, or whatever else is streaming right this second? Open any channel's live page on YouTube:</p>
-    <div class="srcrow">
-      <a class="row" href="https://www.youtube.com/channel/UCeY0bbntWzzVIaj2z3QigXg/live" target="_blank" rel="noopener"><span><span class="rt">NBC News</span><br><span class="rd">Top stories &amp; special coverage</span></span><span class="arr">→</span></a>
-      <a class="row" href="https://www.youtube.com/channel/UCBi2mrWuNuyYy4gbM6fU18Q/live" target="_blank" rel="noopener"><span><span class="rt">ABC News Live</span><br><span class="rd">US news, live 24/7</span></span><span class="arr">→</span></a>
-      <a class="row" href="https://www.youtube.com/channel/UCNye-wNBqNL5ZzHSJj3l8Bg/live" target="_blank" rel="noopener"><span><span class="rt">Al Jazeera English</span><br><span class="rd">Global coverage, live</span></span><span class="arr">→</span></a>
-      <a class="row" href="https://www.youtube.com/channel/UCIALMKvObZNtJ6AmdCLP7Lg/live" target="_blank" rel="noopener"><span><span class="rt">Bloomberg Television</span><br><span class="rd">Markets &amp; money, live</span></span><span class="arr">→</span></a>
-      <a class="row" href="https://www.youtube.com/channel/UCknLrEdhRCp1aegoMqRaCZg/live" target="_blank" rel="noopener"><span><span class="rt">DW News</span><br><span class="rd">World news from Europe</span></span><span class="arr">→</span></a>
-      <a class="row" href="https://www.youtube.com/channel/UC83jt4dlz1Gjl58fzQrrKZg/live" target="_blank" rel="noopener"><span><span class="rt">CNA</span><br><span class="rd">Asia &amp; world, 24/7 live</span></span><span class="arr">→</span></a>
-    </div>
-  </section>
-
-  <section class="panel" id="ainews">
-    <div class="stitle">📰 Live <span class="u">AI News</span></div>
-    <p class="note">The newest AI headlines from three newsrooms we trust, pulled live and newest first — the same stories scrolling in the ticker up top. Every headline links to the original story at the source.</p>
-    <div id="news"><p class="note">Loading headlines…</p></div>
-    <div class="srcrow">
-      <a class="row" href="https://www.bbc.com/news/technology" target="_blank" rel="noopener"><span><span class="rt">BBC Technology</span><br><span class="rd">Read AI and tech news at the BBC</span></span><span class="arr">→</span></a>
-      <a class="row" href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" rel="noopener"><span><span class="rt">TechCrunch — AI</span><br><span class="rd">The AI industry, as it happens</span></span><span class="arr">→</span></a>
-      <a class="row" href="https://www.theverge.com/ai-artificial-intelligence" target="_blank" rel="noopener"><span><span class="rt">The Verge — AI</span><br><span class="rd">AI news, reviews and explainers</span></span><span class="arr">→</span></a>
-    </div>
-  </section>
-
-  <section class="panel" id="tools">
-    <div class="stitle">🧰 AI Tools <span class="u">Directory</span></div>
-    <p class="note">The major AI tools, in plain English — what each one is for, and a straight link to its official site. No rankings to buy, no fake scores: just the map.</p>
-    <!-- AFFILIATE SWAP: when Impact / PartnerStack approvals land, replace the plain official-site links in this directory with the tracked affiliate links for each tool, and add rel="sponsored noopener" to each swapped link. Until then every link below is a plain link to the tool's official site — A.I. NOW earns nothing from them. -->
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="stitle">What we install for you</div>
+    <p class="snote">Pick one service or take a package below. Every price is printed up front — "starting at" means the final number depends on your site and your needs, and you always get the exact figure in writing before any work begins.</p>
     <div class="cards">
-      <div class="card"><div class="ct">ChatGPT</div><div class="cd">The chatbot that started it all — ask questions, write, brainstorm and code.</div><a class="cl" href="https://chatgpt.com" target="_blank" rel="noopener">Official site →</a></div>
-      <div class="card"><div class="ct">Claude</div><div class="cd">Anthropic's assistant — strong on long documents, careful writing and analysis.</div><a class="cl" href="https://claude.ai" target="_blank" rel="noopener">Official site →</a></div>
-      <div class="card"><div class="ct">Gemini</div><div class="cd">Google's AI — lives inside Search, Gmail and Docs, and is quick with images and live info.</div><a class="cl" href="https://gemini.google.com" target="_blank" rel="noopener">Official site →</a></div>
-      <div class="card"><div class="ct">Perplexity</div><div class="cd">An AI search engine — it answers your question and shows the sources so you can check.</div><a class="cl" href="https://www.perplexity.ai" target="_blank" rel="noopener">Official site →</a></div>
-      <div class="card"><div class="ct">Copilot</div><div class="cd">Microsoft's assistant — built into Windows, Edge and the Office apps.</div><a class="cl" href="https://copilot.microsoft.com" target="_blank" rel="noopener">Official site →</a></div>
-      <div class="card"><div class="ct">Midjourney</div><div class="cd">Turn a sentence into a striking image — art, posters and product shots.</div><a class="cl" href="https://www.midjourney.com" target="_blank" rel="noopener">Official site →</a></div>
-      <div class="card"><div class="ct">Runway</div><div class="cd">AI video — generate and edit video clips from text and images.</div><a class="cl" href="https://runwayml.com" target="_blank" rel="noopener">Official site →</a></div>
-      <div class="card"><div class="ct">ElevenLabs</div><div class="cd">Realistic AI voices — narration, audiobooks and video voiceovers.</div><a class="cl" href="https://elevenlabs.io" target="_blank" rel="noopener">Official site →</a></div>
-      <div class="card"><div class="ct">Notion AI</div><div class="cd">AI inside your notes — summaries, drafts and answers pulled from your own workspace.</div><a class="cl" href="https://www.notion.com/product/ai" target="_blank" rel="noopener">Official site →</a></div>
-      <div class="card"><div class="ct">Canva AI (Magic Studio)</div><div class="cd">Design anything with AI help — social posts, logos, flyers and presentations.</div><a class="cl" href="https://www.canva.com/magic-studio/" target="_blank" rel="noopener">Official site →</a></div>
-    </div>
-  </section>
-
-  <section class="panel" id="freebies">
-    <div class="stitle">🎁 Free <span class="u">Downloads</span> — Our Own Stuff</div>
-    <p class="note">Everything here is made by A.I. NOW and free to use. We never offer downloads of other companies' software — for the tools themselves, use the official links in the directory above.</p>
-
-    <details class="pack" open>
-      <summary>📋 The AI Starter Prompt Pack — copy-ready prompts that actually work</summary>
-      <p class="note" style="margin-top:4px">Hit Copy on any prompt and paste it into ChatGPT, Claude, Gemini or any AI chat. Swap the [brackets] for your details.</p>
-
-      <div class="prompt"><div class="pt">Explain anything, plainly <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Explain [topic] to me like I'm smart but brand new to it. Use one real-world example, skip the jargon, and finish with the 3 things that matter most.</p></div>
-
-      <div class="prompt"><div class="pt">Fix my email <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Rewrite the email below so it's shorter, friendly and clear. Keep every fact exactly as-is. Give me two versions: polite and direct.
-[PASTE YOUR EMAIL HERE]</p></div>
-
-      <div class="prompt"><div class="pt">Summarize anything long <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Summarize the text below in 5 bullet points a busy person can read in 30 seconds. Then add one line: "The one thing to remember is…"
-[PASTE THE ARTICLE OR DOCUMENT HERE]</p></div>
-
-      <div class="prompt"><div class="pt">Write a social post that sounds like me <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Write 3 short social media captions about [what you're posting]. Casual and human, no hype words, no fake urgency. One funny, one helpful, one straight to the point.</p></div>
-
-      <div class="prompt"><div class="pt">An honest cover letter <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Write a cover letter for the [job title] job at [company] using ONLY the real experience I paste below. Do not invent employers, dates or duties. Keep it under 250 words and confident.
-[PASTE YOUR EXPERIENCE HERE]</p></div>
-
-      <div class="prompt"><div class="pt">Test a small-business idea <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">I'm thinking about starting [business idea] in [city]. Play devil's advocate: give me the 5 hardest questions a customer or a bank would ask, what it realistically costs to start, and the cheapest way to test it this month before spending real money.</p></div>
-
-      <div class="prompt"><div class="pt">Learn anything in a week <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Build me a 7-day starter plan to learn [skill]. One focused lesson per day, each under an hour, each ending with a tiny hands-on task. Assume I know nothing on day 1.</p></div>
-
-      <div class="prompt"><div class="pt">Meal plan on a budget <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Make me a 5-day dinner plan for [number] people with a grocery budget of $[amount]. Simple ingredients I can find at any grocery store, nothing fancy, and give me the shopping list sorted by aisle.</p></div>
-
-      <div class="prompt"><div class="pt">Turn notes into a to-do list <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Turn these rough notes into a clean action list. Group them by what I can do today, this week, and later. Flag anything that sounds like it has a deadline.
-[PASTE YOUR NOTES HERE]</p></div>
-
-      <div class="prompt"><div class="pt">Brainstorm, then narrow it down <button class="copybtn" onclick="copyPrompt(this)">Copy</button></div><p class="px">Give me 10 ideas for [goal — e.g. posts for my shop, gifts for my mom, side income this month]. Then rank your own list: which 3 are best for someone with almost no budget, and why.</p></div>
-    </details>
-  </section>
-
-  <div class="join">
-    <div class="jt">Get the next packs free — plus 10% off your first order</div>
-    <p>Join the A.I. NOW list at the store: new prompt packs and guides land there first, and list members get 10% off their first store order.</p>
-    <a class="btn" href="https://shop.artificial-intelligencenow.com/pages/join-the-list">Join the List — free</a>
-  </div>
-
-  <div class="appband" id="appCard">
-    <div class="jt">📱 GET THE APP</div>
-    <p>The hub as an app — full-screen, on your home screen, free. One tap installs it right here: no app store, no download wait.</p>
-    <p style="margin-top:16px"><button class="btn" id="installBtn" hidden>📲 Install A.I. NOW</button></p>
-    <p id="installHint" hidden></p>
-    <p id="installedMsg" hidden>✅ You're in — A.I. NOW is already installed on this device.</p>
-  </div>
-
-  <div class="askband" id="askGuide">
-    <div class="jt">💬 ASK A.I. NOW</div>
-    <p style="text-align:center;max-width:640px;margin:8px auto 0">Instant answers — no waiting. Tap a question:</p>
-    <div class="askchips" id="askChips">
-      <button type="button" class="askchip" data-q="best">🤖 What's the best free AI for…?</button>
-      <button type="button" class="askchip" data-q="scam">🛡️ Is this AI tool a scam?</button>
-      <button type="button" class="askchip" data-q="gta">🎮 When does GTA VI drop?</button>
-      <button type="button" class="askchip" data-q="build">🛠️ Build my website</button>
-      <button type="button" class="askchip" data-q="store">🛍️ Where's the store?</button>
-      <button type="button" class="askchip" data-q="agent">🧠 What is an AI agent?</button>
-    </div>
-    <div class="askbox" id="askBox">Tap any question above and the answer lands right here — straight links, no runaround.</div>
-    <p class="asklive">Something else on your mind? <a href="#" id="askLive">Chat with us live</a> — tap the chat bubble in the corner and we'll take it from there.</p>
-  </div>
-
-  <section class="panel" id="explore">
-    <div class="stitle">🧭 Explore <span class="u">the Hub</span></div>
-    <p class="note">Twelve doors, one roof — every A.I. NOW page, live now. Pick a world: money, games, food, your house, your next trip. Each one carries live headlines, plain-English explainers, the real tools, and a free pack to take with you.</p>
-    <div class="cards">
-      <a class="card" href="money.html" style="border-top:6px solid #a6ff4d"><div class="ct">💰 AI × MONEY</div><div class="cd">AI in Bitcoin, crypto and banking — live prices, live headlines, plain-English explainers and a free crypto safety cheat sheet. Education, never advice.</div><span class="cl">Enter →</span></a>
-      <a class="card" href="gaming.html" style="border-top:6px solid #8b3dff"><div class="ct">🎮 AI × GAMING</div><div class="cd">How AI is changing games, game-making and streaming — smart NPCs, AI-built worlds, anti-cheat and the tools players actually use, with live gaming headlines.</div><span class="ainav-chip" data-gta-countdown style="align-self:flex-start">🚀 GTA VI countdown</span><span class="cl">Enter →</span></a>
-      <a class="card" href="business.html" style="border-top:6px solid #ffd400"><div class="ct">💼 AI × BUSINESS</div><div class="cd">AI for small business owners, workers and job hunters — live business news, the tools that help at work, and a free Small Business AI Starter Pack.</div><span class="cl">Enter →</span></a>
-      <a class="card" href="creator.html" style="border-top:6px solid #ff3e8a"><div class="ct">🎨 AI × CREATOR</div><div class="cd">Art, video, music &amp; words — the tools turning anyone into an artist, filmmaker, musician or author.</div><span class="cl">Enter →</span></a>
-      <a class="card" href="life.html" style="border-top:6px solid #a3e635"><div class="ct">🌱 AI × LIFE</div><div class="cd">AI in your health, home, learning, shopping and travel — what it can do, what it can't, in plain English.</div><span class="cl">Enter →</span></a>
-      <a class="card" href="sports.html" style="border-top:6px solid #22d3ee"><div class="ct">🏟️ AI × SPORTS</div><div class="cd">AI in training, analytics, broadcasts and fantasy — player tracking, scouting, auto-highlights and the tools fans actually use, with live sports headlines and zero betting talk.</div><span class="cl">Enter →</span></a>
-      <a class="card" href="travel.html" style="border-top:6px solid #22d3ee"><div class="ct">✈️ AI × TRAVEL</div><div class="cd">Plan trips, dodge scams, travel smarter — AI itinerary builders, fare watching, translation and booking safety, explained plainly with live travel headlines.</div><span class="cl">Enter →</span></a>
-      <a class="card" href="food.html" style="border-top:6px solid #a6f750"><div class="ct">🍳 AI × FOOD</div><div class="cd">Recipes from what's in your fridge, meal plans on a budget, self-writing grocery lists and honest nutrition info — with live food headlines and a hard allergy-safety line.</div><span class="cl">Enter →</span></a>
-      <a class="card" href="home.html" style="border-top:6px solid #22d3ee"><div class="ct">🏠 AI × HOME</div><div class="cd">Smart homes, AI cameras, room-design tools and DIY planning — what AI can run in your house, where it stops, and when to call a licensed pro.</div><span class="cl">Enter →</span></a>
-      <a class="card" href="studio.html" style="border-top:6px solid #8b3dff"><div class="ct">🛠️ A.I. NOW STUDIO</div><div class="cd">We build it for you — done-for-you websites, stores and AI projects with honest starting prices, a flat written quote, and a live preview before anything goes public.</div><span class="cl">Enter →</span></a>
-      <a class="card" href="community.html" style="border-top:6px solid #ff9f43"><div class="ct">💬 THE COMMUNITY</div><div class="cd">Where people talk AI, share what they made, and go live — the Daily Drop Club and our channels are open today; the forum, member video features and live shows are on the way.</div><span class="cl">Enter →</span></a>
-      <a class="card" href="blog.html" style="border-top:6px solid #a855f7"><div class="ct">📡 THE SIGNAL — the A.I. NOW blog</div><div class="cd">Plain-English AI from Detroit: honest free-tool guides, scam warnings that protect your family, and big ideas explained without the hype.</div><span class="cl">Enter →</span></a>
-    </div>
-  </section>
-
-  <section class="panel">
-    <div class="stitle">🌐 The <span class="u">Branches</span> — Everything Under A.I. NOW</div>
-    <p class="note">One family, many doors. Statuses are printed honestly: if it doesn't say LIVE, it isn't yet.</p>
-    <div class="cards">
-      <a class="card" href="https://shop.artificial-intelligencenow.com"><div class="ct">🛍️ The Store <span class="badge b-lime">Live</span></div><div class="cd">The store has its own door now — same products, same checkout. This main address is all AI; the shop lives at shop.</div><span class="cl">shop.artificial-intelligencenow.com →</span></a>
-      <a class="card" href="https://world.artificial-intelligencenow.com"><div class="ct">🌍 World Watch <span class="badge b-lime">Live</span></div><div class="cd">Live earthquakes, storms, wildfires and severe weather from official sources — plus free help resources when an event hits.</div><span class="cl">world.artificial-intelligencenow.com →</span></a>
-      <a class="card" href="https://radar.artificial-intelligencenow.com"><div class="ct">🎯 Drop Radar <span class="badge b-yel">Built — deploying soon</span></div><div class="cd">A live price-drop feed — deals and glitches spotted across the big stores, checked before they're posted.</div><span class="cl">radar.artificial-intelligencenow.com →</span></a>
-      <div class="card"><div class="ct">⚖️ Legal <span class="badge b-dim">In the works</span></div><div class="cd">Court records, forms and legal processes explained in plain language — so you understand the paper in front of you.</div></div>
-      <div class="card"><div class="ct">📚 Learn <span class="badge b-dim">In the works</span></div><div class="cd">AI, explained plainly — beginner guides and walkthroughs that assume nothing and talk down to no one.</div></div>
-      <div class="card"><div class="ct">💼 Careers <span class="badge b-dim">In the works</span></div><div class="cd">Resume and job-search help built on your real experience — nothing invented, ever.</div></div>
-      <div class="card"><div class="ct">❄️ Snow <span class="badge b-dim">In the works</span></div><div class="cd">SnowCall Detroit — district-by-district school-closure calls when the snow is coming.</div></div>
-      <div class="card"><div class="ct">🎅 Santa <span class="badge b-dim">In the works</span></div><div class="cd">Personalized Santa video messages for kids — seasonal, and back when the season is.</div></div>
-      <div class="card"><div class="ct">🤝 Settle <span class="badge b-dim">In the works</span></div><div class="cd">SettleRail — a commission-only payment rail pitch for people tired of card fees eating the job.</div></div>
-      <div class="card"><div class="ct">📣 Ads <span class="badge b-dim">In the works</span></div><div class="cd">Flat-fee AI video ad packs for local shops — real ads for businesses that can't afford an agency.</div></div>
-    </div>
-  </section>
-
-  <section class="panel" style="padding:14px">
-    <div class="emg">
-      <div>
-        <div class="et">🆘 Need help right now?</div>
-        <div class="ed">A storm, quake or emergency near you? World Watch tracks live events from official sources and links the free help — shelters, FEMA, 2-1-1 — in one place.</div>
+      <div class="card">
+        <div class="ct">💬 AI Website Chatbot</div>
+        <div class="cd">A trained assistant on your website, 24/7. It answers questions about your services, hours, pricing and service area in plain language, and captures the visitor's name, phone and what they need — then sends it straight to you.</div>
+        <div class="price">$499 setup <span>+ $99/mo</span></div>
       </div>
-      <a class="btn" href="https://world.artificial-intelligencenow.com">Open World Watch →</a>
+      <div class="card">
+        <div class="ct">📞 AI Voice Receptionist</div>
+        <div class="cd">An AI voice that answers your business line when you can't — after hours, on a job, or when the office is slammed. It handles common questions, takes messages, and books appointments into your process.</div>
+        <div class="price">$799 setup <span>+ $199/mo</span></div>
+      </div>
+      <div class="card">
+        <div class="ct">⚡ Smart Lead Follow-Up</div>
+        <div class="cd">Every new lead from your website gets an instant text and email follow-up — while they're still thinking about you, not hours later. Includes automatic review requests after the job is done.</div>
+        <div class="price">$399 setup <span>+ $79/mo</span></div>
+      </div>
+      <div class="card">
+        <div class="ct">⭐ AI Review Responder</div>
+        <div class="cd">Every Google review gets a prompt, professional reply in your voice — thanking happy customers and handling unhappy ones calmly and correctly. You approve the tone; the AI does the typing.</div>
+        <div class="price">$149 setup <span>+ $49/mo</span></div>
+      </div>
+      <div class="card">
+        <div class="ct">✍️ AI Content Engine</div>
+        <div class="cd">Blog posts and social media content written in your business's voice, on a steady schedule — service pages that answer real customer questions and posts that keep your name in front of your town.</div>
+        <div class="price">$299/mo <span>· no setup fee</span></div>
+      </div>
+      <div class="card">
+        <div class="ct">🌐 AI-Ready Website Build</div>
+        <div class="cd">Starting from scratch, or your current site is holding you back? We build you a modern website with the chatbot and lead capture built in from day one — no bolting things on later.</div>
+        <div class="price">From $1,499 <span>one-time + hosting plan</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="stitle">Packages &amp; pricing</div>
+    <p class="snote">Three packages cover most local businesses. Every package is month-to-month after setup — cancel anytime and the service runs to the end of your paid month. Prefer to start with one piece? Every service above is also available à la carte at the prices shown.</p>
+    <div class="plans">
+      <div class="plan">
+        <div class="pname">STARTER</div>
+        <div class="pprice">$499 setup<br><small>+ $99/month</small></div>
+        <ul>
+          <li>AI chatbot on your existing website</li>
+          <li>24/7 question answering</li>
+          <li>Lead capture — name, phone, and what they need, sent to you</li>
+          <li>Trained on your services, hours and service area</li>
+          <li>Email support</li>
+        </ul>
+        <a class="btn btn-ghost" href="mailto:support@artificial-intelligencenow.com?subject=AI%20SERVICES%20%E2%80%94%20Starter%20Package">Start with Starter</a>
+      </div>
+      <div class="plan pop">
+        <div class="popflag">MOST POPULAR</div>
+        <div class="pname">GROWTH</div>
+        <div class="pprice">$999 setup<br><small>+ $199/month</small></div>
+        <ul>
+          <li>Everything in Starter</li>
+          <li>Smart Lead Follow-Up — instant text/email to every new lead</li>
+          <li>AI Review Responder for your Google reviews</li>
+          <li>Automatic review requests after each job</li>
+          <li>Email support</li>
+        </ul>
+        <a class="btn btn-hot" href="mailto:support@artificial-intelligencenow.com?subject=AI%20SERVICES%20%E2%80%94%20Growth%20Package">Start with Growth</a>
+      </div>
+      <div class="plan">
+        <div class="pname">FULL CREW</div>
+        <div class="pprice">$1,999 setup<br><small>+ $399/month</small></div>
+        <ul>
+          <li>Everything in Growth</li>
+          <li>AI Voice Receptionist — calls answered and appointments booked</li>
+          <li>AI Content Engine — blog + social posts in your voice</li>
+          <li>Priority support</li>
+        </ul>
+        <a class="btn btn-ghost" href="mailto:support@artificial-intelligencenow.com?subject=AI%20SERVICES%20%E2%80%94%20Full%20Crew%20Package">Start with Full Crew</a>
+      </div>
+    </div>
+    <p class="snote" style="margin-top:20px">All prices are starting-at prices in USD. Your exact quote is confirmed in writing before work begins — the price we quote is the price you pay. See our <a href="terms.html">Terms &amp; Conditions</a> for full details.</p>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="stitle">How it works</div>
+    <p class="snote">No tech skills needed on your end. You run your business; we handle the AI.</p>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><div class="st">Free AI Audit</div><div class="sd">Send us your website. We look at how customers find you, where inquiries get dropped, and exactly what AI would do for your business — in a plain-English report. Free, no obligation.</div></div>
+      <div class="step"><div class="num">2</div><div class="st">We Build It</div><div class="sd">You approve a written quote with the exact price. We train the AI on your services, hours, pricing and service area, and build it to sound like your business — not a robot.</div></div>
+      <div class="step"><div class="num">3</div><div class="st">Launch</div><div class="sd">We install it on your website and test it with you before it goes live. You see exactly what your customers will see, and nothing launches until you're happy with it.</div></div>
+      <div class="step"><div class="num">4</div><div class="st">We Maintain It</div><div class="sd">Your monthly plan covers hosting, updates and tuning. Prices change, hours change, services change — tell us and we update the AI. Questions come to us, not your front desk.</div></div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section id="industries">
+    <div class="stitle">Who this is for</div>
+    <p class="snote">If your phone rings while your hands are busy — or your customers shop around after hours — this was built for you.</p>
+    <div class="inds">
+      <div class="ind"><div class="it">🩺 Doctors &amp; Dentists</div><div class="id">Patients ask about hours, insurance and booking at all hours. The chatbot answers and captures appointment requests instead of letting them call the next office on the list.</div></div>
+      <div class="ind"><div class="it">🏠 Roofing</div><div class="id">Storm hits, every roofer's phone melts down. AI answers, qualifies the lead — address, roof type, urgency — and gets it in front of you fast.</div></div>
+      <div class="ind"><div class="it">🌿 Landscaping</div><div class="id">Seasonal rushes mean missed calls. The chatbot quotes your service area, explains packages, and books estimate requests while your crew is on a lawn.</div></div>
+      <div class="ind"><div class="it">🔨 Construction &amp; Remodeling</div><div class="id">Homeowners compare three contractors and hire whoever responds first. Instant follow-up puts your name at the top of that list.</div></div>
+      <div class="ind"><div class="it">❄️ HVAC</div><div class="id">No-heat and no-AC calls don't wait for business hours. AI triages urgency, captures the details, and routes emergencies the way you tell it to.</div></div>
+      <div class="ind"><div class="it">🔧 Plumbing</div><div class="id">A burst pipe at 2 AM is a job for whoever answers. The voice receptionist and chatbot make sure that's you.</div></div>
+      <div class="ind"><div class="it">⚖️ Law Firms</div><div class="id">Potential clients research quietly and after hours. AI answers general questions about your practice areas and captures consultation requests — no legal advice, just a fast, professional first contact.</div></div>
+      <div class="ind"><div class="it">💈 Salons &amp; Barbers</div><div class="id">Booking questions, price lists, walk-in policies — answered instantly, with appointment requests captured instead of lost in a DM pile.</div></div>
+      <div class="ind"><div class="it">🍽️ Restaurants</div><div class="id">Hours, menus, reservations, catering and large-party questions handled on your site while your team handles the dining room.</div></div>
+      <div class="ind"><div class="it">🏡 Real Estate</div><div class="id">Buyers and sellers ask about listings and neighborhoods around the clock. AI answers, captures the lead, and follows up before the next agent does.</div></div>
+      <div class="ind"><div class="it">🚗 Auto Shops</div><div class="id">Services, estimates process, hours and drop-off questions answered up front — so the calls you do get are the ones that matter.</div></div>
+      <div class="ind"><div class="it">➕ Your Business</div><div class="id">Don't see your trade? If customers find you online and reach out through your website, AI can very likely help. The audit is free — ask us.</div></div>
+    </div>
+  </section>
+
+  <!-- AUDIT BAND -->
+  <div class="auditband">
+    <div class="at">Start with the free AI audit</div>
+    <p>Tell us your website address and we'll show you — in plain English, with no charge and no obligation — where inquiries are slipping through and what AI would do about it.</p>
+    <a class="btn btn-hot" href="mailto:support@artificial-intelligencenow.com?subject=AI%20SERVICES%20%E2%80%94%20Free%20AI%20Audit">Request my free audit</a>
+  </div>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="stitle">Straight answers</div>
+    <p class="snote">The questions every business owner asks us first — answered the same way we'd answer across a desk.</p>
+    <details class="faq"><summary>Will this guarantee me more sales or customers?</summary><p>No — and be careful with anyone who promises that. What AI does is mechanical: it answers faster, misses fewer inquiries, and follows up every time. Businesses lose work every week to slow responses and unanswered questions; this closes those gaps. What you close is still up to you and your crew.</p></details>
+    <details class="faq"><summary>Can I cancel anytime?</summary><p>Yes. Monthly plans are month-to-month. Cancel whenever you like and the service keeps running to the end of the month you've already paid for — no cancellation fees and no hard feelings. Setup fees are non-refundable once work has begun, because that work is custom-built for your business.</p></details>
+    <details class="faq"><summary>Do I own my website, my content and my customer data?</summary><p>Yes. Your website, your content and your customer information belong to you. We configure AI tools for your business; we don't claim ownership of your site or your data, and we never sell personal data. See our <a href="privacy.html">Privacy Policy</a>.</p></details>
+    <details class="faq"><summary>Can the AI make mistakes?</summary><p>Yes — AI can occasionally get something wrong, which is why we train it on your actual business information, set clear boundaries on what it should and shouldn't answer, and test it with you before launch. You're responsible for reviewing customer-facing outputs, and we'll adjust the AI whenever you spot something you'd phrase differently.</p></details>
+    <details class="faq"><summary>What do you need from me to get started?</summary><p>Your website address (or your current site login, if we need to install code), your services, hours, service area and pricing basics — the same things your customers ask about. The audit call covers all of it; most owners spend about 30 minutes total on their end.</p></details>
+    <details class="faq"><summary>How fast can this go live?</summary><p>Most chatbot installs go live within one to two weeks of us receiving your information and site access. Voice receptionist and full website builds take longer. We'll give you a realistic timeline in your written quote — and we'd rather tell you straight than promise a date we can't keep.</p></details>
+    <details class="faq"><summary>I don't have a website yet. Can you still help?</summary><p>Yes — that's exactly what the AI-Ready Website Build is for: a new website with the chatbot and lead capture built in from day one, starting at $1,499 plus a hosting plan.</p></details>
+    <details class="faq"><summary>Why are the prices "starting at"?</summary><p>Because a one-page site for a barber and a multi-location dental practice aren't the same job. The starting price is the floor for a standard install; if your project needs more, you get the exact total in writing before we begin. The quoted price is the price you pay — no surprise add-ons mid-project.</p></details>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="stitle">Talk to us</div>
+    <p class="snote">Tell us your website address and what kind of business you run. You'll hear back from a real person on our team.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="ct">✉️ Email — fastest way in</div>
+        <p>For audits, quotes and questions:</p>
+        <p class="big"><a href="mailto:support@artificial-intelligencenow.com?subject=AI%20SERVICES">support@artificial-intelligencenow.com</a></p>
+        <p style="margin-top:8px">Use the subject line <b style="color:var(--txt)">AI SERVICES</b> and include your website address and your type of business.</p>
+        <p style="margin-top:10px">Prefer Gmail? <a href="mailto:ainowstore@gmail.com?subject=AI%20SERVICES">ainowstore@gmail.com</a></p>
+      </div>
+      <div class="contact-card">
+        <div class="ct">💬 Live chat</div>
+        <p>Tap the chat bubble in the bottom-right corner of this page and say hello — if we're at the desk you'll get us live; if not, leave your email and we'll reply.</p>
+        <p style="margin-top:8px">You can also browse the rest of A.I. NOW: our <a href="blog.html">blog</a>, <a href="https://world.artificial-intelligencenow.com">World Watch</a>, and the <a href="https://shop.artificial-intelligencenow.com">A.I. NOW Store</a>.</p>
+      </div>
     </div>
   </section>
 </main>
-<footer class="wrap">
-  A.I. NOW — Detroit, Michigan. This hub is the main site at <a href="https://artificial-intelligencenow.com">artificial-intelligencenow.com</a>; the store lives at <a href="https://shop.artificial-intelligencenow.com">shop.artificial-intelligencenow.com</a>. Live video streams are the channels' own YouTube live broadcasts, embedded with YouTube's official player. News headlines are pulled live from the BBC, TechCrunch and The Verge; each headline belongs to its publisher and links to the original story. Tool names belong to their owners — directory links go to each tool's official site.
+
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <span class="logo" style="font-size:19px">A.I. <span class="grad">NOW</span></span>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#industries">Industries</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://shop.artificial-intelligencenow.com">Store</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <div class="frow">
+      <span>Contact: <a href="mailto:support@artificial-intelligencenow.com?subject=AI%20SERVICES">support@artificial-intelligencenow.com</a></span>
+      <span>Prefer Gmail? <a href="mailto:ainowstore@gmail.com?subject=AI%20SERVICES">ainowstore@gmail.com</a></span>
+    </div>
+    <p>A.I. NOW — Detroit, Michigan. AI implementation services for local businesses, at <a href="https://artificial-intelligencenow.com">artificial-intelligencenow.com</a>. The A.I. NOW Store lives at <a href="https://shop.artificial-intelligencenow.com">shop.artificial-intelligencenow.com</a>. Prices shown are starting-at prices in USD; your exact quote is confirmed in writing before work begins.</p>
+  </div>
 </footer>
 
-<script>
-const $=id=>document.getElementById(id);
-function tick(){const d=new Date();$('clock').textContent=d.toLocaleTimeString('en-US',{hour12:true})+' Detroit';}
-setInterval(tick,1000);tick();
-function ago(t){const s=(Date.now()-t)/1000;if(s<0)return 'just now';if(s<3600)return Math.max(1,Math.round(s/60))+'m ago';if(s<86400)return Math.round(s/3600)+'h ago';return Math.round(s/86400)+'d ago';}
-function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
-function copyPrompt(btn){
-  const box=btn.closest('.prompt');const txt=box?box.querySelector('.px').innerText:'';
-  const done=()=>{const old=btn.textContent;btn.textContent='Copied ✓';setTimeout(()=>{btn.textContent=old;},1600);};
-  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(()=>fallbackCopy(txt,done));}
-  else{fallbackCopy(txt,done);}
-}
-function fallbackCopy(txt,done){
-  const ta=document.createElement('textarea');ta.value=txt;ta.style.position='fixed';ta.style.opacity='0';
-  document.body.appendChild(ta);ta.select();
-  try{document.execCommand('copy');done();}catch(e){}
-  document.body.removeChild(ta);
-}
-/* Live AI news: real headlines pulled client-side via the rss2json reader (the same
-   approach World Watch uses for its BBC feed). Each feed fails independently; if every
-   feed fails, the section falls back to a plain note plus the source cards under it —
-   headlines are never invented or hard-coded. The same items feed the top ticker. */
-const FEEDS=[
-  {name:'BBC Technology',cls:'b-cyan',url:'https://feeds.bbci.co.uk/news/technology/rss.xml'},
-  {name:'TechCrunch — AI',cls:'b-lime',url:'https://techcrunch.com/category/artificial-intelligence/feed/'},
-  {name:'The Verge — AI',cls:'b-pink',url:'https://www.theverge.com/rss/ai-artificial-intelligence/index.xml'}
-];
-async function loadOneFeed(f){
-  const r=await fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(f.url));
-  const j=await r.json();
-  if(j.status!=='ok'||!j.items)return [];
-  return j.items.map(it=>({time:new Date((it.pubDate||'').replace(' ','T')).getTime()||0,title:it.title,url:it.link,src:f.name,cls:f.cls}));
-}
-function fillTicker(items){
-  const html=items.slice(0,14).map(n=>esc(n.title)+' <span class="src">— '+esc(n.src)+'</span>').join('<span class="sep">⚡</span>')+'<span class="sep">⚡</span>';
-  $('ticker-a').innerHTML=html;$('ticker-b').innerHTML=html;
-}
-async function loadNews(){
-  const results=await Promise.allSettled(FEEDS.map(loadOneFeed));
-  let items=[];
-  results.forEach(r=>{if(r.status==='fulfilled')items=items.concat(r.value);});
-  items=items.filter(n=>n.title&&n.url);
-  items.sort((a,b)=>b.time-a.time);
-  if(!items.length){
-    $('news').innerHTML='<p class="err">The live headline feeds aren\'t answering right now — no stale stories shown in their place. Read the latest straight from the sources below.</p>';
-    $('updated').textContent='news feeds unreachable — source links below';
-    return;
-  }
-  fillTicker(items);
-  $('news').innerHTML=items.slice(0,12).map(n=>
-    '<div class="ev"><div class="top"><span class="badge '+n.cls+'">'+esc(n.src)+'</span><span style="color:var(--dim);font-size:12px">'+(n.time?ago(n.time):'')+'</span></div>'+
-    '<div class="t"><a href="'+esc(n.url)+'" target="_blank" rel="noopener" style="color:var(--txt)">'+esc(n.title)+'</a></div></div>').join('');
-  $('updated').textContent='AI news updated '+new Date().toLocaleTimeString('en-US');
-}
-loadNews();setInterval(loadNews,600000);
-</script>
-
-<script id="ainav-js">
-(function(){
-  var items=[].slice.call(document.querySelectorAll('.ainav-item'));
-  function closeAll(except){items.forEach(function(it){if(it!==except){it.classList.remove('open');var b=it.querySelector('.ainav-tab');if(b)b.setAttribute('aria-expanded','false');}});}
-  items.forEach(function(it){var btn=it.querySelector('.ainav-tab');if(!btn)return;btn.addEventListener('click',function(e){e.stopPropagation();var open=it.classList.contains('open');closeAll(it);it.classList.toggle('open',!open);btn.setAttribute('aria-expanded',String(!open));});});
-  document.addEventListener('click',function(){closeAll(null);});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll(null);});
-  /* GTA VI countdown — launch Thu Nov 19, 2026 */
-  var launch=Date.UTC(2026,10,19,5,0,0),days=Math.ceil((launch-Date.now())/864e5);
-  var gtaTxt=days>0?('🚀 GTA VI · '+days+' days to launch'):('🚀 GTA VI · OUT NOW');
-  document.querySelectorAll('[data-gta-countdown]').forEach(function(el){el.textContent=gtaTxt;});
-  /* Breaking strip — top NWS severe alert, else top USGS M4.5+ quake; stays hidden if neither answers */
-  var strip=document.getElementById('breakingStrip'),bt=document.getElementById('breakingText'),bs=document.getElementById('breakingSrc');
-  function showBreaking(text,src){if(!strip||!bt)return;bt.textContent=text;if(bs)bs.textContent=src;strip.hidden=false;}
-  async function loadBreaking(){
-    try{
-      var r=await fetch('https://api.weather.gov/alerts/active?status=actual&message_type=alert&limit=50');
-      var j=await r.json();
-      var feats=(j.features||[]).map(function(f){return f.properties;}).filter(function(p){return p&&p.headline;});
-      var rank={Extreme:0,Severe:1,Moderate:2,Minor:3,Unknown:4};
-      feats.sort(function(a,b){return (rank[a.severity]!=null?rank[a.severity]:4)-(rank[b.severity]!=null?rank[b.severity]:4);});
-      if(feats.length){showBreaking(feats[0].headline,'NWS live · World Watch →');return;}
-    }catch(e){}
-    try{
-      var r2=await fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson');
-      var j2=await r2.json();
-      var fs=(j2.features||[]).map(function(f){return f.properties;}).filter(function(p){return p&&p.place;});
-      fs.sort(function(a,b){return b.mag-a.mag;});
-      if(fs.length){showBreaking('M'+fs[0].mag.toFixed(1)+' earthquake — '+fs[0].place,'USGS live · World Watch →');return;}
-    }catch(e){}
-  }
-  if(strip){loadBreaking();setInterval(loadBreaking,600000);}
-  /* Back to top */
-  var topBtn=document.createElement('button');
-  topBtn.className='ainav-top';topBtn.type='button';topBtn.textContent='↑ TOP';topBtn.setAttribute('aria-label','Back to top');
-  topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
-  document.body.appendChild(topBtn);
-  addEventListener('scroll',function(){topBtn.classList.toggle('show',window.scrollY>650);},{passive:true});
-})();
-</script>
-
-<script id="wall-js">
-/* ==== SELF-HEALING LIVE VIDEO WALL (hub v3) ====
-   Every slot carries a ranked list of verified-embeddable 24/7 channels.
-   A slot advances to its next candidate automatically when the YouTube
-   IFrame API reports an error (100/101/150/5) or the player never becomes
-   ready. A slow health re-check retries the primary when the viewer is
-   not actively watching the fallback. Server-side verification of every
-   channel in this pool: WALL-WATCH.md. */
-const WALL=[
- {theme:'Top Story',cands:[['NBC News','UCeY0bbntWzzVIaj2z3QigXg'],['CBS News','UC8p1vwvWtl6T73JiExfWs1g'],['ABC News Live','UCBi2mrWuNuyYy4gbM6fU18Q'],['Reuters','UChqUTb7kYRX8-EiaN3XFrSQ']]},
- {theme:'US News',cands:[['ABC News Live','UCBi2mrWuNuyYy4gbM6fU18Q'],['NBC News','UCeY0bbntWzzVIaj2z3QigXg'],['Al Jazeera English','UCNye-wNBqNL5ZzHSJj3l8Bg']]},
- {theme:'World',cands:[['Al Jazeera English','UCNye-wNBqNL5ZzHSJj3l8Bg'],['Sky News','UCoMdktPbSTixAyNGwb-UYkQ'],['DW News','UCknLrEdhRCp1aegoMqRaCZg'],['CNA','UC83jt4dlz1Gjl58fzQrrKZg']]},
- {theme:'Money Live',cands:[['Bloomberg Television','UCIALMKvObZNtJ6AmdCLP7Lg'],['CNBC','UCvJJ_dzjViJCoLf5uKUTwoA'],['NBC News','UCeY0bbntWzzVIaj2z3QigXg'],['CBS News','UC8p1vwvWtl6T73JiExfWs1g']]},
- {theme:'Europe',cands:[['DW News','UCknLrEdhRCp1aegoMqRaCZg'],['euronews','UCSrZ3UV4jOidv8ppoVuvW9Q'],['TRT World','UC7fWeaHhqgM4Ry-RMpM2YYw'],['Sky News','UCoMdktPbSTixAyNGwb-UYkQ']]},
- {theme:'Global',cands:[['CNA','UC83jt4dlz1Gjl58fzQrrKZg'],['WION','UC_gUM8rL-Lrg6O3adPW9K1g'],['NDTV 24x7','UCZFMm1mMw0F81Z37aaEzTUA'],['Al Jazeera English','UCNye-wNBqNL5ZzHSJj3l8Bg']]}
-];
-const wallSlots=[];
-function wallInit(){
-  WALL.forEach(function(cfg,i){
-    const root=document.getElementById('wall'+i);
-    if(!root)return;
-    const slot={cfg:cfg,idx:0,ready:false,userWatching:false,player:null,timer:null,
-      root:root,frame:root.querySelector('.frame'),nameEl:root.querySelector('.vname'),
-      watchEl:root.querySelector('.watch'),statEl:root.querySelector('.vstat')};
-    wallSlots.push(slot);
-  });
-  let started=false;
-  function start(){if(started)return;started=true;wallSlots.forEach(function(s,i){setTimeout(function(){wallTry(s);},i*450);});}
-  if('IntersectionObserver' in window){
-    const io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){start();io.disconnect();}});},{rootMargin:'500px'});
-    const grid=document.getElementById('wallGrid');if(grid)io.observe(grid);
-    setTimeout(start,3500); /* never leave the wall blank */
-  } else { start(); }
-  /* If the IFrame API itself never arrives, fall back to plain embeds of the primaries */
-  setTimeout(function(){
-    if(!(window.YT&&YT.Player)){
-      wallSlots.forEach(function(s){if(!s.ready)wallPlain(s);});
-    }
-  },12000);
-  /* Health re-check: retry a beaten primary every 20 min when nobody is watching the fallback */
-  setInterval(function(){
-    wallSlots.forEach(function(s){
-      if(s.idx>0&&s.ready&&!s.userWatching){s.idx=0;s.ready=false;wallTry(s);}
-    });
-  },20*60*1000);
-}
-function wallPlain(slot){
-  const c=slot.cfg.cands[slot.idx];
-  slot.frame.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/live_stream?channel='+c[1]+'" title="'+c[0]+' — live stream" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
-  slot.nameEl.textContent=slot.cfg.theme+' · '+c[0];
-  slot.watchEl.href='https://www.youtube.com/channel/'+c[1]+'/live';
-  slot.statEl.innerHTML='Live: <b>'+c[0]+'</b> (basic mode)';
-  slot.ready=true;
-}
-function wallTry(slot){
-  const c=slot.cfg.cands[slot.idx];
-  slot.nameEl.textContent=slot.cfg.theme+' · '+c[0];
-  slot.watchEl.href='https://www.youtube.com/channel/'+c[1]+'/live';
-  slot.statEl.innerHTML='Checking <b>'+c[0]+'</b>…';
-  try{if(slot.player&&slot.player.destroy)slot.player.destroy();}catch(e){}
-  slot.player=null;slot.ready=false;
-  slot.frame.innerHTML='';
-  const ifr=document.createElement('iframe');
-  ifr.src='https://www.youtube.com/embed/live_stream?channel='+c[1]+'&enablejsapi=1&playsinline=1&rel=0';
-  ifr.title=c[0]+' — live stream';
-  ifr.setAttribute('allow','accelerometer; autoplay; encrypted-media; picture-in-picture');
-  ifr.setAttribute('allowfullscreen','');
-  slot.frame.appendChild(ifr);
-  clearTimeout(slot.timer);
-  slot.timer=setTimeout(function(){if(!slot.ready)wallAdvance(slot,'no answer');},11000);
-  try{
-    slot.player=new YT.Player(ifr,{events:{
-      onReady:function(){slot.ready=true;clearTimeout(slot.timer);
-        slot.statEl.innerHTML='Live: <b>'+c[0]+'</b>'+(slot.idx>0?' · backup swapped in automatically':'');},
-      onError:function(ev){wallAdvance(slot,'error '+(ev&&ev.data));},
-      onStateChange:function(ev){if(ev.data===1||ev.data===2)slot.userWatching=true;}
-    }});
-  }catch(e){wallAdvance(slot,'api exception');}
-}
-function wallAdvance(slot,why){
-  if(slot.advancing)return;slot.advancing=true;
-  clearTimeout(slot.timer);
-  setTimeout(function(){slot.advancing=false;},300);
-  slot.idx++;
-  if(slot.idx>=slot.cfg.cands.length){
-    slot.statEl.innerHTML='Every backup is having a moment — auto-retrying shortly.';
-    slot.idx=slot.cfg.cands.length-1;
-    setTimeout(function(){slot.idx=0;slot.ready=false;wallTry(slot);},60000);
-    return;
-  }
-  slot.ready=false;
-  wallTry(slot);
-}
-const wallApiTag=document.createElement('script');
-wallApiTag.src='https://www.youtube.com/iframe_api';
-document.head.appendChild(wallApiTag);
-const wallPrevReady=window.onYouTubeIframeAPIReady;
-window.onYouTubeIframeAPIReady=function(){if(typeof wallPrevReady==='function')wallPrevReady();wallInit();};
-</script>
-
-<script id="app-install-js">
-(function(){
-  var btn=document.getElementById('installBtn'),hint=document.getElementById('installHint'),done=document.getElementById('installedMsg');
-  if(!btn)return;
-  function standalone(){return window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;}
-  if(standalone()){done.hidden=false;return;}
-  var deferred=null;
-  window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();deferred=e;btn.hidden=false;hint.hidden=true;});
-  window.addEventListener('appinstalled',function(){deferred=null;btn.hidden=true;hint.hidden=true;done.hidden=false;});
-  btn.addEventListener('click',function(){
-    if(!deferred)return;
-    deferred.prompt();
-    deferred.userChoice.then(function(){deferred=null;btn.hidden=true;});
-  });
-  setTimeout(function(){
-    if(deferred||standalone())return;
-    var ios=/iphone|ipad|ipod/i.test(navigator.userAgent);
-    hint.textContent=ios
-      ? 'On iPhone or iPad: tap the Share button, then "Add to Home Screen" — same app, two taps.'
-      : 'No install button in this browser? Open the browser menu and tap "Install app" or "Add to Home screen".';
-    hint.hidden=false;
-  },1500);
-})();
-</script>
-<script id="ask-guide-js">
-(function(){
-  var box=document.getElementById('askBox');if(!box)return;
-  var answers={
-    best:'Start with the free heavy-hitters: <b>ChatGPT</b> for all-round questions and writing, <b>Gemini</b> if you live in Google apps, <b>Perplexity</b> when you want answers with sources you can check, and <b>Canva</b> for design. The full map — what each tool is actually for — is in our <a href="#tools">AI Tools Directory</a>, and the free picks are broken down in <a href="blog-free-ai-tools.html">our free-tools guide</a>.',
-    scam:'Good instinct — AI scams are everywhere right now. The big red flags: a tool that asks for payment before showing you anything, fake celebrity endorsements, and \'AI\' apps that want your bank login. Our plain-English breakdown: <a href="blog-ai-scams-2026.html">AI Scams in 2026 — how to spot them</a>. Rule of thumb: only ever download from the official links in our <a href="#tools">directory</a>.',
-    gta:'<b>Thursday, November 19, 2026</b> — on PS5 and Xbox Series X|S, standard edition $79.99. No PC version at launch. The countdown, the verified facts and launch-week coverage live on our <a href="gaming.html">AI × Gaming page</a>.',
-    build:'That\'s what <b>A.I. NOW Studio</b> does — done-for-you websites, stores and AI projects, with honest starting prices and a flat written quote before anything goes public. See what we build and what it costs: <a href="studio.html">A.I. NOW Studio</a>.',
-    store:'The store lives at its own address now: <a href="https://shop.artificial-intelligencenow.com">shop.artificial-intelligencenow.com</a> — same products, same codes, secure Shopify checkout. This main address is all AI; the shop is one door over.',
-    agent:'Short version: a normal chatbot answers you — an <b>AI agent</b> goes and <i>does</i> things: runs steps, uses tools, checks its own work. The full plain-English explainer, with examples: <a href="blog-what-is-an-ai-agent.html">What is an AI agent?</a>'
-  };
-  var chips=document.querySelectorAll('#askChips .askchip');
-  chips.forEach(function(ch){
-    ch.addEventListener('click',function(){
-      chips.forEach(function(c){c.classList.remove('on');});
-      ch.classList.add('on');
-      box.innerHTML=answers[ch.getAttribute('data-q')]||'';
-    });
-  });
-  var live=document.getElementById('askLive');
-  if(live){live.addEventListener('click',function(e){e.preventDefault();if(window.Tawk_API&&typeof Tawk_API.maximize==='function'){Tawk_API.maximize();}else{box.innerHTML='The live chat bubble sits in the bottom-right corner of this page — tap it and say hi.';}});}
-})();
-</script>
 <script>
 if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').catch(()=>{}); }
 </script>
