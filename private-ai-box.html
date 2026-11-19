@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>Private AI Computer Setup for Business — DGX Spark | A.I. NOW</title>
+<meta name="description" content="We set up NVIDIA DGX Spark private AI computers for your business — your data never leaves the building. Setup from $1,049, care plan $83/mo.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "A.I. NOW",
+  "url": "https://artificial-intelligencenow.com/",
+  "email": "support@artificial-intelligencenow.com",
+  "telephone": "(586) 200-8282",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Macomb Township",
+    "addressRegion": "MI",
+    "addressCountry": "US"
+  },
+  "areaServed": "Detroit metropolitan area, Michigan, and businesses across the United States",
+  "sameAs": [
+    "https://www.instagram.com/ainowstore",
+    "https://www.tiktok.com/@heymattymatt.com",
+    "https://www.youtube.com/@AINowStore"
+  ]
+}
+</script>
+<style>
+  :root{--bg:#FFFFFF;--panel:#FFFFFF;--panel2:#F7F9FC;--line:#D9E0E8;--txt:#161513;--dim:#4B5563;--accent:#1E3A5F;--accent-dark:#14293F}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .bar{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .logo{font-weight:900;font-size:26px;letter-spacing:.5px;color:var(--txt)}
+  .grad{color:var(--txt)}
+  .pill{display:inline-flex;align-items:center;background:var(--accent);color:#fff;font-size:11px;font-weight:900;padding:5px 12px;border-radius:999px;letter-spacing:1.5px}
+  nav.mainnav{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+  nav.mainnav a{color:var(--txt);font-weight:700;font-size:14.5px}
+  nav.mainnav a:hover{color:var(--accent);text-decoration:none}
+  nav.mainnav a.on{color:var(--accent)}
+  .btn{display:inline-block;font-weight:800;font-size:15.5px;padding:13px 26px;border-radius:10px;letter-spacing:.2px;border:0;cursor:pointer}
+  .btn:hover{text-decoration:none}
+  .btn-hot{background:var(--accent);color:#fff}
+  .btn-hot:hover{background:var(--accent-dark)}
+  .btn-ghost{background:#FFFFFF;color:var(--txt);border:1.5px solid #D9E0E8}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .btn-sm{padding:10px 20px;font-size:14px}
+  /* page banner */
+  .pagehead{background:#FFFFFF;color:var(--txt);padding:36px 0 32px;border-bottom:6px solid var(--accent)}
+  .pagehead .pk{font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:#9DB8D9;margin-bottom:10px}
+  .pagehead h1{font-size:clamp(32px,5.6vw,52px);font-weight:900;line-height:1.05;letter-spacing:-.5px}
+  .pagehead p{color:#D9D9D9;font-size:clamp(15.5px,2vw,18px);max-width:780px;margin-top:12px}
+  .pagehead .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+  /* sections */
+  section{padding:52px 0 8px}
+  .stitle{font-size:clamp(27px,4.4vw,38px);font-weight:900;line-height:1.12;letter-spacing:-.3px}
+  .snote{color:var(--dim);font-size:16px;margin:10px 0 26px;max-width:780px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .card{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:9px;box-shadow:0 1px 3px rgba(22,21,19,.05)}
+  .card .ct{font-weight:800;font-size:18.5px}
+  .card .cd{color:var(--dim);font-size:15px;flex:1}
+  .card .price{font-weight:900;font-size:17px;color:var(--txt)}
+  .card .price span{color:var(--accent)}
+  /* pricing */
+  .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:stretch}
+  .plan{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;gap:10px;position:relative;box-shadow:0 1px 3px rgba(22,21,19,.05)}
+  .plan.pop{border:2px solid var(--accent);background:var(--panel2)}
+  .popflag{position:absolute;top:-13px;left:24px;background:var(--accent);color:#fff;font-size:11.5px;font-weight:900;letter-spacing:1.2px;padding:5px 12px;border-radius:999px}
+  .plan .pname{font-weight:900;font-size:15px;letter-spacing:1.6px;color:var(--accent)}
+  .plan .pprice{font-size:30px;font-weight:900;line-height:1.15}
+  .plan .pprice small{font-size:15px;color:var(--dim);font-weight:700}
+  .plan ul{color:#3E3A32;font-size:15px;padding-left:18px;flex:1}
+  .plan ul li{margin:5px 0}
+  .plan .btn{text-align:center;margin-top:8px}
+  /* audit band */
+  .auditband{margin:52px 0 8px;background:#F7F9FC;border:1px solid var(--line);border-radius:16px;padding:30px 26px;text-align:center}
+  .auditband .at{font-weight:900;font-size:clamp(23px,4vw,32px)}
+  .auditband p{color:#3E3A32;font-size:16px;max-width:680px;margin:10px auto 0}
+  .auditband .btn{margin-top:20px}
+  /* footer */
+  footer{border-top:1px solid var(--line);margin-top:60px;padding:30px 0 40px;color:var(--dim);font-size:13.5px}
+  footer .frow{display:flex;flex-wrap:wrap;gap:10px 26px;margin-bottom:12px}
+  footer a{color:#3E3A32;font-weight:700}
+  footer a:hover{color:var(--accent)}
+  @media(max-width:640px){nav.mainnav{margin-left:0;gap:14px}.pagehead{padding:28px 0 26px}}
+</style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="A.I. NOW">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+<style>
+/* A.I. NOW layout (Nov 19): Consultio-style blue strip + info row + white nav, royal-blue accents, Sora/Inter type */
+body{font-family:'Inter',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+h1,h2,h3,.stitle,.sname,.ct,.st,.dt,.at,.sh,.mt,.pname,.pbname,.hline{font-family:'Sora','Inter',sans-serif}
+.bluestrip{background:#2E5BFF;color:#FFFFFF;font-size:13px}
+.bluestrip-in{max-width:1120px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;justify-content:space-between;gap:6px 26px}
+.bluestrip .bs-city{font-weight:600}
+.inforow{background:#FFFFFF;border-bottom:1px solid #E3EAF6;color:#101E30;font-size:13px}
+.inforow-in{max-width:1120px;margin:0 auto;padding:7px 20px;display:flex;align-items:center;justify-content:space-between;gap:8px 26px;flex-wrap:wrap}
+.socials{display:flex;align-items:center;gap:14px}
+.socials a,.socials span{display:inline-flex;align-items:center;color:#2E5BFF}
+.socials a:hover{color:#1E44D6}
+.infocontact{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.infocontact a,.infocontact span{display:inline-flex;align-items:center;gap:7px;color:#101E30;font-weight:600}
+.infocontact a:hover{color:#2E5BFF;text-decoration:none}
+.infocontact svg{color:#2E5BFF;flex:none}
+@media(max-width:720px){.socials{display:none}.infocontact .ic-mail,.infocontact .ic-pin{display:none}.bluestrip .bs-city{display:none}}
+header{position:sticky;top:0;z-index:50;background:#FFFFFF;border-bottom:1px solid #E3E9F2;box-shadow:0 4px 18px rgba(30,58,95,.07);backdrop-filter:none}
+header .bar{flex-direction:row;align-items:center;text-align:left;gap:14px;padding:14px 20px;flex-wrap:wrap}
+header .logo{font-family:'Sora',sans-serif;font-weight:800;font-size:30px;letter-spacing:-.5px;line-height:1.05;color:#101E30}
+header .logo:hover{text-decoration:none}
+header .logo .grad{background:linear-gradient(92deg,#FF3E8A 0%,#A855F7 52%,#22D3EE 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+header nav.mainnav{margin-left:auto;justify-content:flex-end;gap:20px}
+header nav.mainnav a{color:#161513}
+header nav.mainnav a:hover{color:#2E5BFF;text-decoration:none}
+header nav.mainnav a.btn-audit{background:#2E5BFF;color:#FFFFFF;padding:10px 20px;border-radius:8px;font-weight:800}
+header nav.mainnav a.btn-audit:hover{background:#1E44D6;color:#FFFFFF}
+footer .logo{font-family:'Sora',sans-serif}
+@media(max-width:860px){header nav.mainnav{margin-left:0;justify-content:flex-start}}
+@media(max-width:640px){header .bar{padding:12px 14px}header nav.mainnav{margin-left:0;gap:14px}}
+
+/* READABILITY PASS 2026-11-19 — bigger, bolder text sitewide (owner request: +1–2 sizes, one weight step up) */
+body{font-size:18px;font-weight:500}
+.snote{font-size:18px;font-weight:500}
+.card p,.card .cd,.demopanel p,.honesty ul,.honesty p,.svc .sout,.plan ul,.midcta p,.contact-card p,.panelbox p,.panelbox li,.starthere p,.article .cta p{font-size:17px;font-weight:500}
+.svc p,.svc ul,.bridge p,.printlane p,.disclosure p,.article ul{font-size:17.5px;font-weight:500}
+.auditband p{font-size:18px;font-weight:500}
+.step .sd,.svc .note,.card ul{font-size:16.5px;font-weight:500}
+details.faq p{font-size:17px;font-weight:500}
+.prose p{font-size:18.5px;font-weight:500}
+.article p{font-size:18px;font-weight:500}
+table.receipt{font-size:17px}
+.factrows div{font-size:17px}
+.hcard p{font-size:17px;font-weight:500}
+body .pf-stat .l{font-size:17px}
+body .ex-steps li{font-size:17px;font-weight:500}
+.pagehead p{font-size:clamp(17.5px,2vw,20px)}
+main.wrap>p,main.wrap>ul li,main.wrap>ol li{font-size:17.5px;font-weight:500}
+.hero .lead,.pagehead .lead{font-size:20px;font-weight:600}
+.lead{font-size:clamp(18.5px,2.2vw,21px);font-weight:600}
+.hero .sub{font-size:clamp(18.5px,2.2vw,22px);font-weight:600}
+.svc .problem{font-size:18.5px;font-weight:600}
+.bluestrip,.inforow{font-size:14px}
+footer{font-size:14.5px;font-weight:500}
+footer .fhead{font-size:14px}
+.pill,.popflag{font-size:13px}
+.starttag{font-size:13px}
+body .ex-tag{font-size:13px}
+.eyebrow,.kicker,.pagebanner .bsub,.pagebanner .pbtag{font-size:13.5px}
+.pagehead .pk,.printlane .plabel,.article .akick{font-size:13px}
+.jband{font-size:14px}
+.svcindex a{font-size:14.5px}
+.aform .fnote,.pform .hint{font-size:14.5px;font-weight:500}
+main.wrap .dated{font-size:15.5px;font-weight:500}
+.hero .micro,.hero .fineprint{font-size:15px;font-weight:500}
+.pagehead .micro{font-size:15.5px;font-weight:500}
+.ind .id,.svc .bestfor,.svc .price small{font-size:15px}
+.pprice small,.plan .pprice small{font-size:16px}
+nav.mainnav a{font-size:15.5px}
+.btn{font-size:16.5px}
+.btn-sm{font-size:15px}
+.svc .slink,.hcard .hlink{font-size:15.5px}
+.seclink{font-size:16.5px}
+.hcard .hprice{font-size:17px}
+.svc .sprice{font-size:16.5px}
+.printlane .prods a{font-size:16px}
+.ind .more{font-size:15px}
+.faqteaser a{font-size:17px}
+.aform label,.pform label{font-size:15.5px}
+.aform input,.aform textarea,.pform input,.pform select,.pform textarea{font-size:16.5px;font-weight:500}
+@media(max-width:640px){.hcard .hct{font-size:14px}.hcard .hprice{font-size:13.5px}.hcard p{font-size:12.5px}.hcard .hlink{font-size:12.5px}.starttag{font-size:10px}}
+
+/* COLOR PASS 2026-11-19 — soft section tints + blue CTA band (owner: color in page backgrounds) */
+main.wrap>section:nth-of-type(2){background:#EDF3FF}
+.auditband{background:#EDF3FF}
+</style>
+
+<style>
+/* PRIVATE AI BOX PAGE 2026-11-19 — buyer's-guide table, warning box, FAQ, navy offer cards (navy rules copied from #top10 .svc) */
+.gtable{width:100%;border-collapse:collapse;background:#FFFFFF;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.gtable th,.gtable td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);font-size:16.5px;vertical-align:top}
+.gtable tr:last-child td{border-bottom:0}
+.gtable th{background:#F7F9FC;font-weight:800}
+.gtable .gp{font-weight:900;white-space:nowrap}
+.warnbox{margin-top:18px;background:#FFF7E6;border:1.5px solid #E8A33D;border-radius:14px;padding:18px 20px}
+.warnbox .wt{font-weight:900;color:#8A5A00;font-family:'Sora','Inter',sans-serif}
+.warnbox p{margin-top:6px}
+.disc{margin-top:14px;color:var(--dim);font-size:15.5px}
+details.faq{border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px;background:#FFFFFF}
+details.faq summary{font-weight:800;cursor:pointer;font-size:17.5px}
+details.faq p{color:var(--dim);margin-top:8px}
+#boxoffers .svcgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+#boxoffers .svc{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:22px;box-shadow:0 1px 3px rgba(22,21,19,.05);position:relative}
+#boxoffers .svc .num{font-size:30px;font-weight:900;color:var(--accent);line-height:1}
+#boxoffers .svc .sname{font-weight:900;font-size:19px;margin:8px 0 6px}
+#boxoffers .svc .sout{color:var(--dim);font-size:15px}
+#boxoffers .svc .sprice{margin-top:12px;font-weight:800;font-size:15.5px}
+#boxoffers .svc .sprice small{color:var(--dim);font-weight:600}
+#boxoffers .svc{background:linear-gradient(180deg,#16283F 0%,#101E30 100%);border:1px solid #24406B;box-shadow:0 10px 26px rgba(16,30,48,.28)}
+#boxoffers .svc:hover{border-color:#2E5BFF}
+#boxoffers .svc .num{background:linear-gradient(92deg,#FF3E8A 0%,#A855F7 52%,#22D3EE 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+#boxoffers .svc .sname{color:#FFFFFF}
+#boxoffers .svc .sout{color:#C9D6EA}
+#boxoffers .svc .sprice{color:#7FD4FF}
+#boxoffers .svc .sprice small{color:#C9D6EA}
+</style>
+</head>
+<body>
+<div class="bluestrip">
+  <div class="bluestrip-in">
+    <span>Welcome to A.I. NOW — AI services for local business</span>
+    <span class="bs-city">Macomb Township, MI</span>
+  </div>
+</div>
+<div class="inforow">
+  <div class="inforow-in">
+    <div class="socials">
+      <a href="https://www.instagram.com/ainowstore" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.tiktok.com/@heymattymatt.com" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.6 6.7a4.8 4.8 0 0 1-3.5-4.5h-3.2v13a2.9 2.9 0 1 1-2-2.75V9.25a6.1 6.1 0 1 0 5.2 6V8.4a8 8 0 0 0 4.6 1.6V6.85c-.35 0-.7-.05-1.1-.15z"/></svg></a>
+      <a href="https://www.youtube.com/@AINowStore" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.28 5 12 5 12 5s-6.28 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2 26.2 26.2 0 0 0 2 12a26.2 26.2 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.76 1.77C5.72 19 12 19 12 19s6.28 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77A26.2 26.2 0 0 0 22 12a26.2 26.2 0 0 0-.4-4.8zM10 15.2V8.8L15.5 12z"/></svg></a>
+      <span aria-label="X — account coming soon"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.9 3H21l-6.78 7.74L22.2 21h-6.24l-4.9-6.4L5.5 21H2.34l7.25-8.28L1.8 3h6.4l4.43 5.85L17.9 3zm-1.1 16.13h1.73L7.36 4.77H5.5l11.3 14.36z"/></svg></span>
+    </div>
+    <div class="infocontact">
+      <a href="tel:+15862008282"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call Us: (586) 200-8282</a>
+      <a class="ic-mail" href="mailto:support@artificial-intelligencenow.com"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> support@artificial-intelligencenow.com</a>
+      <span class="ic-pin"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Macomb Township, MI</span>
+    </div>
+  </div>
+</div>
+<header>
+  <div class="bar">
+    <a class="logo" href="/">A.I. <span class="grad">NOW</span></a>
+    <nav class="mainnav" aria-label="Main">
+      <a href="/">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="print.html">Print &amp; Promo</a>
+      <a href="industries.html">Industries</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn-audit" href="audit.html">Free AI Audit</a>
+    </nav>
+  </div>
+</header>
+<!-- PAGE BANNER -->
+<div class="pagehead">
+  <div class="wrap">
+    <div class="pk">Private AI — On Your Premises</div>
+    <h1>A private AI supercomputer for your business — set up by A.I. NOW.</h1>
+    <p>Some businesses can't put customer data in the cloud — and shouldn't have to. A DGX Spark-class computer runs a full AI assistant on a desk in your office, on your own information. We install it, configure it, load it with your documents, connect your tools, and train your team. You buy the hardware direct; we make it work.</p>
+    <div class="ctas">
+      <a class="btn btn-hot" href="audit.html">Get my free AI audit</a>
+      <a class="btn btn-ghost" href="#boxoffers">See the offers</a>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <!-- WHY PRIVATE -->
+  <section>
+    <div class="stitle">Why businesses go private</div>
+    <p class="snote">Cloud AI is powerful — but every question your team asks it, and every document it touches, leaves your building. A private AI box keeps the assistant, and the data, inside your walls.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="ct">⚖️ Law offices</div>
+        <div class="cd">Client files, case notes, and contracts are privileged. An assistant that reads them has to live where they live — in your office, under your control — not on a cloud server shared with the world.</div>
+      </div>
+      <div class="card">
+        <div class="ct">🩺 Medical &amp; dental</div>
+        <div class="cd">Patient information carries legal duties. A local AI assistant can help your front desk with policies, forms, and scheduling information without patient details ever leaving the practice.</div>
+      </div>
+      <div class="card">
+        <div class="ct">🏭 Factories &amp; shops</div>
+        <div class="cd">Proprietary drawings, quotes, and process documents are your competitive edge. A private box lets your team search and use them with AI help — with nothing uploaded anywhere.</div>
+      </div>
+      <div class="card">
+        <div class="ct">💼 Finance &amp; professional services</div>
+        <div class="cd">Client financials and internal records stay on your premises, while your team still gets an assistant that knows your documents, templates, and procedures.</div>
+      </div>
+      <div class="card">
+        <div class="ct">🔒 Your data never leaves the building</div>
+        <div class="cd">The assistant runs on the box, in your office. Your documents are loaded onto it by us during setup — they are not sent to a cloud AI service to be answered.</div>
+      </div>
+      <div class="card">
+        <div class="ct">🧾 No per-seat cloud AI bills</div>
+        <div class="cd">One machine, one setup. No stack of per-user monthly AI subscriptions for the whole office — the box serves your team from your own desk.</div>
+      </div>
+      <div class="card">
+        <div class="ct">📶 Works when the internet doesn't</div>
+        <div class="cd">Once it's set up, the assistant itself runs locally — an internet outage doesn't take your office's AI down with it.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUYER'S GUIDE -->
+  <section id="guide">
+    <div class="stitle">The honest buyer's guide</div>
+    <p class="snote">We don't sell the hardware — so we can tell you the truth about what it costs. Prices below were checked on November 19, 2026, against the makers' own listings. Hardware prices move; your written quote from us never includes the hardware.</p>
+    <table class="gtable">
+      <tr><th>Machine</th><th>What it is</th><th>The real price</th><th>Where</th></tr>
+      <tr>
+        <td><b>NVIDIA DGX Spark — 128GB</b></td>
+        <td>The original desktop AI supercomputer: GB10 Grace Blackwell chip, 128GB unified memory, 4TB storage. The one to buy for the biggest models a desk box can run.</td>
+        <td class="gp">$6,950</td>
+        <td>NVIDIA's own list price — and it is often out of stock. <a href="https://www.nvidia.com">nvidia.com</a></td>
+      </tr>
+      <tr>
+        <td><b>DGX Spark 64GB — partner models</b></td>
+        <td>The same GB10 chip with 64GB of memory, built by Acer, ASUS, Dell, Gigabyte, HP, and MSI. Runs models up to roughly 100 billion parameters on its own — and two of them connect together (see the Two-Box offer below).</td>
+        <td class="gp">from $4,999</td>
+        <td>Sold by the partner makers and their authorized stores. <a href="https://www.nvidia.com">nvidia.com</a></td>
+      </tr>
+      <tr>
+        <td><b>ASUS Ascent GX10</b></td>
+        <td>The same NVIDIA GB10 chip in ASUS's box — the same class of machine, from a different maker.</td>
+        <td class="gp">$5,999</td>
+        <td>Listed at that price on NVIDIA's marketplace when we checked. <a href="https://www.nvidia.com">nvidia.com</a></td>
+      </tr>
+    </table>
+    <div class="warnbox">
+      <div class="wt">⚠️ Watch out for reseller markups</div>
+      <p>Resellers list this machine as high as <b>$8,095</b> — that's over NVIDIA's own price for the same box. Never pay a reseller markup without talking to us first. Our $209 Right-Box Session exists for exactly this: we tell you which box to buy, at the real price, before you spend a dollar on hardware.</p>
+    </div>
+    <p class="disc">Links go straight to the makers. If a link on this page ever earns us a commission, it will be marked "affiliate" — your price is the same either way.</p>
+  </section>
+
+  <!-- OFFERS -->
+  <section id="boxoffers">
+    <div class="stitle">Private AI Box offers</div>
+    <p class="snote">Four ways in — from a straight answer on what to buy, to a two-box cluster running your whole office's AI. Every price printed, every quote confirmed in writing before work begins.</p>
+    <div class="svcgrid">
+      <div class="svc">
+        <div class="num">01</div>
+        <div class="sname">Right-Box Session</div>
+        <p class="sout">A working session plus a written buying plan: which box, which size, where to buy it at the real price, and what not to pay. The cheapest insurance against a $1,000+ reseller markup or the wrong machine.</p>
+        <div class="sprice">$209 <small>one-time</small></div>
+      </div>
+      <div class="svc">
+        <div class="popflag">MOST POPULAR</div>
+        <div class="num">02</div>
+        <div class="sname">Private AI Box Setup</div>
+        <p class="sout">We configure your box, install a private AI assistant loaded with your business's own documents, connect your website chatbot and review tools to run on it, and walk your staff through using it. Your data stays in your building — the assistant does too.</p>
+        <div class="sprice">from $1,049 <small>one-time</small></div>
+      </div>
+      <div class="svc">
+        <div class="num">03</div>
+        <div class="sname">Two-Box Cluster Setup</div>
+        <p class="sout">Two 64GB units connected and pooled — 128GB of combined memory — for teams and bigger models. Everything in the single-box setup, across a matched pair, configured as one system.</p>
+        <div class="sprice">from $1,899 <small>one-time</small></div>
+      </div>
+      <div class="svc">
+        <div class="num">04</div>
+        <div class="sname">Box Care Plan</div>
+        <p class="sout">The add-on that keeps it current: software and model updates, model refreshes as better ones release, accuracy checks, and priority support. Month-to-month, like everything we sell.</p>
+        <div class="sprice">+ $83/mo <small>add-on to any setup</small></div>
+      </div>
+    </div>
+    <p class="snote" style="margin-top:22px">You always buy the hardware yourself, direct from NVIDIA or an authorized partner — we never touch the hardware money, and the warranty stays with the maker. Booking starts with the free audit; your written quote includes your payment link.</p>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <div class="stitle">How it works</div>
+    <p class="snote">Four steps, in order. You are never asked to guess at hardware, and never asked to hand us hardware money.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="ct">1 — Right-Box Session</div>
+        <div class="cd">We look at what you actually need the AI to do, then hand you a written buying plan: the right box, the right size, and where to buy it at the real price.</div>
+      </div>
+      <div class="card">
+        <div class="ct">2 — You buy direct</div>
+        <div class="cd">You purchase the hardware yourself from NVIDIA or an authorized partner. Your money goes to the maker, your name is on the receipt, and the warranty is yours.</div>
+      </div>
+      <div class="card">
+        <div class="ct">3 — We set it up</div>
+        <div class="cd">We configure the box, install your private assistant on your documents, connect your website chat and review tools to it, and train your staff.</div>
+      </div>
+      <div class="card">
+        <div class="ct">4 — Care plan keeps it current</div>
+        <div class="cd">Optional, month-to-month: updates, model refreshes, and priority support, so the box your team relies on never quietly goes stale.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MINI FAQ -->
+  <section>
+    <div class="stitle">Straight answers</div>
+    <p class="snote">The four questions every business asks us about the box.</p>
+    <details class="faq">
+      <summary>Do you sell the computer?</summary>
+      <p>No. We sell the setup — configuration, installation, training, and care. You buy the hardware yourself, direct from NVIDIA or an authorized partner, so your money goes to the maker and the warranty is in your name. We never touch the hardware money.</p>
+    </details>
+    <details class="faq">
+      <summary>Who is the warranty with?</summary>
+      <p>NVIDIA or the partner maker who built your box — the same as if you'd bought it without us. Our responsibility is the setup work we do, covered by our published terms.</p>
+    </details>
+    <details class="faq">
+      <summary>What can it actually run?</summary>
+      <p>A private assistant that works from your own documents, your website chat, and your review replies — sized to the model the box supports. The 128GB box runs the largest models a desktop machine can; the 64GB models run models up to roughly 100 billion parameters, and two of them pool together. We'll tell you honestly, in the Right-Box Session, whether your use case fits — no guarantees, no overselling.</p>
+    </details>
+    <details class="faq">
+      <summary>Can you set up a box we already own?</summary>
+      <p>Yes. If a DGX Spark-class machine is already sitting in your office, the same setup offers apply — the Setup and Care Plan don't care where the box came from, as long as it's yours.</p>
+    </details>
+  </section>
+
+  <!-- AUDIT BAND -->
+  <div class="auditband">
+    <div class="at">Start with the free AI audit</div>
+    <p>Tell us about your business and we'll say plainly — no charge, no obligation — whether a private AI box makes sense for you, or whether our regular services would do the job for less.</p>
+    <a class="btn btn-hot" href="audit.html">Get my free AI audit</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <span class="logo" style="font-size:19px">A.I. <span class="grad">NOW</span></span>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="industries.html">Industries</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://shop.artificial-intelligencenow.com">Store</a>
+      <a href="print.html">Print &amp; Promo</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <div class="frow">
+      <span>Contact: <a href="mailto:support@artificial-intelligencenow.com?subject=AI%20SERVICES">support@artificial-intelligencenow.com</a></span>
+      <span>Prefer Gmail? <a href="mailto:ainowstore@gmail.com?subject=AI%20SERVICES">ainowstore@gmail.com</a></span>
+    </div>
+    <p>A.I. NOW — Detroit, Michigan. AI implementation services for local businesses, at <a href="https://artificial-intelligencenow.com">artificial-intelligencenow.com</a>. The A.I. NOW Store lives at <a href="https://shop.artificial-intelligencenow.com">shop.artificial-intelligencenow.com</a>. Prices shown are starting-at prices in USD; your exact quote is confirmed in writing before work begins.</p>
+  </div>
+</footer>
+
+<script>
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').catch(()=>{}); }
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6aef788aa3c2893c2c94aa40/1k6rmtnk6';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>
