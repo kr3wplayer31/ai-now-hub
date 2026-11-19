@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI for Factories &amp; Light Industrial — A.I. NOW</title>
+<meta name="description" content="AI for factories, manufacturers, light industrial shops and warehouses: supplier and applicant calls answered, after-hours quote and order-status inquiries captured, FAQ help centers and staff training. Published pricing, free AI audit.">
+<style>
+  :root{--bg:#FAF7F0;--panel:#FFFFFF;--panel2:#F4EFE2;--line:#E1D9C6;--txt:#161513;--dim:#5D594E;--accent:#1E3A5F;--accent-dark:#14293F}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .bar{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .logo{font-weight:900;font-size:26px;letter-spacing:.5px;color:var(--txt)}
+  .grad{color:var(--txt)}
+  .pill{display:inline-flex;align-items:center;background:var(--accent);color:#fff;font-size:11px;font-weight:900;padding:5px 12px;border-radius:999px;letter-spacing:1.5px}
+  nav.mainnav{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+  nav.mainnav a{color:var(--txt);font-weight:700;font-size:14.5px}
+  nav.mainnav a:hover{color:var(--accent);text-decoration:none}
+  nav.mainnav a.on{color:var(--accent)}
+  .btn{display:inline-block;font-weight:800;font-size:15.5px;padding:13px 26px;border-radius:10px;letter-spacing:.2px;border:0;cursor:pointer}
+  .btn:hover{text-decoration:none}
+  .btn-hot{background:var(--accent);color:#fff}
+  .btn-hot:hover{background:var(--accent-dark)}
+  .btn-ghost{background:#FFFFFF;color:var(--txt);border:1.5px solid #CFC7AF}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .btn-sm{padding:10px 20px;font-size:14px}
+  /* page banner */
+  .pagehead{background:#111111;color:#FFFFFF;padding:36px 0 32px;border-bottom:6px solid var(--accent)}
+  .pagehead .pk{font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:#9DB8D9;margin-bottom:10px}
+  .pagehead h1{font-size:clamp(32px,5.6vw,52px);font-weight:900;line-height:1.05;letter-spacing:-.5px}
+  .pagehead p{color:#D9D9D9;font-size:clamp(15.5px,2vw,18px);max-width:780px;margin-top:12px}
+  .pagehead .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+  /* sections */
+  section{padding:52px 0 8px}
+  .stitle{font-size:clamp(27px,4.4vw,38px);font-weight:900;line-height:1.12;letter-spacing:-.3px}
+  .snote{color:var(--dim);font-size:16px;margin:10px 0 26px;max-width:780px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .card{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:9px;box-shadow:0 1px 3px rgba(22,21,19,.05)}
+  .card .ct{font-weight:800;font-size:18.5px}
+  .card .cd{color:var(--dim);font-size:15px;flex:1}
+  .card .price{font-weight:900;font-size:17px;color:var(--txt)}
+  .card .price span{color:var(--accent)}
+  /* pricing */
+  .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:stretch}
+  .plan{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;gap:10px;position:relative;box-shadow:0 1px 3px rgba(22,21,19,.05)}
+  .plan.pop{border:2px solid var(--accent);background:var(--panel2)}
+  .popflag{position:absolute;top:-13px;left:24px;background:var(--accent);color:#fff;font-size:11.5px;font-weight:900;letter-spacing:1.2px;padding:5px 12px;border-radius:999px}
+  .plan .pname{font-weight:900;font-size:15px;letter-spacing:1.6px;color:var(--accent)}
+  .plan .pprice{font-size:30px;font-weight:900;line-height:1.15}
+  .plan .pprice small{font-size:15px;color:var(--dim);font-weight:700}
+  .plan ul{color:#3E3A32;font-size:15px;padding-left:18px;flex:1}
+  .plan ul li{margin:5px 0}
+  .plan .btn{text-align:center;margin-top:8px}
+  /* quick form */
+  .aform{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:26px;box-shadow:0 1px 3px rgba(22,21,19,.05);max-width:720px}
+  .aform label{display:block;font-weight:800;font-size:14.5px;margin:16px 0 6px}
+  .aform label:first-of-type{margin-top:0}
+  .aform input,.aform textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:15.5px;font-family:inherit;background:#FFFDF8;color:var(--txt)}
+  .aform input:focus,.aform textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+  .aform .btn{margin-top:20px;width:100%;text-align:center}
+  .aform .fnote{color:var(--dim);font-size:13.5px;margin-top:12px}
+  /* audit band */
+  .auditband{margin:52px 0 8px;background:#F1EADA;border:1px solid var(--line);border-radius:16px;padding:30px 26px;text-align:center}
+  .auditband .at{font-weight:900;font-size:clamp(23px,4vw,32px)}
+  .auditband p{color:#3E3A32;font-size:16px;max-width:680px;margin:10px auto 0}
+  .auditband .btn{margin-top:20px}
+  /* footer */
+  footer{border-top:1px solid var(--line);margin-top:60px;padding:30px 0 40px;color:var(--dim);font-size:13.5px}
+  footer .frow{display:flex;flex-wrap:wrap;gap:10px 26px;margin-bottom:12px}
+  footer a{color:#3E3A32;font-weight:700}
+  footer a:hover{color:var(--accent)}
+  @media(max-width:640px){nav.mainnav{margin-left:0;gap:14px}.pagehead{padding:28px 0 26px}}
+</style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#FAF7F0">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="A.I. NOW">
+</head>
+<body>
+<header>
+  <div class="bar">
+    <div class="logo">A.I. <span class="grad">NOW</span></div>
+    <span class="pill">AI SERVICES</span>
+    <nav class="mainnav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="industries.html" class="on">Industries</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn btn-hot btn-sm" href="audit.html">Get Started</a>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE BANNER -->
+<div class="pagehead">
+  <div class="wrap">
+    <div class="pk">Industries · Factories &amp; Light Industrial</div>
+    <h1>The floor can't stop to answer the phone.</h1>
+    <p>For factories, manufacturers, light industrial shops and warehouses: A.I. NOW installs AI that answers supplier, customer and applicant questions on your website and your phone line around the clock — so your office staff can run the operation instead of repeating the same answers all day.</p>
+    <div class="ctas">
+      <a class="btn btn-hot" href="audit.html">Get my free AI audit</a>
+      <a class="btn btn-ghost" href="#quickform">Use the 60-second form</a>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <!-- PAIN -->
+  <section>
+    <div class="stitle">The daily reality on the floor</div>
+    <p class="snote">A plant runs on people working with their hands. The phone and the website don't know that — they interrupt all day with questions that are almost always the same ones.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="ct">🏭 Supplier and vendor calls hit an empty office</div>
+        <div class="cd">Your office staff are out on the floor — checking a line, walking the warehouse, handling a delivery. Supplier and vendor calls land in voicemail, and the back-and-forth eats the rest of the day.</div>
+      </div>
+      <div class="card">
+        <div class="ct">🧑‍🏭 Applicants ask the same questions all day</div>
+        <div class="cd">"What does it pay? What shifts are open? How do I apply?" Job seekers call with the same three questions, over and over — and every call pulls someone away from the work that actually ships product.</div>
+      </div>
+      <div class="card">
+        <div class="ct">🌙 After-hours inquiries go to voicemail</div>
+        <div class="cd">Customers checking on an order, a buyer asking for a quote, a prospect comparing shops at night — if the only answer after 5 PM is a voicemail box, that inquiry quietly goes to a competitor who answered.</div>
+      </div>
+      <div class="card">
+        <div class="ct">🦺 Routine questions eat office staff time</div>
+        <div class="cd">Shift times, delivery windows, procedure and policy basics, "who do I talk to about…" — your smallest team fields the same questions from employees, vendors and customers, every single day.</div>
+      </div>
+      <div class="card">
+        <div class="ct">🌐 Your website is a phone number and an address</div>
+        <div class="cd">Most plant websites are a logo, a phone number and a map pin. Anyone who finds you online — a buyer, a supplier, a good applicant — has no way to get an answer or leave their details without calling during business hours.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section>
+    <div class="stitle">What we install for factories &amp; light industrial</div>
+    <p class="snote">Built around one idea: the routine questions answer themselves, and every real inquiry gets captured with its details attached — 24 hours a day, shift or no shift.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="ct">💬 AI Website Chatbot</div>
+        <div class="cd">Answers questions on your website instantly, day and night: capabilities and services, how to request a quote, how to apply for a job, delivery and pickup basics. Captures inquiries with the details you need instead of letting visitors bounce off a phone number.</div>
+        <div class="price">$599 setup <span>+ $89/mo</span></div>
+      </div>
+      <div class="card">
+        <div class="ct">📞 AI Voice Receptionist</div>
+        <div class="cd">Answers your phone when the office is on the floor or the plant is closed — takes the message, captures who's calling and why, and handles the routine questions so a real inquiry never dies in a voicemail box.</div>
+        <div class="price">$479 setup <span>+ $119/mo</span></div>
+      </div>
+      <div class="card">
+        <div class="ct">⚡ AI Lead Follow-Up</div>
+        <div class="cd">The moment a quote request or inquiry comes in, it gets an instant text and email from your company — not the next morning. Buyers comparing shops hear back from you first, every time.</div>
+        <div class="price">$299 setup <span>+ $79/mo</span></div>
+      </div>
+      <div class="card">
+        <div class="ct">❓ AI FAQ Help Center</div>
+        <div class="cd">A help page on your website that answers the questions you hear ten times a day — how to apply, shift and hours basics, how ordering and delivery work, who handles what — written from your real policies, so the calls slow down.</div>
+        <div class="price">$449 <span>one-time</span></div>
+      </div>
+      <div class="card">
+        <div class="ct">🎓 AI Staff Training Session</div>
+        <div class="cd">A one-hour, plain-English session where we walk your office team through the exact AI tools we set up for you — using your plant, your examples, your questions. No tech background needed.</div>
+        <div class="price">$149 <span>per session</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOMMENDED -->
+  <section id="recommended">
+    <div class="stitle">Recommended for factories &amp; light industrial</div>
+    <p class="snote">Full Crew is the complete front office: the chatbot works your website, the voice receptionist works your phone line, and every inquiry gets followed up in seconds. Month-to-month after setup.</p>
+    <div class="plans">
+      <div class="plan pop">
+        <div class="popflag">RECOMMENDED</div>
+        <div class="pname">FULL CREW</div>
+        <div class="pprice">$1,499 setup<br><small>+ $399/month</small></div>
+        <ul>
+          <li>AI Website Chatbot</li>
+          <li>AI Voice Receptionist — calls answered around the clock</li>
+          <li>AI Lead Follow-Up — instant text/email to every new inquiry</li>
+          <li>AI Review Responder</li>
+          <li>AI Content Engine</li>
+          <li>The complete front office</li>
+          <li>Priority support</li>
+        </ul>
+        <a class="btn btn-hot" href="audit.html">Start with a free audit</a>
+      </div>
+      <div class="plan">
+        <div class="pname">START SMALLER — GROWTH</div>
+        <div class="pprice">$899 setup<br><small>+ $249/month</small></div>
+        <ul>
+          <li>AI Website Chatbot</li>
+          <li>AI Lead Follow-Up — instant text/email to every new lead</li>
+          <li>AI Review Responder for your Google reviews</li>
+          <li>Automatic review requests after each job</li>
+          <li>Email support</li>
+          <li>Step up to FULL CREW ($1,499 setup + $399/mo) when you want the phone line answered too</li>
+        </ul>
+        <a class="btn btn-ghost" href="audit.html">Ask about Growth</a>
+      </div>
+    </div>
+    <p class="snote" style="margin-top:20px">All prices are starting-at prices in USD. Your exact quote is confirmed in writing before work begins — the price we quote is the price you pay. See our <a href="terms.html">Terms &amp; Conditions</a> for full details.</p>
+  </section>
+
+  <!-- QUICK FORM -->
+  <section id="quickform">
+    <div class="stitle">Short on time? The 60-second form</div>
+    <p class="snote">Three fields, that's it. Fill them in and hit the button — it opens a ready-to-send email in your own mail app, addressed to us with everything filled in. Just press send, and we'll take it from there.</p>
+    <form class="aform" action="mailto:support@artificial-intelligencenow.com?subject=FACTORY%20INQUIRY" method="post" enctype="text/plain">
+      <label for="biz">Business name</label>
+      <input id="biz" name="Business name" type="text" placeholder="e.g. Lakewood Fabrication Inc." required>
+      <label for="contact">Best phone number or email</label>
+      <input id="contact" name="Phone or email" type="text" placeholder="e.g. (586) 555-0123 or office@yourplant.com" required>
+      <label for="help">What do you need help with?</label>
+      <textarea id="help" name="What they need help with" rows="3" placeholder="e.g. Applicants keep calling about shifts and pay, and nobody can get to the phone during the day."></textarea>
+      <button class="btn btn-hot" type="submit">Send my inquiry</button>
+      <p class="fnote">Prefer to write your own email? Send the same three things to <a href="mailto:support@artificial-intelligencenow.com?subject=FACTORY%20INQUIRY">support@artificial-intelligencenow.com</a> with the subject <b>FACTORY INQUIRY</b>. Prefer Gmail? <a href="mailto:ainowstore@gmail.com?subject=FACTORY%20INQUIRY">ainowstore@gmail.com</a> works too. Or call us at <a href="tel:+15862008282">(586) 200-8282</a>.</p>
+    </form>
+  </section>
+
+  <!-- AUDIT BAND -->
+  <div class="auditband">
+    <div class="at">Start with the free AI audit</div>
+    <p>Send us your website and we'll show you — in plain English, no charge, no obligation — where supplier, customer and applicant inquiries are slipping away while your office is on the floor, and what AI would do about it.</p>
+    <a class="btn btn-hot" href="audit.html">Get my free AI audit</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <span class="logo" style="font-size:19px">A.I. <span class="grad">NOW</span></span>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="industries.html">Industries</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://shop.artificial-intelligencenow.com">Store</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <div class="frow">
+      <span>Contact: <a href="mailto:support@artificial-intelligencenow.com?subject=AI%20SERVICES">support@artificial-intelligencenow.com</a></span>
+      <span>Prefer Gmail? <a href="mailto:ainowstore@gmail.com?subject=AI%20SERVICES">ainowstore@gmail.com</a></span>
+      <span>Call: <a href="tel:+15862008282">(586) 200-8282</a></span>
+    </div>
+    <p>A.I. NOW — Macomb Township, Michigan. AI implementation services for local businesses, at <a href="https://artificial-intelligencenow.com">artificial-intelligencenow.com</a>. The A.I. NOW Store lives at <a href="https://shop.artificial-intelligencenow.com">shop.artificial-intelligencenow.com</a>. Prices shown are starting-at prices in USD; your exact quote is confirmed in writing before work begins.</p>
+  </div>
+</footer>
+
+<script>
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').catch(()=>{}); }
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6aef788aa3c2893c2c94aa40/1k6rmtnk6';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>
