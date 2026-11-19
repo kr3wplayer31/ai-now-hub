@@ -127,60 +127,140 @@
 {"@type":"ListItem","position":9,"name":"AI Social Media Manager","url":"https://artificial-intelligencenow.com/services.html#service-9"},
 {"@type":"ListItem","position":10,"name":"AI Training & Care Plan","url":"https://artificial-intelligencenow.com/services.html#service-10"}]}
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+<style>
+/* A.I. NOW layout (Nov 19): Consultio-style topbar + white nav, royal-blue accents, Sora/Inter type */
+body{font-family:'Inter',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+h1,h2,h3,.stitle,.sname,.ct,.st,.dt,.at,.sh,.mt,.pname,.pbname,.hline{font-family:'Sora','Inter',sans-serif}
+.topbar{background:#EDF2FB;color:#1E3A5F;font-size:13px;border-bottom:1px solid #D9E4F2}
+.topbar-in{max-width:1120px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;justify-content:space-between;gap:6px 26px;flex-wrap:wrap}
+.topbar a{color:#1E3A5F;font-weight:600}
+.topbar a:hover{color:#2E5BFF}
+header{position:sticky;top:0;z-index:50;background:#FFFFFF;border-bottom:1px solid #E3E9F2;box-shadow:0 4px 18px rgba(30,58,95,.07);backdrop-filter:none}
+header .bar{flex-direction:row;align-items:center;text-align:left;gap:14px;padding:14px 20px;flex-wrap:wrap}
+header .logo{font-family:'Sora',sans-serif;font-weight:800;font-size:30px;letter-spacing:-.5px;line-height:1.05;color:#101E30}
+header .logo:hover{text-decoration:none}
+header .logo .grad{background:linear-gradient(92deg,#FF3E8A 0%,#A855F7 52%,#22D3EE 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+header nav.mainnav{margin-left:auto;justify-content:flex-end;gap:20px}
+header nav.mainnav a{color:#161513}
+header nav.mainnav a:hover{color:#2E5BFF;text-decoration:none}
+header nav.mainnav a.btn-audit{background:#2E5BFF;color:#FFFFFF;padding:10px 20px;border-radius:8px;font-weight:800}
+header nav.mainnav a.btn-audit:hover{background:#1E44D6;color:#FFFFFF}
+footer .logo{font-family:'Sora',sans-serif}
+@media(max-width:860px){header nav.mainnav{margin-left:0;justify-content:flex-start}}
+@media(max-width:640px){header .bar{padding:12px 14px}header nav.mainnav{margin-left:0;gap:14px}.topbar-in{justify-content:center;text-align:center}}
+/* homepage hero — Consultio layout */
+.heroband{background:linear-gradient(118deg,#E9F1FD 0%,#F5F9FE 54%,#E8F0FC 100%);position:relative;overflow:hidden}
+.heroband::after{content:"";position:absolute;top:0;right:0;width:560px;max-width:70%;height:100%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='208' viewBox='0 0 240 208'%3E%3Cg fill='none' stroke='%232E5BFF' stroke-opacity='0.10' stroke-width='1.5'%3E%3Cpath d='M60 6l52 30v60L60 126 8 96V36z'/%3E%3Cpath d='M180 110l52 30v60l-52 30-52-30v-60z'/%3E%3Cpath d='M186 2l40 23v46l-40 23-40-23V25z'/%3E%3C/g%3E%3C/svg%3E");background-repeat:repeat;pointer-events:none}
+.heroband .hero{position:relative;z-index:1;padding:54px 0 92px}
+.heroband .hero-grid{align-items:center}
+.hero h1{font-family:'Sora',sans-serif;font-size:clamp(40px,6vw,64px);font-weight:800;line-height:1.04;letter-spacing:-1px}
+.hero .eyebrow{color:#2E5BFF}
+.hero .btn-hot{background:#2E5BFF}
+.hero .btn-hot:hover{background:#1E44D6}
+.seclink{font-weight:700;font-size:15.5px;color:#1E3A5F;align-self:center}
+.seclink:hover{color:#2E5BFF}
+.heroart{margin:0;border-radius:20px;overflow:hidden;box-shadow:0 18px 44px rgba(30,58,95,.16);background:#EDF3FA;aspect-ratio:5/6}
+.heroart img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.herocards{position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:-58px}
+.hcard{background:#FFFFFF;border:1px solid #D9E0E8;border-radius:14px;padding:24px;box-shadow:0 10px 28px rgba(30,58,95,.10);position:relative}
+.hcard .hic{color:#2E5BFF;margin-bottom:12px}
+.hcard .hct{font-family:'Sora',sans-serif;font-weight:800;font-size:17.5px;margin-bottom:7px;line-height:1.25}
+.hcard p{color:#4B5563;font-size:15px}
+.hcard .hprice{margin-top:14px;font-weight:800;font-size:16px;color:#101E30}
+.hcard .hlink{margin-top:6px;font-size:14.5px;font-weight:700}
+.hcard.hot{background:#2E5BFF;border-color:#2E5BFF;color:#FFFFFF}
+.hcard.hot p{color:rgba(255,255,255,.88)}
+.hcard.hot .hic{color:#FFFFFF}
+.hcard.hot .hprice{color:#FFFFFF}
+.hcard.hot .hlink a{color:#FFFFFF}
+.starttag{position:absolute;top:-12px;right:18px;background:#101E30;color:#FFFFFF;font-size:11px;font-weight:900;letter-spacing:1.5px;padding:5px 12px;border-radius:999px;text-transform:uppercase}
+@media(max-width:860px){.herocards{grid-template-columns:1fr;margin-top:-40px}.heroband .hero{padding-bottom:72px}}
+</style>
 </head>
 <body>
+<div class="topbar">
+  <div class="topbar-in">
+    <span>Welcome to A.I. NOW — AI services for local business</span>
+    <span><a href="tel:+15862008282">(586) 200-8282</a> &nbsp;·&nbsp; <a href="mailto:support@artificial-intelligencenow.com">support@artificial-intelligencenow.com</a> &nbsp;·&nbsp; Macomb Township, MI</span>
+  </div>
+</div>
 <header>
   <div class="bar">
-    <div class="logo">A.I. NOW</div>
-    <span class="pill">AI SERVICES</span>
+    <a class="logo" href="/">A.I. <span class="grad">NOW</span></a>
     <nav class="mainnav" aria-label="Main">
       <a href="/">Home</a>
       <a href="services.html">Services</a>
       <a href="pricing.html">Pricing</a>
-      <a href="industries.html">Industries</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="faq.html">FAQ</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
       <a href="print.html">Print &amp; Promo</a>
-      <a class="btn btn-hot btn-sm" href="get-started.html">Get Started</a>
+      <a href="industries.html">Industries</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn-audit" href="audit.html">Free AI Audit</a>
     </nav>
   </div>
 </header>
 
 <main>
   <!-- HERO -->
-  <div class="hero wrap">
-    <div class="hero-grid">
-      <div>
-        <div class="eyebrow">AI Implementation Services · Macomb Township, Michigan</div>
-        <h1>We put AI to work for your local business.</h1>
-        <p class="lead">A.I. NOW installs 10 practical services — from a website chatbot and phone receptionist to lead follow-up, reviews, content, and search visibility. Start with a free audit, see the price in writing, and choose only what fits.</p>
-        <div class="ctas">
-          <a class="btn btn-hot" href="audit.html">Get my free AI audit</a>
-          <a class="btn btn-ghost" href="services.html">See the Top 10 services</a>
+  <div class="heroband">
+    <div class="hero wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">AI Services for Local Business</div>
+          <h1>We put AI to work for your local business.</h1>
+          <p class="lead">A.I. NOW installs 10 practical services — from a website chatbot and phone receptionist to lead follow-up, reviews, content, and search visibility. Start with a free audit, see the price in writing, and choose only what fits.</p>
+          <div class="ctas">
+            <a class="btn btn-hot" href="audit.html">Get my free AI audit</a>
+            <a class="seclink" href="#top10">See the 10 services ↓</a>
+          </div>
+          <p class="micro">Free audit, no charge and no obligation. Published prices. Written quote before work begins.</p>
         </div>
-        <p class="micro">Free audit, no charge and no obligation. Published prices. Written quote before work begins.</p>
-      </div>
-      <div class="demopanel">
-        <div class="dt">Try the kind of help we install</div>
-        <p>This chat is an example of the assistant we can install on your website. Tap the chat bubble in the bottom-right corner and ask it about services, prices, or the free audit. If you need a person, it will take your details for Matthew.</p>
-        <div class="factrows">
-          <div><span>✓</span> Published prices</div>
-          <div><span>✓</span> Month-to-month plans</div>
-          <div><span>✓</span> Written quote before work begins</div>
-          <div><span>✓</span> You own your website, content, and customer data</div>
-        </div>
+        <figure class="heroart">
+          <img src="assets/hero-logo.webp" alt="A.I. NOW — Artificial Intelligence Now" width="1280" height="1920">
+        </figure>
       </div>
     </div>
   </div>
+
+  <!-- OVERLAP SERVICE CARDS -->
+  <div class="wrap">
+    <div class="herocards">
+      <div class="hcard">
+        <div class="hic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div class="hct">AI Voice Receptionist + Missed-Call Text-Back</div>
+        <p>Your phone gets answered when you can't — and every missed call gets a text back, so the customer doesn't just call the next business.</p>
+        <div class="hprice">$335 setup + $83/mo</div>
+        <div class="hlink"><a href="services.html#service-1">See Service 01 →</a></div>
+      </div>
+      <div class="hcard hot">
+        <div class="hic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+        <div class="hct">AI Website Chatbot &amp; Booking Assistant</div>
+        <p>Answers common questions on your website around the clock, captures the visitor's details, and helps them book.</p>
+        <div class="hprice">$419 setup + $62/mo</div>
+        <div class="hlink"><a href="services.html#service-3">See Service 03 →</a></div>
+      </div>
+      <div class="hcard">
+        <span class="starttag">Start here</span>
+        <div class="hic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
+        <div class="hct">AI Review Responder &amp; Review Engine</div>
+        <p>Every Google review answered professionally, and happy customers asked for a review at the right time.</p>
+        <div class="hprice">$99/mo · no setup fee</div>
+        <div class="hlink"><a href="services.html#service-4">See Service 04 →</a></div>
+      </div>
+    </div>
+  </div>
+
+
 
   <!-- HONESTY STRIP -->
   <div class="honesty">
     <div class="wrap">
       <div class="hline">Prices printed. Month-to-month. No results promised — ever.</div>
       <ul>
-        <li>Every price is set at 60% of what typical agencies charge — same work, fair price.</li>
+        <li>Every price is set at 42% of what typical agencies charge — same work, fair price.</li>
         <li>Exact quote confirmed in writing before work begins. Setup and monthly amounts shown separately.</li>
         <li>Cancel according to the published terms; service runs to the end of the paid month.</li>
         <li>AI can make mistakes, so everything is trained, bounded, and tested with you before launch.</li>
@@ -203,16 +283,16 @@
   </section>
 
   <!-- TOP 10 -->
-  <section>
+  <section id=\"top10\">
     <div class="stitle">The 10 ways we help</div>
     <p class="snote">Start with one service or combine several in a package. Every service is installed and managed by A.I. NOW, and every engagement begins with a free audit so we recommend only what fits.</p>
     <div class="tengrid">
-      <div class="svc"><div class="num">01</div><div class="sname">AI Voice Receptionist + Missed-Call Text-Back</div><p class="sout">Your phone gets answered when you can't — and every missed call gets a text back, so the customer doesn't just call the next business.</p><div class="sprice">$479 setup + $119/mo <small>· after-hours pilot first</small></div><div class="slink"><a href="services.html#service-1">See Service 01 →</a></div></div>
-      <div class="svc"><div class="num">02</div><div class="sname">Instant Lead Follow-Up</div><p class="sout">Every web form, ad, and inquiry answered in seconds — then followed up automatically until they reply or book.</p><div class="sprice">$299 setup + $79/mo</div><div class="slink"><a href="services.html#service-2">See Service 02 →</a></div></div>
-      <div class="svc"><div class="num">03</div><div class="sname">AI Website Chatbot &amp; Booking Assistant</div><p class="sout">Answers common questions on your website around the clock, captures the visitor's details, and helps them book.</p><div class="sprice">$599 setup + $89/mo</div><div class="slink"><a href="services.html#service-3">See Service 03 →</a></div></div>
-      <div class="svc"><div class="num">04</div><div class="sname">AI Review Responder &amp; Review Engine</div><p class="sout">Every Google review answered professionally, and happy customers asked for a review at the right time.</p><div class="sprice">$149/mo <small>· no setup fee</small></div><div class="slink"><a href="services.html#service-4">See Service 04 →</a></div></div>
-      <div class="svc"><div class="num">05</div><div class="sname">Google Profile, Local Search &amp; AI Search Tune-Up</div><p class="sout">Cleans up your Google profile and structures your site so search engines and AI assistants understand what you do and where you work.</p><div class="sprice">$299 one-time</div><div class="slink"><a href="services.html#service-5">See Service 05 →</a></div></div>
-      <div class="svc"><div class="num">06</div><div class="sname">AI-Ready Website Build</div><p class="sout">A fast, professional website built to convert — with chatbot-ready structure, booking, and payments wired in.</p><div class="sprice">From $1,499 one-time</div><div class="slink"><a href="services.html#service-6">See Service 06 →</a></div></div>
+      <div class="svc"><div class="num">01</div><div class="sname">AI Voice Receptionist + Missed-Call Text-Back</div><p class="sout">Your phone gets answered when you can't — and every missed call gets a text back, so the customer doesn't just call the next business.</p><div class="sprice">$335 setup + $83/mo <small>· after-hours pilot first</small></div><div class="slink"><a href="services.html#service-1">See Service 01 →</a></div></div>
+      <div class="svc"><div class="num">02</div><div class="sname">Instant Lead Follow-Up</div><p class="sout">Every web form, ad, and inquiry answered in seconds — then followed up automatically until they reply or book.</p><div class="sprice">$209 setup + $55/mo</div><div class="slink"><a href="services.html#service-2">See Service 02 →</a></div></div>
+      <div class="svc"><div class="num">03</div><div class="sname">AI Website Chatbot &amp; Booking Assistant</div><p class="sout">Answers common questions on your website around the clock, captures the visitor's details, and helps them book.</p><div class="sprice">$419 setup + $62/mo</div><div class="slink"><a href="services.html#service-3">See Service 03 →</a></div></div>
+      <div class="svc"><div class="num">04</div><div class="sname">AI Review Responder &amp; Review Engine</div><p class="sout">Every Google review answered professionally, and happy customers asked for a review at the right time.</p><div class="sprice">$99/mo <small>· no setup fee</small></div><div class="slink"><a href="services.html#service-4">See Service 04 →</a></div></div>
+      <div class="svc"><div class="num">05</div><div class="sname">Google Profile, Local Search &amp; AI Search Tune-Up</div><p class="sout">Cleans up your Google profile and structures your site so search engines and AI assistants understand what you do and where you work.</p><div class="sprice">$209 one-time</div><div class="slink"><a href="services.html#service-5">See Service 05 →</a></div></div>
+      <div class="svc"><div class="num">06</div><div class="sname">AI-Ready Website Build</div><p class="sout">A fast, professional website built to convert — with chatbot-ready structure, booking, and payments wired in.</p><div class="sprice">From $1,049 one-time</div><div class="slink"><a href="services.html#service-6">See Service 06 →</a></div></div>
     </div>
     <div class="midcta">
       <div class="mt">Not sure which of the 10 fits?</div>
@@ -220,10 +300,10 @@
       <a class="btn btn-hot" href="audit.html">Request my free AI audit</a>
     </div>
     <div class="tengrid">
-      <div class="svc"><div class="num">07</div><div class="sname">Email Newsletter &amp; Past-Customer Reactivation</div><p class="sout">Regular emails to your own customer list that bring past customers back — written and sent for you.</p><div class="sprice">$239/mo <small>· no setup fee</small></div><div class="slink"><a href="services.html#service-7">See Service 07 →</a></div></div>
-      <div class="svc"><div class="num">08</div><div class="sname">AI Content Engine</div><p class="sout">Planned website articles, FAQ, and social drafts on a steady schedule — feeding search and AI answers, with your approval before anything goes live.</p><div class="sprice">$299/mo <small>· no setup fee</small></div><div class="slink"><a href="services.html#service-8">See Service 08 →</a></div></div>
-      <div class="svc"><div class="num">09</div><div class="sname">AI Social Media Manager</div><p class="sout">Keeps your social accounts active with planned posts, captions, and hashtags — handled for you.</p><div class="sprice">$599/mo <small>· no setup fee</small></div><div class="slink"><a href="services.html#service-9">See Service 09 →</a></div></div>
-      <div class="svc"><div class="num">10</div><div class="sname">AI Training &amp; Care Plan</div><p class="sout">Trains your team at onboarding and keeps the tools updated as your hours, prices, and services change — with a plain-English monthly report.</p><div class="sprice">$119/mo <small>· no setup fee</small></div><div class="slink"><a href="services.html#service-10">See Service 10 →</a></div></div>
+      <div class="svc"><div class="num">07</div><div class="sname">Email Newsletter &amp; Past-Customer Reactivation</div><p class="sout">Regular emails to your own customer list that bring past customers back — written and sent for you.</p><div class="sprice">$167/mo <small>· no setup fee</small></div><div class="slink"><a href="services.html#service-7">See Service 07 →</a></div></div>
+      <div class="svc"><div class="num">08</div><div class="sname">AI Content Engine</div><p class="sout">Planned website articles, FAQ, and social drafts on a steady schedule — feeding search and AI answers, with your approval before anything goes live.</p><div class="sprice">$209/mo <small>· no setup fee</small></div><div class="slink"><a href="services.html#service-8">See Service 08 →</a></div></div>
+      <div class="svc"><div class="num">09</div><div class="sname">AI Social Media Manager</div><p class="sout">Keeps your social accounts active with planned posts, captions, and hashtags — handled for you.</p><div class="sprice">$419/mo <small>· no setup fee</small></div><div class="slink"><a href="services.html#service-9">See Service 09 →</a></div></div>
+      <div class="svc"><div class="num">10</div><div class="sname">AI Training &amp; Care Plan</div><p class="sout">Trains your team at onboarding and keeps the tools updated as your hours, prices, and services change — with a plain-English monthly report.</p><div class="sprice">$83/mo <small>· no setup fee</small></div><div class="slink"><a href="services.html#service-10">See Service 10 →</a></div></div>
     </div>
   </section>
 
@@ -270,7 +350,7 @@
     <div class="plans">
       <div class="plan">
         <div class="pname">STARTER</div>
-        <div class="pprice">$599 setup <small>+ $89/month</small></div>
+        <div class="pprice">$419 setup <small>+ $62/month</small></div>
         <ul>
           <li>Service 03 — AI Website Chatbot &amp; Booking Assistant</li>
           <li>Answers customer questions 24/7</li>
@@ -281,7 +361,7 @@
       <div class="plan pop">
         <div class="popflag">MOST POPULAR</div>
         <div class="pname">GROWTH</div>
-        <div class="pprice">$899 setup <small>+ $249/month</small></div>
+        <div class="pprice">$629 setup <small>+ $174/month</small></div>
         <ul>
           <li>Service 03 — AI Website Chatbot &amp; Booking Assistant</li>
           <li>Service 02 — Instant Lead Follow-Up</li>
@@ -291,7 +371,7 @@
       </div>
       <div class="plan">
         <div class="pname">FULL CREW</div>
-        <div class="pprice">$1,499 setup <small>+ $399/month</small></div>
+        <div class="pprice">$1,049 setup <small>+ $279/month</small></div>
         <ul>
           <li>Services 03, 01, 02, 04, and 08</li>
           <li>Chatbot, voice receptionist, lead follow-up, reviews, and content</li>

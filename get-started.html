@@ -67,23 +67,51 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="A.I. NOW">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+<style>
+/* A.I. NOW layout (Nov 19): Consultio-style topbar + white nav, royal-blue accents, Sora/Inter type */
+body{font-family:'Inter',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+h1,h2,h3,.stitle,.sname,.ct,.st,.dt,.at,.sh,.mt,.pname,.pbname,.hline{font-family:'Sora','Inter',sans-serif}
+.topbar{background:#EDF2FB;color:#1E3A5F;font-size:13px;border-bottom:1px solid #D9E4F2}
+.topbar-in{max-width:1120px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;justify-content:space-between;gap:6px 26px;flex-wrap:wrap}
+.topbar a{color:#1E3A5F;font-weight:600}
+.topbar a:hover{color:#2E5BFF}
+header{position:sticky;top:0;z-index:50;background:#FFFFFF;border-bottom:1px solid #E3E9F2;box-shadow:0 4px 18px rgba(30,58,95,.07);backdrop-filter:none}
+header .bar{flex-direction:row;align-items:center;text-align:left;gap:14px;padding:14px 20px;flex-wrap:wrap}
+header .logo{font-family:'Sora',sans-serif;font-weight:800;font-size:30px;letter-spacing:-.5px;line-height:1.05;color:#101E30}
+header .logo:hover{text-decoration:none}
+header .logo .grad{background:linear-gradient(92deg,#FF3E8A 0%,#A855F7 52%,#22D3EE 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+header nav.mainnav{margin-left:auto;justify-content:flex-end;gap:20px}
+header nav.mainnav a{color:#161513}
+header nav.mainnav a:hover{color:#2E5BFF;text-decoration:none}
+header nav.mainnav a.btn-audit{background:#2E5BFF;color:#FFFFFF;padding:10px 20px;border-radius:8px;font-weight:800}
+header nav.mainnav a.btn-audit:hover{background:#1E44D6;color:#FFFFFF}
+footer .logo{font-family:'Sora',sans-serif}
+@media(max-width:860px){header nav.mainnav{margin-left:0;justify-content:flex-start}}
+@media(max-width:640px){header .bar{padding:12px 14px}header nav.mainnav{margin-left:0;gap:14px}.topbar-in{justify-content:center;text-align:center}}
+</style>
 </head>
 <body>
+<div class="topbar">
+  <div class="topbar-in">
+    <span>Welcome to A.I. NOW — AI services for local business</span>
+    <span><a href="tel:+15862008282">(586) 200-8282</a> &nbsp;·&nbsp; <a href="mailto:support@artificial-intelligencenow.com">support@artificial-intelligencenow.com</a> &nbsp;·&nbsp; Macomb Township, MI</span>
+  </div>
+</div>
 <header>
   <div class="bar">
-    <div class="logo">A.I. <span class="grad">NOW</span></div>
-    <span class="pill">AI SERVICES</span>
+    <a class="logo" href="/">A.I. <span class="grad">NOW</span></a>
     <nav class="mainnav" aria-label="Main">
       <a href="/">Home</a>
       <a href="services.html">Services</a>
       <a href="pricing.html">Pricing</a>
-      <a href="industries.html">Industries</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="faq.html">FAQ</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
       <a href="print.html">Print &amp; Promo</a>
-      <a class="btn btn-hot btn-sm" href="get-started.html">Get Started</a>
+      <a href="industries.html">Industries</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn-audit" href="audit.html">Free AI Audit</a>
     </nav>
   </div>
 </header>
@@ -112,32 +140,32 @@
       <div class="plan">
         <!-- PAYPAL-LINK: STARTER -->
         <div class="pname">STARTER</div>
-        <div class="pprice">$599 setup<br><small>+ $89/month</small></div>
+        <div class="pprice">$419 setup<br><small>+ $62/month</small></div>
         <ul>
           <li>AI Website Chatbot &amp; Booking Assistant on your existing website</li>
           <li>Answers customer questions 24/7</li>
           <li>Captures leads while you're closed</li>
           <li>Email support</li>
         </ul>
-        <a class="btn btn-hot" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-25B078929U235740WNL7J47Q" target="_blank" rel="noopener">Buy STARTER — $599 setup + $89/mo</a><div style="margin-top:10px;font-size:14px;text-align:center"><a href="audit.html">Or start with the free audit first →</a></div>
+        <a class="btn btn-hot" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-2UH91205VP3374154NL7LLPQ" target="_blank" rel="noopener">Buy STARTER — $419 setup + $62/mo</a><div style="margin-top:10px;font-size:14px;text-align:center"><a href="audit.html">Or start with the free audit first →</a></div>
       </div>
       <div class="plan">
         <!-- PAYPAL-LINK: BOOKING-PRO -->
         <div class="pname">BOOKING PRO</div>
-        <div class="pprice">$899 setup<br><small>+ $199/month</small></div>
+        <div class="pprice">$629 setup<br><small>+ $139/month</small></div>
         <ul>
           <li>AI Website Chatbot &amp; Booking Assistant</li>
           <li>Appointment &amp; booking help built in</li>
           <li>AI Review Responder &amp; Review Engine for your Google reviews</li>
           <li>Email support</li>
         </ul>
-        <a class="btn btn-hot" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-3CP31650AD724791RNL7J5WI" target="_blank" rel="noopener">Buy BOOKING PRO — $899 setup + $199/mo</a><div style="margin-top:10px;font-size:14px;text-align:center"><a href="audit.html">Or start with the free audit first →</a></div>
+        <a class="btn btn-hot" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-18J43006KL385913XNL7LL3A" target="_blank" rel="noopener">Buy BOOKING PRO — $629 setup + $139/mo</a><div style="margin-top:10px;font-size:14px;text-align:center"><a href="audit.html">Or start with the free audit first →</a></div>
       </div>
       <div class="plan pop">
         <!-- PAYPAL-LINK: GROWTH -->
         <div class="popflag">MOST POPULAR</div>
         <div class="pname">GROWTH</div>
-        <div class="pprice">$899 setup<br><small>+ $249/month</small></div>
+        <div class="pprice">$629 setup<br><small>+ $174/month</small></div>
         <ul>
           <li>AI Website Chatbot &amp; Booking Assistant</li>
           <li>Instant Lead Follow-Up — instant text/email to every new lead</li>
@@ -145,24 +173,24 @@
           <li>Automatic review requests after each job</li>
           <li>Email support</li>
         </ul>
-        <a class="btn btn-hot" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-3WL55630638519827NL7J6LA" target="_blank" rel="noopener">Buy GROWTH — $899 setup + $249/mo</a><div style="margin-top:10px;font-size:14px;text-align:center"><a href="audit.html">Or start with the free audit first →</a></div>
+        <a class="btn btn-hot" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-59S93319NL3502644NL7LMHI" target="_blank" rel="noopener">Buy GROWTH — $629 setup + $174/mo</a><div style="margin-top:10px;font-size:14px;text-align:center"><a href="audit.html">Or start with the free audit first →</a></div>
       </div>
       <div class="plan">
         <!-- PAYPAL-LINK: SOCIAL-PRO -->
         <div class="pname">SOCIAL PRO</div>
-        <div class="pprice">$499 setup<br><small>+ $499/month</small></div>
+        <div class="pprice">$349 setup<br><small>+ $349/month</small></div>
         <ul>
           <li>AI Content Engine — blog &amp; website content on schedule</li>
           <li>AI Social Media Manager — daily posts, captions &amp; hashtags</li>
           <li>AI Review Responder &amp; Review Engine for your Google reviews</li>
           <li>Email support</li>
         </ul>
-        <a class="btn btn-hot" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-94J78402R95288141NL7J64Y" target="_blank" rel="noopener">Buy SOCIAL PRO — $499 setup + $499/mo</a><div style="margin-top:10px;font-size:14px;text-align:center"><a href="audit.html">Or start with the free audit first →</a></div>
+        <a class="btn btn-hot" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-4D291967B9045783TNL7LMWQ" target="_blank" rel="noopener">Buy SOCIAL PRO — $349 setup + $349/mo</a><div style="margin-top:10px;font-size:14px;text-align:center"><a href="audit.html">Or start with the free audit first →</a></div>
       </div>
       <div class="plan">
         <!-- PAYPAL-LINK: FULL-CREW -->
         <div class="pname">FULL CREW</div>
-        <div class="pprice">$1,499 setup<br><small>+ $399/month</small></div>
+        <div class="pprice">$1,049 setup<br><small>+ $279/month</small></div>
         <ul>
           <li>AI Website Chatbot &amp; Booking Assistant</li>
           <li>AI Voice Receptionist + Missed-Call Text-Back — calls answered, appointments booked</li>
@@ -171,12 +199,12 @@
           <li>AI Content Engine</li>
           <li>Priority support</li>
         </ul>
-        <a class="btn btn-hot" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-1VC37097HS133861HNL7J7QI" target="_blank" rel="noopener">Buy FULL CREW — $1,499 setup + $399/mo</a><div style="margin-top:10px;font-size:14px;text-align:center"><a href="audit.html">Or start with the free audit first →</a></div>
+        <a class="btn btn-hot" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-0SW99428H45759136NL7LNCQ" target="_blank" rel="noopener">Buy FULL CREW — $1,049 setup + $279/mo</a><div style="margin-top:10px;font-size:14px;text-align:center"><a href="audit.html">Or start with the free audit first →</a></div>
       </div>
       <div class="plan">
         <!-- PAYPAL-LINK: ALL-IN-EMPIRE -->
         <div class="pname">ALL-IN EMPIRE</div>
-        <div class="pprice">$1,999 setup<br><small>+ $599/month</small></div>
+        <div class="pprice">$1,399 setup<br><small>+ $419/month</small></div>
         <ul>
           <li>Everything in Full Crew</li>
           <li>AI Social Media Manager</li>
@@ -184,7 +212,7 @@
           <li>AI Training &amp; Care Plan included</li>
           <li>Priority support</li>
         </ul>
-        <a class="btn btn-hot" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-7G963958N5533511XNL7KADQ" target="_blank" rel="noopener">Buy ALL-IN EMPIRE — $1,999 setup + $599/mo</a><div style="margin-top:10px;font-size:14px;text-align:center"><a href="audit.html">Or start with the free audit first →</a></div>
+        <a class="btn btn-hot" href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-0BB11036WP4550455NL7LNOQ" target="_blank" rel="noopener">Buy ALL-IN EMPIRE — $1,399 setup + $419/mo</a><div style="margin-top:10px;font-size:14px;text-align:center"><a href="audit.html">Or start with the free audit first →</a></div>
       </div>
     </div>
     <p class="snote" style="margin-top:20px">Prefer a single service instead of a package? All <a href="services.html">Top 10 services</a> are available à la carte — start with the same free audit and tell us which one you want. Questions first? <a href="contact.html">Contact us</a> — email <a href="mailto:support@artificial-intelligencenow.com?subject=AI%20SERVICES">support@artificial-intelligencenow.com</a> or call <a href="tel:+15862008282">(586) 200-8282</a>. See our <a href="terms.html">Terms &amp; Conditions</a> for the full agreement.</p>
