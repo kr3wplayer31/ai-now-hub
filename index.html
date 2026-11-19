@@ -129,7 +129,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet">
 <style>
 /* A.I. NOW layout (Nov 19): Consultio-style blue strip + info row + white nav, royal-blue accents, Sora/Inter type */
 body{font-family:'Inter',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
@@ -162,11 +162,11 @@ footer .logo{font-family:'Sora',sans-serif}
 @media(max-width:640px){header .bar{padding:12px 14px}header nav.mainnav{margin-left:0;gap:14px}}
 /* homepage hero — Consultio layout */
 .heroband{background:linear-gradient(118deg,#EAF2FD 0%,#F7FAFE 54%,#E9F1FD 100%);position:relative;overflow:hidden}
-.heroband::after{content:"";position:absolute;top:0;right:0;width:640px;max-width:72%;height:100%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='208' viewBox='0 0 240 208'%3E%3Cg fill='none' stroke='%232E5BFF' stroke-opacity='0.10' stroke-width='1.5'%3E%3Cpath d='M60 6l52 30v60L60 126 8 96V36z'/%3E%3Cpath d='M180 110l52 30v60l-52 30-52-30v-60z'/%3E%3Cpath d='M186 2l40 23v46l-40 23-40-23V25z'/%3E%3C/g%3E%3C/svg%3E");background-repeat:repeat;pointer-events:none}
+.heroband::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='208' viewBox='0 0 240 208'%3E%3Cg fill='none' stroke='%232E5BFF' stroke-opacity='0.08' stroke-width='1.5'%3E%3Cpath d='M60 6l52 30v60L60 126 8 96V36z'/%3E%3Cpath d='M180 110l52 30v60l-52 30-52-30v-60z'/%3E%3Cpath d='M186 2l40 23v46l-40 23-40-23V25z'/%3E%3C/g%3E%3C/svg%3E");background-repeat:repeat;pointer-events:none}
 .heroband .hero{position:relative;z-index:1;padding-top:0;padding-bottom:0}
-.heroband .hero-grid{grid-template-columns:52% 48%;gap:0;align-items:stretch}
-.herotext{padding:58px 38px 118px 0}
-.hero h1{font-family:'Sora',sans-serif;font-size:clamp(42px,6vw,72px);font-weight:800;line-height:1.04;letter-spacing:-1px}
+.herotext{padding:58px 0 118px}
+.hero h1{font-family:'Archivo Black',sans-serif;font-size:clamp(46px,7.2vw,88px);font-weight:400;line-height:1.03;letter-spacing:0;color:#101E30}
+.hero .lead{max-width:900px}
 .hero .eyebrow{color:#2E5BFF}
 .hero .btn-hot{background:#2E5BFF}
 .hero .btn-hot:hover{background:#1E44D6}
@@ -175,11 +175,6 @@ footer .logo{font-family:'Sora',sans-serif}
 .btn-dot::after{content:"";width:8px;height:8px;border-radius:50%;background:#FFFFFF}
 .seclink{font-weight:700;font-size:15.5px;color:#1E3A5F;align-self:center}
 .seclink:hover{color:#2E5BFF}
-.herofig{position:relative}
-.herofig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 14%);mask-image:linear-gradient(to right,transparent 0,#000 14%)}
-.sliderarrows{position:absolute;right:0;bottom:76px;z-index:2;display:flex;align-items:flex-end;gap:6px}
-.sliderarrows .sa-b{width:34px;height:34px;background:#0B0B0B;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:19px;line-height:1}
-.sliderarrows .sa-w{width:26px;height:26px;background:#FFFFFF;color:#101E30;display:flex;align-items:center;justify-content:center;font-size:15px;line-height:1;box-shadow:0 2px 8px rgba(30,58,95,.18)}
 .herocards{position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:-58px}
 .hcard{background:#FFFFFF;border:1px solid #D9E0E8;border-radius:14px;padding:24px;box-shadow:0 10px 28px rgba(30,58,95,.10);position:relative}
 .hcard .hic{color:#2E5BFF;margin-bottom:12px}
@@ -193,7 +188,7 @@ footer .logo{font-family:'Sora',sans-serif}
 .hcard.hot .hprice{color:#FFFFFF}
 .hcard.hot .hlink a{color:#FFFFFF}
 .starttag{position:absolute;top:-12px;right:18px;background:#101E30;color:#FFFFFF;font-size:11px;font-weight:900;letter-spacing:1.5px;padding:5px 12px;border-radius:999px;text-transform:uppercase}
-@media(max-width:860px){.herocards{grid-template-columns:1fr;margin-top:-40px}.herotext{padding:42px 0 26px}.herofig{height:340px}.herofig img{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 6%);mask-image:linear-gradient(to right,transparent 0,#000 6%)}}
+@media(max-width:860px){.herocards{grid-template-columns:1fr;margin-top:-40px}.herotext{padding:42px 0 68px}}
 </style>
 </head>
 <body>
@@ -238,21 +233,15 @@ footer .logo{font-family:'Sora',sans-serif}
   <!-- HERO -->
   <div class="heroband">
     <div class="hero wrap">
-      <div class="hero-grid">
-        <div class="herotext">
-          <div class="eyebrow">AI Services for Local Business</div>
-          <h1>We put AI to work for your local business.</h1>
-          <p class="lead">A.I. NOW installs 10 practical services — from a website chatbot and phone receptionist to lead follow-up, reviews, content, and search visibility. Start with a free audit, see the price in writing, and choose only what fits.</p>
-          <div class="ctas">
-            <a class="btn btn-hot btn-pill" href="#top10"><span class="btn-dot" aria-hidden="true"></span>See the 10 services</a>
-            <a class="seclink" href="audit.html">Get my free AI audit →</a>
-          </div>
-          <p class="micro">Free audit, no charge and no obligation. Published prices. Written quote before work begins.</p>
+      <div class="herotext">
+        <div class="eyebrow">AI Services for Local Business</div>
+        <h1>We put AI to work for your local business.</h1>
+        <p class="lead">A.I. NOW installs 10 practical services — from a website chatbot and phone receptionist to lead follow-up, reviews, content, and search visibility. Start with a free audit, see the price in writing, and choose only what fits.</p>
+        <div class="ctas">
+          <a class="btn btn-hot btn-pill" href="#top10"><span class="btn-dot" aria-hidden="true"></span>See the 10 services</a>
+          <a class="seclink" href="audit.html">Get my free AI audit →</a>
         </div>
-        <div class="herofig">
-          <img src="assets/hero-logo.webp" alt="A.I. NOW — Artificial Intelligence Now" width="1280" height="1920">
-          <div class="sliderarrows" aria-hidden="true"><span class="sa-w">‹</span><span class="sa-b">›</span></div>
-        </div>
+        <p class="micro">Free audit, no charge and no obligation. Published prices. Written quote before work begins.</p>
       </div>
     </div>
   </div>
