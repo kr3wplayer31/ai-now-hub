@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI for Retail, Clothing, Agencies &amp; Gaming Venues — A.I. NOW</title>
+<meta name="description" content="AI for clothing and retail stores, social media and creative agencies, and gaming venues: product and stock questions answered instantly, party and event bookings captured, your own lead capture handled. Free AI audit.">
+<style>
+  :root{--bg:#FAF7F0;--panel:#FFFFFF;--panel2:#F4EFE2;--line:#E1D9C6;--txt:#161513;--dim:#5D594E;--accent:#1E3A5F;--accent-dark:#14293F}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--txt);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .bar{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .logo{font-weight:900;font-size:26px;letter-spacing:.5px;color:var(--txt)}
+  .grad{color:var(--txt)}
+  .pill{display:inline-flex;align-items:center;background:var(--accent);color:#fff;font-size:11px;font-weight:900;padding:5px 12px;border-radius:999px;letter-spacing:1.5px}
+  nav.mainnav{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+  nav.mainnav a{color:var(--txt);font-weight:700;font-size:14.5px}
+  nav.mainnav a:hover{color:var(--accent);text-decoration:none}
+  nav.mainnav a.on{color:var(--accent)}
+  .btn{display:inline-block;font-weight:800;font-size:15.5px;padding:13px 26px;border-radius:10px;letter-spacing:.2px;border:0;cursor:pointer}
+  .btn:hover{text-decoration:none}
+  .btn-hot{background:var(--accent);color:#fff}
+  .btn-hot:hover{background:var(--accent-dark)}
+  .btn-ghost{background:#FFFFFF;color:var(--txt);border:1.5px solid #CFC7AF}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .btn-sm{padding:10px 20px;font-size:14px}
+  /* page banner */
+  .pagehead{background:#111111;color:#FFFFFF;padding:36px 0 32px;border-bottom:6px solid var(--accent)}
+  .pagehead .pk{font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:#9DB8D9;margin-bottom:10px}
+  .pagehead h1{font-size:clamp(32px,5.6vw,52px);font-weight:900;line-height:1.05;letter-spacing:-.5px}
+  .pagehead p{color:#D9D9D9;font-size:clamp(15.5px,2vw,18px);max-width:780px;margin-top:12px}
+  .pagehead .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+  /* sections */
+  section{padding:52px 0 8px}
+  .stitle{font-size:clamp(27px,4.4vw,38px);font-weight:900;line-height:1.12;letter-spacing:-.3px}
+  .snote{color:var(--dim);font-size:16px;margin:10px 0 26px;max-width:780px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+  .card{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:9px;box-shadow:0 1px 3px rgba(22,21,19,.05)}
+  .card .ct{font-weight:800;font-size:18.5px}
+  .card .cd{color:var(--dim);font-size:15px;flex:1}
+  .card .price{font-weight:900;font-size:17px;color:var(--txt)}
+  .card .price span{color:var(--accent)}
+  /* pricing */
+  .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;align-items:stretch}
+  .plan{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:26px 24px;display:flex;flex-direction:column;gap:10px;position:relative;box-shadow:0 1px 3px rgba(22,21,19,.05)}
+  .plan.pop{border:2px solid var(--accent);background:var(--panel2)}
+  .popflag{position:absolute;top:-13px;left:24px;background:var(--accent);color:#fff;font-size:11.5px;font-weight:900;letter-spacing:1.2px;padding:5px 12px;border-radius:999px}
+  .plan .pname{font-weight:900;font-size:15px;letter-spacing:1.6px;color:var(--accent)}
+  .plan .pprice{font-size:30px;font-weight:900;line-height:1.15}
+  .plan .pprice small{font-size:15px;color:var(--dim);font-weight:700}
+  .plan ul{color:#3E3A32;font-size:15px;padding-left:18px;flex:1}
+  .plan ul li{margin:5px 0}
+  .plan .btn{text-align:center;margin-top:8px}
+  /* audit band */
+  .auditband{margin:52px 0 8px;background:#F1EADA;border:1px solid var(--line);border-radius:16px;padding:30px 26px;text-align:center}
+  .auditband .at{font-weight:900;font-size:clamp(23px,4vw,32px)}
+  .auditband p{color:#3E3A32;font-size:16px;max-width:680px;margin:10px auto 0}
+  .auditband .btn{margin-top:20px}
+  /* footer */
+  footer{border-top:1px solid var(--line);margin-top:60px;padding:30px 0 40px;color:var(--dim);font-size:13.5px}
+  footer .frow{display:flex;flex-wrap:wrap;gap:10px 26px;margin-bottom:12px}
+  footer a{color:#3E3A32;font-weight:700}
+  footer a:hover{color:var(--accent)}
+  @media(max-width:640px){nav.mainnav{margin-left:0;gap:14px}.pagehead{padding:28px 0 26px}}
+</style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#FAF7F0">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="A.I. NOW">
+</head>
+<body>
+<header>
+  <div class="bar">
+    <div class="logo">A.I. <span class="grad">NOW</span></div>
+    <span class="pill">AI SERVICES</span>
+    <nav class="mainnav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="industries.html" class="on">Industries</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn btn-hot btn-sm" href="audit.html">Get Started</a>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE BANNER -->
+<div class="pagehead">
+  <div class="wrap">
+    <div class="pk">Industries · Retail, Creative &amp; Gaming</div>
+    <h1>Questions answered the second they're asked.</h1>
+    <p>For clothing and retail stores, social media and creative agencies, and gaming and entertainment venues: A.I. NOW installs AI that answers product, stock and booking questions instantly and captures the sale or the lead — because online, an unanswered question is a customer gone.</p>
+    <div class="ctas">
+      <a class="btn btn-hot" href="audit.html">Get my free AI audit</a>
+      <a class="btn btn-ghost" href="#recommended">See the recommended package</a>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+  <!-- PAIN -->
+  <section>
+    <div class="stitle">The daily reality for shops, agencies &amp; venues</div>
+    <p class="snote">Three different businesses, one shared leak: people ask buying questions all day — in chat, in comments, in DMs, by email — and every unanswered one is money that quietly walks away.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="ct">👕 "Do you have this in a medium?" — asked at midnight</div>
+        <div class="cd">Clothing and retail shoppers ask about sizes, stock, shipping and returns while they're deciding — often late at night, always ready to buy in that moment. If the answer means sending an email and waiting, the moment usually passes.</div>
+      </div>
+      <div class="card">
+        <div class="ct">🎮 Party bookings run through a phone nobody's holding</div>
+        <div class="cd">Gaming lounges and entertainment venues take birthday parties, tournaments and group events — planned by parents and organizers at night, on their phones. Phone-only or form-only booking means those events get planned at the venue that answered.</div>
+      </div>
+      <div class="card">
+        <div class="ct">📱 Agencies: your own site is your loudest portfolio</div>
+        <div class="cd">Social media and creative agencies sell online presence for a living. A prospect who lands on your site and finds no instant answer, no easy next step, notices — it's the one pitch that undercuts itself. Your lead capture should work the way you promise clients theirs will.</div>
+      </div>
+      <div class="card">
+        <div class="ct">💬 Comments and DMs are a sales floor nobody staffs</div>
+        <div class="cd">Buying questions pile up across comments, DMs and inboxes while you're with customers, on a shoot, or running an event. Nobody can watch every channel at once — that's the job AI is actually good at.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section>
+    <div class="stitle">What we install for retail, agencies &amp; venues</div>
+    <p class="snote">Start with the chatbot that never sleeps, then hand us the content and social work that keeps your pages looking alive between drops, events and campaigns.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="ct">💬 AI Website Chatbot</div>
+        <div class="cd">Answers size, stock, shipping, hours and pricing questions instantly, captures party and event booking requests with the details attached, and turns agency-site visitors into captured leads instead of bounces.</div>
+        <div class="price">$599 setup <span>+ $89/mo</span></div>
+      </div>
+      <div class="card">
+        <div class="ct">📱 AI Social Media Manager</div>
+        <div class="cd">Daily posts, captions and hashtags across your social accounts, done for you — new arrivals, event nights, promotions — so your feeds sell while you're on the floor.</div>
+        <div class="price">$599/mo <span>· no setup fee</span></div>
+      </div>
+      <div class="card">
+        <div class="ct">✍️ AI Content Engine</div>
+        <div class="cd">Blog posts and website content written and posted on schedule — product stories, event recaps, seasonal pages — the steady content that keeps search engines and AI assistants finding you.</div>
+        <div class="price">$299/mo <span>· no setup fee</span></div>
+      </div>
+      <div class="card">
+        <div class="ct">⭐ AI Review Responder</div>
+        <div class="cd">Every Google review answered professionally, plus review requests sent for you — because shoppers, parents and clients all read the reviews before they read anything else.</div>
+        <div class="price">$149/mo <span>· no setup fee</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOMMENDED -->
+  <section id="recommended">
+    <div class="stitle">Recommended for retail, creative &amp; gaming</div>
+    <p class="snote">Social Pro hands us your whole online presence — content, social and reviews — and most shops and venues add the chatbot so the website itself answers and captures, too. Month-to-month after setup.</p>
+    <div class="plans">
+      <div class="plan pop">
+        <div class="popflag">RECOMMENDED</div>
+        <div class="pname">SOCIAL PRO</div>
+        <div class="pprice">$499 setup<br><small>+ $499/month</small></div>
+        <ul>
+          <li>AI Content Engine — blog &amp; website content on schedule</li>
+          <li>AI Social Media Manager — daily posts, captions &amp; hashtags</li>
+          <li>AI Review Responder for your Google reviews</li>
+          <li>Your whole online presence, handled</li>
+          <li>Email support</li>
+        </ul>
+        <a class="btn btn-hot" href="audit.html">Start with a free audit</a>
+      </div>
+      <div class="plan">
+        <div class="pname">ADD THE CHATBOT — AI WEBSITE CHATBOT</div>
+        <div class="pprice">$599 setup<br><small>+ $89/month</small></div>
+        <ul>
+          <li>Product, size, stock and hours questions answered instantly</li>
+          <li>Party &amp; event booking requests captured 24/7</li>
+          <li>Agency sites: your own lead capture, working like you sell it</li>
+          <li>Prefer everything in one? ALL-IN EMPIRE ($1,999 setup + $599/mo) combines Social Pro's services with the full front-office crew</li>
+        </ul>
+        <a class="btn btn-ghost" href="audit.html">Ask about the chatbot</a>
+      </div>
+    </div>
+    <p class="snote" style="margin-top:20px">All prices are starting-at prices in USD. Your exact quote is confirmed in writing before work begins — the price we quote is the price you pay. See our <a href="terms.html">Terms &amp; Conditions</a> for full details.</p>
+  </section>
+
+  <!-- AUDIT BAND -->
+  <div class="auditband">
+    <div class="at">Start with the free AI audit</div>
+    <p>Send us your website and we'll show you — in plain English, no charge, no obligation — where questions and booking requests are slipping away unanswered, and what AI would do about it.</p>
+    <a class="btn btn-hot" href="audit.html">Get my free AI audit</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <span class="logo" style="font-size:19px">A.I. <span class="grad">NOW</span></span>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="industries.html">Industries</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://shop.artificial-intelligencenow.com">Store</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <div class="frow">
+      <span>Contact: <a href="mailto:support@artificial-intelligencenow.com?subject=AI%20SERVICES">support@artificial-intelligencenow.com</a></span>
+      <span>Prefer Gmail? <a href="mailto:ainowstore@gmail.com?subject=AI%20SERVICES">ainowstore@gmail.com</a></span>
+    </div>
+    <p>A.I. NOW — Detroit, Michigan. AI implementation services for local businesses, at <a href="https://artificial-intelligencenow.com">artificial-intelligencenow.com</a>. The A.I. NOW Store lives at <a href="https://shop.artificial-intelligencenow.com">shop.artificial-intelligencenow.com</a>. Prices shown are starting-at prices in USD; your exact quote is confirmed in writing before work begins.</p>
+  </div>
+</footer>
+
+<script>
+if ('serviceWorker' in navigator) { navigator.serviceWorker.register('sw.js').catch(()=>{}); }
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6aef788aa3c2893c2c94aa40/1k6rmtnk6';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>
