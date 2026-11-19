@@ -131,13 +131,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet">
 <style>
-/* A.I. NOW layout (Nov 19): Consultio-style topbar + white nav, royal-blue accents, Sora/Inter type */
+/* A.I. NOW layout (Nov 19): Consultio-style blue strip + info row + white nav, royal-blue accents, Sora/Inter type */
 body{font-family:'Inter',-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
 h1,h2,h3,.stitle,.sname,.ct,.st,.dt,.at,.sh,.mt,.pname,.pbname,.hline{font-family:'Sora','Inter',sans-serif}
-.topbar{background:#EDF2FB;color:#1E3A5F;font-size:13px;border-bottom:1px solid #D9E4F2}
-.topbar-in{max-width:1120px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;justify-content:space-between;gap:6px 26px;flex-wrap:wrap}
-.topbar a{color:#1E3A5F;font-weight:600}
-.topbar a:hover{color:#2E5BFF}
+.bluestrip{background:#2E5BFF;color:#FFFFFF;font-size:13px}
+.bluestrip-in{max-width:1120px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;justify-content:space-between;gap:6px 26px}
+.bluestrip .bs-city{font-weight:600}
+.inforow{background:#FFFFFF;border-bottom:1px solid #E3EAF6;color:#101E30;font-size:13px}
+.inforow-in{max-width:1120px;margin:0 auto;padding:7px 20px;display:flex;align-items:center;justify-content:space-between;gap:8px 26px;flex-wrap:wrap}
+.socials{display:flex;align-items:center;gap:14px}
+.socials a,.socials span{display:inline-flex;align-items:center;color:#2E5BFF}
+.socials a:hover{color:#1E44D6}
+.infocontact{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.infocontact a,.infocontact span{display:inline-flex;align-items:center;gap:7px;color:#101E30;font-weight:600}
+.infocontact a:hover{color:#2E5BFF;text-decoration:none}
+.infocontact svg{color:#2E5BFF;flex:none}
+@media(max-width:720px){.socials{display:none}.infocontact .ic-mail,.infocontact .ic-pin{display:none}.bluestrip .bs-city{display:none}}
 header{position:sticky;top:0;z-index:50;background:#FFFFFF;border-bottom:1px solid #E3E9F2;box-shadow:0 4px 18px rgba(30,58,95,.07);backdrop-filter:none}
 header .bar{flex-direction:row;align-items:center;text-align:left;gap:14px;padding:14px 20px;flex-wrap:wrap}
 header .logo{font-family:'Sora',sans-serif;font-weight:800;font-size:30px;letter-spacing:-.5px;line-height:1.05;color:#101E30}
@@ -150,41 +159,63 @@ header nav.mainnav a.btn-audit{background:#2E5BFF;color:#FFFFFF;padding:10px 20p
 header nav.mainnav a.btn-audit:hover{background:#1E44D6;color:#FFFFFF}
 footer .logo{font-family:'Sora',sans-serif}
 @media(max-width:860px){header nav.mainnav{margin-left:0;justify-content:flex-start}}
-@media(max-width:640px){header .bar{padding:12px 14px}header nav.mainnav{margin-left:0;gap:14px}.topbar-in{justify-content:center;text-align:center}}
+@media(max-width:640px){header .bar{padding:12px 14px}header nav.mainnav{margin-left:0;gap:14px}}
 /* homepage hero — Consultio layout */
-.heroband{background:linear-gradient(118deg,#E9F1FD 0%,#F5F9FE 54%,#E8F0FC 100%);position:relative;overflow:hidden}
-.heroband::after{content:"";position:absolute;top:0;right:0;width:560px;max-width:70%;height:100%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='208' viewBox='0 0 240 208'%3E%3Cg fill='none' stroke='%232E5BFF' stroke-opacity='0.10' stroke-width='1.5'%3E%3Cpath d='M60 6l52 30v60L60 126 8 96V36z'/%3E%3Cpath d='M180 110l52 30v60l-52 30-52-30v-60z'/%3E%3Cpath d='M186 2l40 23v46l-40 23-40-23V25z'/%3E%3C/g%3E%3C/svg%3E");background-repeat:repeat;pointer-events:none}
-.heroband .hero{position:relative;z-index:1;padding:54px 0 92px}
-.heroband .hero-grid{align-items:center}
-.hero h1{font-family:'Sora',sans-serif;font-size:clamp(40px,6vw,64px);font-weight:800;line-height:1.04;letter-spacing:-1px}
+.heroband{background:linear-gradient(118deg,#EAF2FD 0%,#F7FAFE 54%,#E9F1FD 100%);position:relative;overflow:hidden}
+.heroband::after{content:"";position:absolute;top:0;right:0;width:640px;max-width:72%;height:100%;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='208' viewBox='0 0 240 208'%3E%3Cg fill='none' stroke='%232E5BFF' stroke-opacity='0.10' stroke-width='1.5'%3E%3Cpath d='M60 6l52 30v60L60 126 8 96V36z'/%3E%3Cpath d='M180 110l52 30v60l-52 30-52-30v-60z'/%3E%3Cpath d='M186 2l40 23v46l-40 23-40-23V25z'/%3E%3C/g%3E%3C/svg%3E");background-repeat:repeat;pointer-events:none}
+.heroband .hero{position:relative;z-index:1;padding-top:0;padding-bottom:0}
+.heroband .hero-grid{grid-template-columns:52% 48%;gap:0;align-items:stretch}
+.herotext{padding:58px 38px 118px 0}
+.hero h1{font-family:'Sora',sans-serif;font-size:clamp(42px,6vw,72px);font-weight:800;line-height:1.04;letter-spacing:-1px}
 .hero .eyebrow{color:#2E5BFF}
 .hero .btn-hot{background:#2E5BFF}
 .hero .btn-hot:hover{background:#1E44D6}
+.hero .btn-pill{border-radius:999px;display:inline-flex;align-items:center;gap:10px}
+.btn-dot{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.25);display:inline-flex;align-items:center;justify-content:center;flex:none}
+.btn-dot::after{content:"";width:8px;height:8px;border-radius:50%;background:#FFFFFF}
 .seclink{font-weight:700;font-size:15.5px;color:#1E3A5F;align-self:center}
 .seclink:hover{color:#2E5BFF}
-.heroart{margin:0;border-radius:20px;overflow:hidden;box-shadow:0 18px 44px rgba(30,58,95,.16);background:#EDF3FA;aspect-ratio:5/6}
-.heroart img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.herofig{position:relative}
+.herofig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 14%);mask-image:linear-gradient(to right,transparent 0,#000 14%)}
+.sliderarrows{position:absolute;right:0;bottom:0;z-index:2;display:flex;align-items:flex-end;gap:6px}
+.sliderarrows .sa-b{width:34px;height:34px;background:#0B0B0B;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:19px;line-height:1}
+.sliderarrows .sa-w{width:26px;height:26px;background:#FFFFFF;color:#101E30;display:flex;align-items:center;justify-content:center;font-size:15px;line-height:1;box-shadow:0 2px 8px rgba(30,58,95,.18)}
 .herocards{position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:-58px}
 .hcard{background:#FFFFFF;border:1px solid #D9E0E8;border-radius:14px;padding:24px;box-shadow:0 10px 28px rgba(30,58,95,.10);position:relative}
 .hcard .hic{color:#2E5BFF;margin-bottom:12px}
-.hcard .hct{font-family:'Sora',sans-serif;font-weight:800;font-size:17.5px;margin-bottom:7px;line-height:1.25}
+.hcard .hct{font-family:'Sora',sans-serif;font-weight:800;font-size:17.5px;margin-bottom:6px;line-height:1.25}
+.hcard .hprice{font-weight:800;font-size:16px;color:#101E30;margin-bottom:8px}
 .hcard p{color:#4B5563;font-size:15px}
-.hcard .hprice{margin-top:14px;font-weight:800;font-size:16px;color:#101E30}
-.hcard .hlink{margin-top:6px;font-size:14.5px;font-weight:700}
+.hcard .hlink{margin-top:10px;font-size:14.5px;font-weight:700}
 .hcard.hot{background:#2E5BFF;border-color:#2E5BFF;color:#FFFFFF}
 .hcard.hot p{color:rgba(255,255,255,.88)}
 .hcard.hot .hic{color:#FFFFFF}
 .hcard.hot .hprice{color:#FFFFFF}
 .hcard.hot .hlink a{color:#FFFFFF}
 .starttag{position:absolute;top:-12px;right:18px;background:#101E30;color:#FFFFFF;font-size:11px;font-weight:900;letter-spacing:1.5px;padding:5px 12px;border-radius:999px;text-transform:uppercase}
-@media(max-width:860px){.herocards{grid-template-columns:1fr;margin-top:-40px}.heroband .hero{padding-bottom:72px}}
+@media(max-width:860px){.herocards{grid-template-columns:1fr;margin-top:-40px}.herotext{padding:42px 0 26px}.herofig{height:340px}.herofig img{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 6%);mask-image:linear-gradient(to right,transparent 0,#000 6%)}}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <div class="topbar-in">
+<div class="bluestrip">
+  <div class="bluestrip-in">
     <span>Welcome to A.I. NOW — AI services for local business</span>
-    <span><a href="tel:+15862008282">(586) 200-8282</a> &nbsp;·&nbsp; <a href="mailto:support@artificial-intelligencenow.com">support@artificial-intelligencenow.com</a> &nbsp;·&nbsp; Macomb Township, MI</span>
+    <span class="bs-city">Macomb Township, MI</span>
+  </div>
+</div>
+<div class="inforow">
+  <div class="inforow-in">
+    <div class="socials">
+      <a href="https://www.instagram.com/ainowstore" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a href="https://www.tiktok.com/@heymattymatt.com" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.6 6.7a4.8 4.8 0 0 1-3.5-4.5h-3.2v13a2.9 2.9 0 1 1-2-2.75V9.25a6.1 6.1 0 1 0 5.2 6V8.4a8 8 0 0 0 4.6 1.6V6.85c-.35 0-.7-.05-1.1-.15z"/></svg></a>
+      <a href="https://www.youtube.com/@AINowStore" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.28 5 12 5 12 5s-6.28 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2 26.2 26.2 0 0 0 2 12a26.2 26.2 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.76 1.77C5.72 19 12 19 12 19s6.28 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77A26.2 26.2 0 0 0 22 12a26.2 26.2 0 0 0-.4-4.8zM10 15.2V8.8L15.5 12z"/></svg></a>
+      <span aria-label="X — account coming soon"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.9 3H21l-6.78 7.74L22.2 21h-6.24l-4.9-6.4L5.5 21H2.34l7.25-8.28L1.8 3h6.4l4.43 5.85L17.9 3zm-1.1 16.13h1.73L7.36 4.77H5.5l11.3 14.36z"/></svg></span>
+    </div>
+    <div class="infocontact">
+      <a href="tel:+15862008282"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call Us: (586) 200-8282</a>
+      <a class="ic-mail" href="mailto:support@artificial-intelligencenow.com"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> support@artificial-intelligencenow.com</a>
+      <span class="ic-pin"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Macomb Township, MI</span>
+    </div>
   </div>
 </div>
 <header>
@@ -208,19 +239,20 @@ footer .logo{font-family:'Sora',sans-serif}
   <div class="heroband">
     <div class="hero wrap">
       <div class="hero-grid">
-        <div>
+        <div class="herotext">
           <div class="eyebrow">AI Services for Local Business</div>
           <h1>We put AI to work for your local business.</h1>
           <p class="lead">A.I. NOW installs 10 practical services — from a website chatbot and phone receptionist to lead follow-up, reviews, content, and search visibility. Start with a free audit, see the price in writing, and choose only what fits.</p>
           <div class="ctas">
-            <a class="btn btn-hot" href="audit.html">Get my free AI audit</a>
-            <a class="seclink" href="#top10">See the 10 services ↓</a>
+            <a class="btn btn-hot btn-pill" href="#top10"><span class="btn-dot" aria-hidden="true"></span>See the 10 services</a>
+            <a class="seclink" href="audit.html">Get my free AI audit →</a>
           </div>
           <p class="micro">Free audit, no charge and no obligation. Published prices. Written quote before work begins.</p>
         </div>
-        <figure class="heroart">
+        <div class="herofig">
           <img src="assets/hero-logo.webp" alt="A.I. NOW — Artificial Intelligence Now" width="1280" height="1920">
-        </figure>
+          <div class="sliderarrows" aria-hidden="true"><span class="sa-w">‹</span><span class="sa-b">›</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -230,24 +262,24 @@ footer .logo{font-family:'Sora',sans-serif}
     <div class="herocards">
       <div class="hcard">
         <div class="hic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-        <div class="hct">AI Voice Receptionist + Missed-Call Text-Back</div>
-        <p>Your phone gets answered when you can't — and every missed call gets a text back, so the customer doesn't just call the next business.</p>
+        <div class="hct">AI Voice Receptionist + Text-Back</div>
         <div class="hprice">$335 setup + $83/mo</div>
+        <p>Your phone answered when you can't — and every missed call gets a text back.</p>
         <div class="hlink"><a href="services.html#service-1">See Service 01 →</a></div>
       </div>
       <div class="hcard hot">
         <div class="hic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
-        <div class="hct">AI Website Chatbot &amp; Booking Assistant</div>
-        <p>Answers common questions on your website around the clock, captures the visitor's details, and helps them book.</p>
+        <div class="hct">AI Website Chatbot &amp; Booking</div>
         <div class="hprice">$419 setup + $62/mo</div>
+        <p>Answers customer questions on your site around the clock and helps them book.</p>
         <div class="hlink"><a href="services.html#service-3">See Service 03 →</a></div>
       </div>
       <div class="hcard">
         <span class="starttag">Start here</span>
         <div class="hic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></div>
-        <div class="hct">AI Review Responder &amp; Review Engine</div>
-        <p>Every Google review answered professionally, and happy customers asked for a review at the right time.</p>
+        <div class="hct">AI Review Responder</div>
         <div class="hprice">$99/mo · no setup fee</div>
+        <p>Every Google review answered professionally — the easiest place to start.</p>
         <div class="hlink"><a href="services.html#service-4">See Service 04 →</a></div>
       </div>
     </div>
